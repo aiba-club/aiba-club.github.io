@@ -1,6 +1,6 @@
 @import "tailwindcss";
 :root{--bg:#050b1a;--fg:#fff;--lb:#8cc8ff;--db:#0a2a6b;--mute:rgba(255,255,255,.55);--line:rgba(255,255,255,.12)}
-@theme inline{--color-lb:var(--lb);--color-db:var(--db);--color-line:var(--line);--color-mute:var(--mute);--font-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--font-hand:"Caveat","Bradley Hand",cursive;--font-sans:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+@theme inline{--color-lb:var(--lb);--color-db:var(--db);--color-line:var(--line);--color-mute:var(--mute);--font-display:"Sora","Helvetica Neue",Arial,sans-serif;--font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--font-hand:"Caveat","Bradley Hand",cursive;--font-sans:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif}
 html{scroll-behavior:smooth;overflow-x:clip}
 body{overflow-x:hidden}
 h1,h2,h3{font-family:var(--font-display);font-weight:600}
