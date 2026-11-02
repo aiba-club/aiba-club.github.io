@@ -34,7 +34,7 @@ export default function Home() {
       <section className="border-t border-white/10">
         <div className="wrap py-24">
           <h2 className={H2}>How the club works.</h2>
-          <p className="mt-3 text-white/65 max-w-xl">Four stages, from your first lesson to the end-of-year Cup. Pick one to see an example.</p>
+          <p className="mt-3 text-white/65 max-w-xl">Four stages, from your first lesson to the AIBA Cup. Pick one to see an example.</p>
           <div className="mt-10"><HowItWorks /></div>
         </div>
       </section>

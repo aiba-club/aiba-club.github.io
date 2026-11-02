@@ -1,6 +1,8 @@
 // TODO: dates, prizes, teams and scores are placeholders
 export const CUP = {
-  name: "AIBA Cup", deadline: "2027-05-30T23:59:00", updated: "Last updated Friday",
+  name: "AIBA Cup", deadline: "2027-05-30T23:59:00",
+  // The Cup opens in March and runs five weeks. TODO: set the real start date and time.
+  start: "2027-03-01T08:00:00", weeks: 5, startLabel: "March 2027", updated: "Last updated Friday",
   tracks: [
     { key: "revenue", label: "Most revenue", unit: "$", teams: [
       { name: "Team Alpha", members: "Maya, Dev, Sam", built: "Study Buddy", score: 1240, delta: 1 },
