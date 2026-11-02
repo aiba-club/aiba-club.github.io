@@ -18,7 +18,7 @@ export default function Home() {
     <>
       {/* HERO: one promise, and a tool you can use right now */}
       <section className="relative overflow-hidden">
-        <Safe><DotField gradientFrom="#2f6fcf" gradientTo="#0a2a6b" glowColor="#8cc8ff" dotSpacing={22} baseOpacity={0.24} /></Safe>
+        <div aria-hidden className="hero-bg"><span className="grid" /><span className="glow g1" /><span className="glow g2" /></div>
         <div className="wrap relative pt-32 md:pt-40 pb-20 text-center flex flex-col items-center">
           <h1 className="font-semibold tracking-tight leading-[1.05] text-[clamp(2.5rem,5.8vw,4.8rem)] max-w-4xl">
             Bring an idea.<br /><GradientText colors={["#ffffff", "#8cc8ff", "#cfe6ff"]} animationSpeed={7}>Build it with AI.</GradientText>

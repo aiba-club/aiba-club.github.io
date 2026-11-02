@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import Strands from "./Strands";
-import SafeGL from "./SafeGL";
+import AssistantOrb from "./AssistantOrb";
 import { FAQ } from "@/data/faq";
 import { CLUB } from "@/data/club";
 
@@ -34,7 +33,7 @@ export default function Chatbot() {
         <div className="w-[min(92vw,360px)] h-[min(78vh,600px)] flex flex-col rounded-2xl border border-line bg-black/90 backdrop-blur-xl overflow-hidden">
           <div className="relative border-b border-line">
             <button onClick={() => setOpen(false)} className="absolute right-3 top-3 z-10 text-mute hover:text-white" aria-label="Close">✕</button>
-            <div className="mx-auto h-36 w-36 relative"><SafeGL className="absolute inset-0" fallback={<div className="absolute inset-4 rounded-full bg-[radial-gradient(circle_at_35%_30%,#8cc8ff,#0a2a6b_70%)]" />}><Strands colors={["#8cc8ff", "#2f6fcf", "#ffffff"]} glass listening={thinking} interactive maxDevicePixelRatio={1.5} /></SafeGL></div>
+            <div className="mx-auto my-4 w-fit"><AssistantOrb size={104} thinking={thinking} /></div>
             <p className="pb-3 text-center text-sm font-medium">{thinking ? "Thinking…" : `${CLUB.name} assistant`}</p>
           </div>
           <div className="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
@@ -49,9 +48,7 @@ export default function Chatbot() {
           <form onSubmit={(e) => { e.preventDefault(); ask(input); }} className="p-3 flex gap-2"><input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask a question…" className={field} /><button className="btn btn-solid !py-2">Send</button></form>
         </div>
       )}
-      <button onClick={() => setOpen((o) => !o)} aria-label="Open assistant" className="w-[64px] h-[64px] rounded-full overflow-hidden bg-[radial-gradient(circle_at_35%_30%,rgba(140,200,255,.9),#0a2a6b_72%)] ring-1 ring-white/25">
-        <SafeGL className="w-full h-full" fallback={<div className="w-full h-full" />}><Strands colors={["#8cc8ff", "#2f6fcf", "#ffffff"]} glass glassSize={1.15} interactive={false} maxDevicePixelRatio={1.5} /></SafeGL>
-      </button>
+      <button onClick={() => setOpen((o) => !o)} aria-label="Open assistant" className="rounded-full transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lb"><AssistantOrb size={64} thinking={thinking} /></button>
     </div>
   );
 }
