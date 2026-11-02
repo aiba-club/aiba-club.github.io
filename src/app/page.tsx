@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Safe from "@/components/Safe";
 import DotField from "@/components/DotField";
-import GradientText from "@/components/GradientText";
+import WordSwap from "@/components/WordSwap";
 import IdeaPlanner from "@/components/IdeaPlanner";
 import HowItWorks from "@/components/HowItWorks";
 import ResumeCompare from "@/components/ResumeCompare";
@@ -20,8 +20,8 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div aria-hidden className="hero-bg"><span className="grid" /><span className="glow g1" /><span className="glow g2" /></div>
         <div className="wrap relative pt-32 md:pt-44 pb-20 text-center flex flex-col items-center">
-          <h1 className="font-bold tracking-[-0.035em] leading-[0.98] text-[clamp(2.35rem,9vw,8rem)] max-w-6xl [text-shadow:0_0_60px_rgba(140,200,255,.25)]">
-            Bring an idea.<br /><GradientText colors={["#ffffff", "#8cc8ff", "#4f9bff", "#cfe6ff"]} animationSpeed={6}>Build it with AI.</GradientText>
+          <h1 className="font-semibold tracking-tight leading-[1.08]  max-w-5xl" style={{ fontSize: "clamp(2.3rem,5.4vw,4.6rem)" }}>
+            Bring an idea.<br />Build <WordSwap words={["an app", "a site", "a brand", "a store", "a tool", "a game"]} /> with AI.
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-xl text-white/75">{CLUB.fullName} is a student club. Every {CLUB.meeting.day.replace(/s$/, "")} you learn one AI tool, then use it with a team to make something real. It&rsquo;s free, and you don&rsquo;t need any experience.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3"><Link href="#plan" className="btn btn-solid">Plan your first project ↓</Link><Link href="/contact" className="btn btn-line bg-black/30 backdrop-blur">Join the club</Link></div>
