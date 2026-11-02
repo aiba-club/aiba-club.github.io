@@ -32,7 +32,7 @@ const rows: Row[] = [
 ["Projects","Do I need skills to join a project?","No, there's a role for every skill level.","skill"],
 ["Challenge","What is the AIBA Cup?","Our five-week competition where teams compete on revenue, sales and users. It starts in March.","cup competition"],
 ["Challenge","What are the tracks?","Most revenue, most sales and most users.","categories"],
-["Challenge","When is the deadline?","The Cup starts in March and runs five weeks. Exact dates will be posted on the Cup page.","date deadline"],
+["Challenge","When is the deadline?","The Cup starts Wednesday, March 24, 2027 and runs five weeks. The full schedule will be posted on the Cup page.","date deadline"],
 ["Challenge","How do I enter?","Form a team of 2–5 and register with an officer.","register"],
 ["Challenge","What are the prizes?","1st place gets $200 and a trophy; each track winner gets $100. (PLACEHOLDER)","prize reward"],
 ["Challenge","Where is the leaderboard?","On the Cup page. It unlocks when the Cup starts in March.","leaderboard scoreboard"],
