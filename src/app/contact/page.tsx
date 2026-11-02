@@ -1,9 +1,8 @@
 import Link from "next/link";
 import GlareHover from "@/components/GlareHover";
 import ReflectiveCard from "@/components/ReflectiveCard";
-import PaperCrumple from "@/components/PaperCrumple";
 import Safe from "@/components/Safe";
-import SafeGL from "@/components/SafeGL";
+import SpreadTheWord from "@/components/SpreadTheWord";
 import PageHeader from "@/components/PageHeader";
 import JoinForm from "@/components/JoinForm";
 import CopyButton from "@/components/CopyButton";
@@ -35,10 +34,7 @@ export default function Contact() {
             <GlareHover width="100%" height="auto" {...card}><div className="p-6"><p className="eyebrow mb-2">When</p><p className="text-xl font-semibold">{CLUB.meeting.day}</p><p className="text-white/65">{CLUB.meeting.time}</p></div></GlareHover>
             <GlareHover width="100%" height="auto" {...card}><div className="p-6"><p className="eyebrow mb-2">Where</p><p className="text-xl font-semibold">{CLUB.meeting.place}</p><p className="text-white/65">{CLUB.school} · [street address]</p></div></GlareHover>
           </div>
-          <div className="grid sm:grid-cols-2 gap-6 items-center">
-            <div className="h-[300px]"><SafeGL className="relative w-full h-full" fallback={<a href="/gallery/flyer.svg" target="_blank" className="block h-full"><img src="/gallery/flyer.svg" alt="AIBA meeting flyer" className="h-full mx-auto rounded-lg border border-line object-contain" /></a>}><PaperCrumple src="/gallery/flyer.png" alt="AIBA meeting flyer" width={240} height={300} sceneHeight={300} /></SafeGL></div>
-            <div><p className="text-xl font-semibold">Grab a flyer.</p><p className="mt-2 text-white/65">Drag it, crumple it, or put it up in your hallway. Or <a href="/gallery/flyer.svg" download className="text-lb underline underline-offset-4">download the flyer</a> to print.</p></div>
-          </div>
+          <SpreadTheWord />
           <p className="text-white/65">Questions first? Read the <Link href="/faq" className="text-lb underline underline-offset-4">FAQ</Link> or ask the assistant in the corner.</p>
         </div>
         <div className="space-y-6 lg:sticky lg:top-28 self-start">

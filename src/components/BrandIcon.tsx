@@ -6,6 +6,7 @@ import { useState } from "react";
 const LOCAL: Record<string, "mono" | "color"> = {
   openai: "mono", midjourney: "mono", capcut: "mono", grok: "mono", copilot: "mono", bolt: "mono", runway: "mono", lovable: "mono",
   gamma: "mono", heygen: "mono", gohighlevel: "mono", youware: "mono", canva: "color",
+  higgsfield: "mono", googlevids: "mono", aistudio: "mono",
 };
 
 // Brand marks from simpleicons.org (white) for everything else; falls back to a letter tile if offline.

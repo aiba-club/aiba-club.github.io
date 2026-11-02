@@ -24,10 +24,6 @@ export default function About() {
           ))}
         </ul>
       </div></section>
-      <section className="wrap py-16 grid md:grid-cols-[1fr_1.2fr] gap-12">
-        <div><h2 className="text-2xl md:text-4xl font-semibold tracking-tight">Our story.</h2><p className="mt-3 text-white/65">Where we started and where we are.</p></div>
-        <ol className="border-l border-line">{ABOUT.history.map((h, i) => <li key={i} className="relative pl-8 pb-8"><span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-lb" /><p className="text-lb text-sm">{h.when}</p><p className="text-white/80">{h.what}</p></li>)}</ol>
-      </section>
       <section className="border-t border-line"><div className="wrap py-16 flex flex-wrap items-center justify-between gap-6"><div><h2 className="text-2xl md:text-4xl font-semibold tracking-tight">Come to a meeting.</h2><p className="mt-2 text-white/65">{CLUB.meeting.day}, {CLUB.meeting.time}, {CLUB.meeting.place}.</p></div><Link href="/contact" className="btn btn-solid">Join the club →</Link></div></section>
     </>
   );

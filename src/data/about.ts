@@ -1,4 +1,4 @@
-// TODO: replace every placeholder with your real officers and history.
+// TODO: replace every placeholder with your real officers.
 export const ABOUT = {
   mission: "AIBA exists so any student can learn the AI tools that are changing business, and then use them on something real before they graduate.",
   principles: [
@@ -13,9 +13,4 @@ export const ABOUT = {
     { name: "[NAME]", role: "Head of Projects", grade: "12th", bio: "[One line.]" },
   ],
   advisor: { name: "[ADVISOR NAME]", role: "Faculty advisor" },
-  history: [
-    { when: "[YEAR]", what: "AIBA is founded with [NUMBER] students in [ROOM]." },
-    { when: "[YEAR]", what: "First AIBA Cup. [TEAM NAME] wins." },
-    { when: "[YEAR]", what: "[NUMBER] members, [NUMBER] projects shipped." },
-  ],
 };
