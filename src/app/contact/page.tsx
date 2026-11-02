@@ -20,13 +20,13 @@ export default function Contact() {
     <>
       <PageHeader eyebrow="Contact" title="Come say hello." lede="The easiest way to find us is in person. The second easiest is Discord." />
       <div className="wrap py-14 grid lg:grid-cols-[1.2fr_1fr] gap-12">
-        <div className="space-y-10">
+        <div className="min-w-0 space-y-10">
           <ul className="space-y-3">
             {links.map((l) => (
-              <li key={l.name} className="card-glass !rounded-2xl p-5 flex items-center gap-5 hover:border-lb/50 transition-colors">
+              <li key={l.name} className="card-glass !rounded-2xl p-5 flex flex-wrap sm:flex-nowrap items-center gap-x-5 gap-y-3 hover:border-lb/50 transition-colors">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10"><BrandIcon slug={l.slug} label={l.name} size={26} /></span>
                 <a href={l.href} target="_blank" rel="noreferrer" className="min-w-0 flex-1"><span className="block text-lg font-semibold">{l.name}</span><span className="block text-white/60 text-sm truncate">{l.handle}</span><span className="block text-white/45 text-sm mt-0.5">{l.note}</span></a>
-                {l.copy ? <CopyButton text={CLUB.links.email} /> : <a href={l.href} target="_blank" rel="noreferrer" aria-label={`Open ${l.name}`} className="text-white/50 hover:text-lb text-xl">↗</a>}
+                {l.copy ? <CopyButton text={CLUB.links.email} /> : <a href={l.href} target="_blank" rel="noreferrer" aria-label={`Open ${l.name}`} className="grid h-11 w-11 place-items-center text-white/50 hover:text-lb text-xl">↗</a>}
               </li>
             ))}
           </ul>

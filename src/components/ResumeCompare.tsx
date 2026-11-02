@@ -49,14 +49,14 @@ export default function ResumeCompare() {
   const [role, setRole] = useState("Builder");
   const [copied, setCopied] = useState<number | null>(null);
   const copy = (t: string, i: number) => { navigator.clipboard?.writeText(t); setCopied(i); setTimeout(() => setCopied(null), 1400); };
-  const H = ({ children }: { children: React.ReactNode }) => <p className="mt-6 border-b border-black/10 pb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#4a6fa5]">{children}</p>;
+  const H = ({ children }: { children: React.ReactNode }) => <p className="mt-6 border-b border-black/10 pb-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#4a6fa5]">{children}</p>;
 
   return (
     <div className="mt-12">
       <div className="grid items-start gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
         <div>
           <div role="tablist" aria-label="Compare" className="mb-6 inline-flex rounded-full border border-white/15 p-1">
-            {[[false, "Without AIBA"], [true, "With AIBA"]].map(([v, l]) => <button key={String(l)} role="tab" aria-selected={after === v} onClick={() => setAfter(v as boolean)} className={"rounded-full px-5 py-2 text-sm font-medium transition-colors " + (after === v ? "bg-white text-black" : "text-white/65 hover:text-white")}>{l as string}</button>)}
+            {[[false, "Without AIBA"], [true, "With AIBA"]].map(([v, l]) => <button key={String(l)} role="tab" aria-selected={after === v} onClick={() => setAfter(v as boolean)} className={"rounded-full px-5 py-2.5 text-sm font-medium transition-colors " + (after === v ? "bg-white text-black" : "text-white/65 hover:text-white")}>{l as string}</button>)}
           </div>
           <SpotlightCard spotlightColor="rgba(140,200,255,0.18)" className="!p-0">
             <div className="reinvert rounded-2xl bg-[#faf9f4] p-7 text-[#14161c] md:p-10">
@@ -109,8 +109,8 @@ export default function ResumeCompare() {
       <div className="mt-20 rounded-[32px] border border-white/12 bg-white/[0.03] p-6 md:p-10">
         <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">Starter bullets by role.</h3>
         <p className="mt-2 max-w-xl text-white/65">Pick your role on the team, copy a line, and fill in your real numbers.</p>
-        <div role="tablist" aria-label="Team role" className="mt-6 flex flex-wrap gap-2">{Object.keys(ROLES).map((r) => <button key={r} role="tab" aria-selected={role === r} onClick={() => setRole(r)} className={"rounded-full border px-5 py-2 text-sm font-medium transition-colors " + (role === r ? "border-white bg-white text-[#0b1730]" : "border-white/20 text-white/70 hover:border-white/50")}>{r}</button>)}</div>
-        <ul key={role} className="mt-6 space-y-3">{ROLES[role].map((b, i) => <li key={b} className="flex items-start justify-between gap-4 rounded-2xl border border-white/10 bg-black/20 p-4" style={{ animation: `fadeUp .3s ${i * 0.06}s both` }}><span className="text-[15px] text-white/85">{b}</span><button onClick={() => copy(b, i)} className="shrink-0 rounded-full border border-white/20 px-3.5 py-1 text-xs text-white/70 hover:border-lb hover:text-lb">{copied === i ? "Copied" : "Copy"}</button></li>)}</ul>
+        <div role="tablist" aria-label="Team role" className="mt-6 flex flex-wrap gap-2">{Object.keys(ROLES).map((r) => <button key={r} role="tab" aria-selected={role === r} onClick={() => setRole(r)} className={"rounded-full border px-5 py-2.5 text-sm font-medium transition-colors " + (role === r ? "border-white bg-white text-[#0b1730]" : "border-white/20 text-white/70 hover:border-white/50")}>{r}</button>)}</div>
+        <ul key={role} className="mt-6 space-y-3">{ROLES[role].map((b, i) => <li key={b} className="flex items-start justify-between gap-4 rounded-2xl border border-white/10 bg-black/20 p-4" style={{ animation: `fadeUp .3s ${i * 0.06}s both` }}><span className="text-[15px] text-white/85">{b}</span><button onClick={() => copy(b, i)} className="shrink-0 rounded-full border border-white/20 px-4 py-2.5 text-xs text-white/70 hover:border-lb hover:text-lb">{copied === i ? "Copied" : "Copy"}</button></li>)}</ul>
       </div>
     </div>
   );

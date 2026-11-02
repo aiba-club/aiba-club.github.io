@@ -18,7 +18,7 @@ export default function Scoreboard() {
     <>
       <div className="flex flex-wrap items-end justify-between gap-8">
         <div><p className="text-sm text-white/55 mb-3">Time left to score</p>
-          <div className="grid grid-cols-4 gap-px bg-line rounded-2xl overflow-hidden w-full max-w-md">{["Days", "Hours", "Min", "Sec"].map((u, i) => <div key={u} className="bg-[#050b1a] py-5 text-center"><div className="text-3xl md:text-4xl font-semibold tabular-nums">{parts[i]}</div><div className="text-[11px] text-mute mt-1 uppercase tracking-widest">{u}</div></div>)}</div></div>
+          <div className="grid grid-cols-4 gap-px bg-line rounded-2xl overflow-hidden w-full max-w-md">{["Days", "Hours", "Min", "Sec"].map((u, i) => <div key={u} className="bg-[#050b1a] py-5 text-center"><div className="text-3xl md:text-4xl font-semibold tabular-nums">{parts[i]}</div><div className="text-xs text-mute mt-1 uppercase tracking-widest">{u}</div></div>)}</div></div>
         <p className="text-sm text-white/55">{CUP.updated}</p>
       </div>
       <div role="tablist" className="mt-12 flex gap-2 flex-wrap">{CUP.tracks.map((x, i) => <button role="tab" aria-selected={i === track} key={x.key} onClick={() => setTrack(i)} className={"btn " + (i === track ? "btn-solid" : "btn-line")}>{x.label}</button>)}</div>

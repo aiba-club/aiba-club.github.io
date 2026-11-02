@@ -19,7 +19,7 @@ export default function LessonsTrack() {
     <div className="grid lg:grid-cols-[230px_1fr] gap-10 lg:gap-16">
       {/* track */}
       <aside className="lg:sticky lg:top-28 self-start hidden lg:block">
-        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">The track</p>
+        <p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">The track</p>
         <ol className="mt-5 relative">
           <span aria-hidden className="absolute left-[11px] top-3 bottom-3 w-px bg-white/15" />
           <span aria-hidden className="absolute left-[11px] top-3 w-px bg-lb transition-all duration-500" style={{ height: `calc(${(active / (LESSONS.length - 1)) * 100}% - ${active === 0 ? 0 : 6}px)` }} />
@@ -45,7 +45,7 @@ export default function LessonsTrack() {
               <h2 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-[1.08]">{l.title}</h2>
               <p className="mt-3 max-w-xl text-white/70">{l.summary}</p>
               <ul className="mt-6 space-y-2.5">{l.bullets.map((b) => <li key={b} className="flex gap-3 text-[15px] text-white/85"><span className="mt-2 h-px w-4 shrink-0 bg-lb" />{b}</li>)}</ul>
-              <div className="mt-7 border border-white/12 bg-white/[0.03] p-4 max-w-xl"><p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">You&rsquo;ll make</p><p className="mt-1 font-medium">{l.makes}</p></div>
+              <div className="mt-7 border border-white/12 bg-white/[0.03] p-4 max-w-xl"><p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">You&rsquo;ll make</p><p className="mt-1 font-medium">{l.makes}</p></div>
               <p className="mt-5 flex flex-wrap gap-2">{l.tools.map((t) => <span key={t} className="border border-white/15 px-2.5 py-0.5 text-xs text-white/65">{t}</span>)}</p>
               <div className="mt-7 flex flex-wrap items-center gap-5"><Link href={`/lessons/${l.slug}`} className="btn btn-solid">Open lesson →</Link><span className="text-sm text-white/45">Slides · video · tutorial · resources</span></div>
             </div>

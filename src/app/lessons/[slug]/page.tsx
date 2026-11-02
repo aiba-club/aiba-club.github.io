@@ -10,7 +10,7 @@ export default async function Lesson({ params }: { params: Promise<{ slug: strin
   const l = LESSONS[i], prev = LESSONS[i - 1], next = LESSONS[i + 1];
   return (
     <div className="wrap pt-36">
-      <Link href="/lessons" className="text-sm text-mute hover:text-white">← All lessons</Link>
+      <Link href="/lessons" className="inline-block py-3 text-sm text-mute hover:text-white">← All lessons</Link>
       <p className="eyebrow mt-8">Lesson {l.n}</p>
       <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mt-2">{l.title}</h1>
       <p className="mt-4 text-white/70 max-w-xl">{l.summary}</p>

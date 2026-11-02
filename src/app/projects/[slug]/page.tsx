@@ -11,7 +11,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
   return (
     <div className="pt-36">
       <div className="wrap">
-        <Link href="/projects" className="text-sm text-mute hover:text-white">← All projects</Link>
+        <Link href="/projects" className="inline-block py-3 text-sm text-mute hover:text-white">← All projects</Link>
         <div className="mt-8 flex flex-wrap items-center gap-3 text-sm"><span className="eyebrow">{p.kind} · {p.year}</span><span className={"rounded-full border px-3 py-0.5 " + (p.status === "Live" ? "border-lb text-lb" : "border-line text-white/60")}>{p.status}</span></div>
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mt-3">{p.title}</h1>
         <p className="mt-5 text-lg md:text-xl text-white/75 max-w-3xl">{p.description}</p>

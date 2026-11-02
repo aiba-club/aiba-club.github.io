@@ -18,11 +18,11 @@ export default function Footer() {
           <Link href="/contact" className="btn btn-solid">Join the club</Link>
         </div>
         {/* Row 2: page links, one line */}
-        <nav aria-label="Footer" className="mt-10 border-y border-line py-5"><ul className="flex flex-wrap gap-x-8 gap-y-3 text-white/75">{links.map((n) => <li key={n.href}><Link href={n.href} className="hover:text-lb">{n.label}</Link></li>)}</ul></nav>
+        <nav aria-label="Footer" className="mt-10 border-y border-line py-5"><ul className="flex flex-wrap gap-x-6 gap-y-0 text-white/75">{links.map((n) => <li key={n.href}><Link href={n.href} className="inline-block py-2.5 hover:text-lb">{n.label}</Link></li>)}</ul></nav>
         {/* Row 3: meeting info + socials, one line */}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-x-10 gap-y-4 text-sm">
           <p className="text-white/70">{CLUB.meeting.day}, {CLUB.meeting.time} · {CLUB.meeting.place}, {CLUB.school}</p>
-          <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 text-white/75">{social.map(([slug, label, href]) => <li key={slug}><a href={href} className="flex items-center gap-2 hover:text-lb"><BrandIcon slug={slug} label={label} size={18} />{label}</a></li>)}</ul>
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 text-white/75">{social.map(([slug, label, href]) => <li key={slug}><a href={href} className="flex items-center gap-2 py-2.5 hover:text-lb"><BrandIcon slug={slug} label={label} size={18} />{label}</a></li>)}</ul>
         </div>
       </div>
       {/* Wordmark */}
@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
       <div className="wrap py-6 border-t border-line flex flex-wrap gap-3 justify-between text-sm text-mute">
         <span>© 2026 {CLUB.fullName}. Student-run.</span>
-        <span className="flex items-center gap-4"><ThemeToggle /><a href="#top" className="hover:text-white">Back to top ↑</a></span>
+        <span className="flex items-center gap-4"><ThemeToggle /><a href="#top" className="inline-block py-2.5 hover:text-white">Back to top ↑</a></span>
       </div>
     </footer>
   );

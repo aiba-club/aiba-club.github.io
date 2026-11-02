@@ -5,7 +5,7 @@ import Counter from "./Counter";
 import GlareHover from "./GlareHover";
 
 const g = { background: "#0a1226", borderColor: "rgba(255,255,255,0.12)", borderRadius: "8px", glareColor: "#8cc8ff", glareOpacity: 0.14 };
-const Label = ({ children }: { children: React.ReactNode }) => <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">{children}</p>;
+const Label = ({ children }: { children: React.ReactNode }) => <p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">{children}</p>;
 
 function Tile({ title, body, children, className = "" }: { title: string; body: string; children: React.ReactNode; className?: string }) {
   return (
@@ -46,7 +46,7 @@ export default function FeatureGrid() {
       </Tile>
 
       <Tile title="A page with your name on it" body="Every project gets its own case-study page with your role, the tools you used and the results. Link it on an application or resume.">
-        <div className="bg-[#faf9f4] p-4 text-[#14161c]"><p className="font-mono text-[10px] uppercase tracking-widest text-[#4a6fa5]">Case study</p><p className="mt-1 font-semibold">[Project name]</p><p className="text-xs text-[#5a5f6a]">Role: Project lead · Team of 3</p><div className="mt-3 flex gap-2">{["[NUMBER] users", "3 weeks"].map((x) => <span key={x} className="bg-[#8cc8ff]/30 px-2 py-0.5 text-[11px]">{x}</span>)}</div></div>
+        <div className="bg-[#faf9f4] p-4 text-[#14161c]"><p className="font-mono text-[10px] uppercase tracking-widest text-[#4a6fa5]">Case study</p><p className="mt-1 font-semibold">[Project name]</p><p className="text-xs text-[#5a5f6a]">Role: Project lead · Team of 3</p><div className="mt-3 flex gap-2">{["[NUMBER] users", "3 weeks"].map((x) => <span key={x} className="bg-[#8cc8ff]/30 px-2 py-0.5 text-xs">{x}</span>)}</div></div>
       </Tile>
 
       <Tile title="A deadline that isn't pretend" body="The AIBA Cup closes on May 30. Scores are public and teams report every Friday, so there's always a reason to ship this week.">

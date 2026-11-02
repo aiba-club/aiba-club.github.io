@@ -25,7 +25,7 @@ export default function LessonCards() {
                 <p className="font-mono text-xs text-lb">Lesson {x.n}</p>
                 <h3 className="mt-2 text-xl font-semibold tracking-tight">{x.title}</h3>
                 <p className="mt-2 text-sm text-white/65">{x.summary}</p>
-                <div className="mt-5 border-t border-white/10 pt-4"><p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">Project</p><p className="mt-1 text-sm font-medium">{x.makes}</p></div>
+                <div className="mt-5 border-t border-white/10 pt-4"><p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Project</p><p className="mt-1 text-sm font-medium">{x.makes}</p></div>
                 <span className="mt-auto pt-5 text-sm font-semibold text-lb group-hover:text-white">Open +</span>
               </div>
             </button>
@@ -42,7 +42,7 @@ export default function LessonCards() {
             </div>
             <p className="mt-3 text-white/70">{l.summary}</p>
             <ul className="mt-5 space-y-2">{l.bullets.map((b) => <li key={b} className="flex gap-3 text-[15px] text-white/85"><span className="mt-2.5 h-px w-4 shrink-0 bg-lb" />{b}</li>)}</ul>
-            <div className="mt-6 rounded-2xl border border-white/12 bg-white/[0.03] p-4"><p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">You&rsquo;ll make</p><p className="mt-1 font-medium">{l.makes}</p></div>
+            <div className="mt-6 rounded-2xl border border-white/12 bg-white/[0.03] p-4"><p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">You&rsquo;ll make</p><p className="mt-1 font-medium">{l.makes}</p></div>
             <p className="mt-5 flex flex-wrap gap-2">{l.tools.map((t) => <span key={t} className="rounded-full border border-white/15 px-3 py-0.5 text-xs text-white/65">{t}</span>)}</p>
             <div className="mt-7 flex flex-wrap items-center gap-4"><Link href={`/lessons/${l.slug}`} className="btn btn-solid">Open lesson →</Link><button onClick={() => setSel(null)} className="text-sm text-white/60 underline underline-offset-4 hover:text-white">Close</button></div>
           </div>

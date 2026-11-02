@@ -35,18 +35,18 @@ export default function IdeaPlanner() {
     <div id="plan" className="mx-auto w-full max-w-5xl overflow-hidden rounded-[32px] border border-white/15 bg-[#0a1226] text-left shadow-[0_30px_80px_rgba(0,0,0,.45)]">
       <div className="grid lg:grid-cols-[340px_1fr]">
         <div className="border-b lg:border-b-0 lg:border-r border-white/10 p-6 md:p-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-lb">Try it · plan your first project</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-lb">Try it · plan your first project</p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight">What would you build?</h2>
           <form onSubmit={submit} className="mt-5 flex gap-2">
             <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Type your idea" aria-label="Your idea" className="min-w-0 flex-1 rounded-full border border-white/15 bg-black/25 px-4 py-2.5 text-[15px] outline-none focus:border-lb" />
             <button className="rounded-full bg-white px-5 text-sm font-semibold text-[#0b1730] hover:bg-lb transition-colors">Plan</button>
           </form>
           <p className="mt-5 text-xs text-white/45">Or pick one</p>
-          <div className="mt-2 flex flex-wrap gap-2">{CHIPS.map((c) => <button key={c} onClick={() => setIdea(c)} aria-pressed={idea === c} className={"rounded-full border px-3.5 py-1.5 text-sm transition-colors " + (idea === c ? "border-lb bg-lb/15 text-white" : "border-white/15 text-white/70 hover:border-white/40")}>{c}</button>)}</div>
+          <div className="mt-2 flex flex-wrap gap-2">{CHIPS.map((c) => <button key={c} onClick={() => setIdea(c)} aria-pressed={idea === c} className={"rounded-full border px-4 py-2.5 text-sm transition-colors " + (idea === c ? "border-lb bg-lb/15 text-white" : "border-white/15 text-white/70 hover:border-white/40")}>{c}</button>)}</div>
           <div className="mt-8 border-t border-white/10 pt-5 text-sm text-white/60"><p className="text-white/80">{p.kind}</p><p className="mt-1">Teams of 2–5. Suggested roles: {p.roles.join(", ")}.</p></div>
         </div>
         <div className="p-6 md:p-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">Your first four weeks</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Your first four weeks</p>
           <p className="mt-1 text-xl font-semibold tracking-tight">“{idea}”</p>
           <ol key={idea} className="mt-6 space-y-0 border-l border-white/15">
             {p.steps.map((s, i) => (
@@ -54,7 +54,7 @@ export default function IdeaPlanner() {
                 <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-lb" />
                 <div className="flex flex-wrap items-baseline gap-x-3"><span className="font-mono text-xs text-lb">{s.week}</span><span className="font-semibold">{s.title}</span></div>
                 <p className="mt-1 text-sm text-white/65 max-w-md">{s.text}</p>
-                <p className="mt-2 flex flex-wrap items-center gap-2">{s.tools.map((t) => <span key={t} className="rounded-full border border-white/12 px-2.5 py-0.5 text-xs text-white/65">{t}</span>)}<Link href={`/lessons/${s.lesson[1]}`} className="ml-1 text-xs text-lb underline underline-offset-4 hover:text-white">{s.lesson[0]} →</Link></p>
+                <p className="mt-2 flex flex-wrap items-center gap-2">{s.tools.map((t) => <span key={t} className="rounded-full border border-white/12 px-2.5 py-0.5 text-xs text-white/65">{t}</span>)}<Link href={`/lessons/${s.lesson[1]}`} className="ml-1 inline-block py-2.5 text-xs text-lb underline underline-offset-4 hover:text-white">{s.lesson[0]} →</Link></p>
               </li>
             ))}
           </ol>

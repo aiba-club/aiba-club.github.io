@@ -46,7 +46,7 @@ export default function ToolsShowcase() {
                   <div className="flex items-center gap-4">
                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/10"><BrandIcon slug={t.icon} label={t.name} size={26} /></span>
                     <div className="min-w-0 flex-1"><p className="text-lg font-semibold">{t.name}</p><p className="text-xs text-lb">{t.group}</p></div>
-                    {c.sub === "yes" && <span className="shrink-0 rounded-full border border-amber-300/70 px-2.5 py-0.5 text-[11px] text-amber-200">Paid plan</span>}
+                    {c.sub === "yes" && <span className="shrink-0 rounded-full border border-amber-300/70 px-2.5 py-0.5 text-xs text-amber-200">Paid plan</span>}
                   </div>
                   <p className="mt-4 flex-1 text-white/75">{t.use}</p>
                   <span className="mt-5 border-t border-line pt-4 text-sm font-semibold text-lb group-hover:text-white">Cost and details +</span>
@@ -66,10 +66,10 @@ export default function ToolsShowcase() {
               <button onClick={() => setSel(null)} aria-label="Close" className="grid h-9 w-9 place-items-center rounded-full border border-white/20 text-lg hover:border-lb hover:text-lb">×</button>
             </div>
             <dl className="mt-5 space-y-4 text-[15px]">
-              <div><dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">What we use it for</dt><dd className="mt-1 text-white/85">{tool.use}</dd></div>
-              <div><dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">Subscription needed?</dt><dd className="mt-1.5 flex items-center gap-3"><span className={"rounded-full border px-3 py-0.5 text-sm font-medium " + SUB[cost.sub][2]}>{SUB[cost.sub][0]}</span><span className="text-white/60 text-sm">{SUB[cost.sub][1]}</span></dd></div>
-              <div><dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">Cost</dt><dd className="mt-1 font-medium">{cost.price}</dd><dd className="mt-1 text-sm text-white/60">{cost.note}</dd></div>
-              {lessons.length > 0 && <div><dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">Used in</dt><dd className="mt-1 flex flex-wrap gap-2">{lessons.map((l) => <Link key={l.slug} href={`/lessons/${l.slug}`} className="rounded-full border border-white/20 px-3 py-0.5 text-sm text-lb hover:border-lb">Lesson {l.n}</Link>)}</dd></div>}
+              <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">What we use it for</dt><dd className="mt-1 text-white/85">{tool.use}</dd></div>
+              <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Subscription needed?</dt><dd className="mt-1.5 flex items-center gap-3"><span className={"rounded-full border px-3 py-0.5 text-sm font-medium " + SUB[cost.sub][2]}>{SUB[cost.sub][0]}</span><span className="text-white/60 text-sm">{SUB[cost.sub][1]}</span></dd></div>
+              <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Cost</dt><dd className="mt-1 font-medium">{cost.price}</dd><dd className="mt-1 text-sm text-white/60">{cost.note}</dd></div>
+              {lessons.length > 0 && <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Used in</dt><dd className="mt-1 flex flex-wrap gap-2">{lessons.map((l) => <Link key={l.slug} href={`/lessons/${l.slug}`} className="rounded-full border border-white/20 px-3 py-0.5 text-sm text-lb hover:border-lb">Lesson {l.n}</Link>)}</dd></div>}
             </dl>
             <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
               {tool.url ? <a href={tool.url} target="_blank" rel="noreferrer" className="text-sm font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">Official pricing and details ↗</a> : <span className="text-xs text-white/40">Prices change. Check their site before paying.</span>}

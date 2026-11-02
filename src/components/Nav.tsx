@@ -15,7 +15,7 @@ export default function Nav() {
   const items = [{ label: "Home", ariaLabel: "Go to home", link: "/" }, ...NAV.map((n) => ({ label: n.label, ariaLabel: `Go to ${n.label}`, link: n.href }))];
   return (
     <>
-      <div className="md:hidden"><ThemeToggle className="fixed top-3 right-[118px] z-[60] bg-white/10" /><div className="fixed top-0 inset-x-0 h-[68px] z-[5] bg-[#050b1a]/85 backdrop-blur-md border-b border-white/10" /><StaggeredMenu logoUrl="/aiba-logo.png" isFixed position="right" items={items} socialItems={[{ label: "Discord", link: CLUB.links.discord }, { label: "Instagram", link: CLUB.links.instagram }]} displaySocials displayItemNumbering colors={["#0a2a6b", "#2f6fcf"]} accentColor="#8cc8ff" menuButtonColor="#ffffff" openMenuButtonColor="#ffffff" changeMenuColorOnOpen={false} /></div>
+      <div className="md:hidden"><ThemeToggle className="fixed top-2 right-[112px] z-[60] bg-white/10" /><div className="fixed top-0 inset-x-0 h-[68px] z-[5] bg-[#050b1a]/85 backdrop-blur-md border-b border-white/10" /><StaggeredMenu logoUrl="/aiba-logo.png" isFixed position="right" items={items} socialItems={[{ label: "Discord", link: CLUB.links.discord }, { label: "Instagram", link: CLUB.links.instagram }]} displaySocials displayItemNumbering colors={["#0a2a6b", "#2f6fcf"]} accentColor="#8cc8ff" menuButtonColor="#ffffff" openMenuButtonColor="#ffffff" changeMenuColorOnOpen={false} /></div>
       <svg width="0" height="0" aria-hidden style={{ position: "absolute" }}>
         <filter id="aiba-refract" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
           <feImage href={MAP_URI} x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="map" />

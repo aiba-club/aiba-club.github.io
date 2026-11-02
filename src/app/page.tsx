@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* TOOLS */}
       <section className="border-t border-white/10 py-24">
-        <div className="wrap mb-16 md:mb-20 flex flex-wrap items-end justify-between gap-6"><div><h2 className={H2}>The tools you&rsquo;ll learn.</h2><p className="mt-4 text-white/65 max-w-xl">Most have a free version.</p></div><Link href="/tools" className="font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">All tools →</Link></div>
+        <div className="wrap mb-16 md:mb-20 flex flex-wrap items-end justify-between gap-6"><div><h2 className={H2}>The tools you&rsquo;ll learn.</h2><p className="mt-4 text-white/65 max-w-xl">Most have a free version.</p></div><Link href="/tools" className="py-2 font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">All tools →</Link></div>
         <ToolStrip />
       </section>
 

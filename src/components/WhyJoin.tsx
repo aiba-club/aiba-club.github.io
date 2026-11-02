@@ -10,19 +10,19 @@ function Visual({ i: j }: { i: number }) {
   const i = j + OFFSET;
   if (i === 0) return (
     <div className="rounded-xl bg-[#faf9f4] text-[#14161c] p-6 md:p-8 w-full max-w-md shadow-2xl">
-      <p className="text-[11px] uppercase tracking-widest text-[#4a6fa5]">Activities · Entry 1</p>
+      <p className="text-xs uppercase tracking-widest text-[#4a6fa5]">Activities · Entry 1</p>
       
-      <p className="mt-5 text-[11px] text-[#8a8f9a]">Example only. AIBA can&rsquo;t promise admission anywhere.</p>
+      <p className="mt-5 text-xs text-[#8a8f9a]">Example only. AIBA can&rsquo;t promise admission anywhere.</p>
     </div>
   );
   if (i === 1) return (
     <div className="rounded-xl bg-[#faf9f4] p-6 md:p-8 w-full max-w-md shadow-2xl space-y-5">
       <div className="space-y-2"><div className="h-3 w-40 rounded bg-[#14161c]" /><Bar w="55%" c="bg-black/15" /></div>
-      <div><p className="text-[11px] uppercase tracking-widest text-[#8a8f9a]">Experience</p><div className="mt-2 space-y-2"><Bar w="90%" c="bg-black/10" /><Bar w="75%" c="bg-black/10" /></div></div>
-      <div><p className="text-[11px] uppercase tracking-widest text-[#4a6fa5]">Projects</p>
+      <div><p className="text-xs uppercase tracking-widest text-[#8a8f9a]">Experience</p><div className="mt-2 space-y-2"><Bar w="90%" c="bg-black/10" /><Bar w="75%" c="bg-black/10" /></div></div>
+      <div><p className="text-xs uppercase tracking-widest text-[#4a6fa5]">Projects</p>
         <div className="mt-2 rounded-md bg-[#8cc8ff]/30 border border-[#8cc8ff] p-3 text-[13px] text-[#14161c]">Built and launched [PROJECT], used by [NUMBER] students. Led a team of 3.</div>
         <div className="mt-2 space-y-2"><Bar w="80%" c="bg-black/10" /></div></div>
-      <div><p className="text-[11px] uppercase tracking-widest text-[#8a8f9a]">Skills</p><div className="mt-2 flex gap-2 flex-wrap">{["Prompting", "Web", "Design", "Sales"].map((s) => <span key={s} className="rounded bg-black/10 px-2 py-0.5 text-[12px] text-[#14161c]">{s}</span>)}</div></div>
+      <div><p className="text-xs uppercase tracking-widest text-[#8a8f9a]">Skills</p><div className="mt-2 flex gap-2 flex-wrap">{["Prompting", "Web", "Design", "Sales"].map((s) => <span key={s} className="rounded bg-black/10 px-2 py-0.5 text-[12px] text-[#14161c]">{s}</span>)}</div></div>
     </div>
   );
   if (i === 2) return (

@@ -58,3 +58,6 @@ html[data-theme="light"] dialog{filter:invert(1) hue-rotate(180deg)}
 .hero-bg .g2{right:-8%;top:18%;width:520px;height:420px;background:rgba(140,200,255,.16);animation:drift 22s ease-in-out infinite reverse}
 @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,24px)}}
 @media (prefers-reduced-motion:reduce){.orb::before,.orb[data-thinking="true"],.hero-bg .glow{animation:none}}
+
+/* Phones: bigger tap area for the menu button */
+@media (max-width:767px){.staggered-menu-header .sm-toggle{min-height:44px;min-width:56px;padding:12px 4px}}

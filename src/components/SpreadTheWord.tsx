@@ -36,14 +36,14 @@ export default function SpreadTheWord() {
           <p className="mt-3 text-xs text-white/45">The PDF is US Letter size and ready to print. The QR code on the flyer opens this site.</p>
 
           <div className="mt-7 rounded-2xl border border-white/10 bg-black/20 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">Message for a group chat</p>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Message for a group chat</p>
             <p className="mt-2 text-[15px] leading-relaxed text-white/85">{MESSAGE}</p>
-            <button onClick={() => copy(MESSAGE, "msg")} className="mt-3 rounded-full border border-white/20 px-4 py-1.5 text-sm text-white/80 hover:border-lb hover:text-lb">{done === "msg" ? "Copied" : "Copy message"}</button>
+            <button onClick={() => copy(MESSAGE, "msg")} className="mt-3 rounded-full border border-white/20 px-4 py-2.5 text-sm text-white/80 hover:border-lb hover:text-lb">{done === "msg" ? "Copied" : "Copy message"}</button>
           </div>
 
           <div className="mt-4 flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4">
             <img src="/gallery/qr.svg" alt="QR code that opens aiba-club.github.io" className="h-24 w-24 shrink-0 rounded-xl bg-white p-1.5" />
-            <div><p className="font-semibold">Scan to open the site</p><p className="mt-0.5 text-sm text-white/60">Show it on your phone or{" "}<a href="/gallery/qr.svg" download="AIBA-qr.svg" className="text-lb underline underline-offset-4 hover:text-white">download the QR code</a>.</p></div>
+            <div><p className="font-semibold">Scan to open the site</p><p className="mt-0.5 text-sm text-white/60">Show it on your phone or{" "}<a href="/gallery/qr.svg" download="AIBA-qr.svg" className="inline-block py-2 text-lb underline underline-offset-4 hover:text-white">download the QR code</a>.</p></div>
           </div>
         </div>
       </div>
