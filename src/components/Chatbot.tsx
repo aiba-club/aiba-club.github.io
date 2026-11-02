@@ -18,7 +18,7 @@ export default function Chatbot() {
   const [input, setInput] = useState(""); const [form, setForm] = useState(false); const [sent, setSent] = useState(false); const [thinking, setThinking] = useState(false);
   const end = useRef<HTMLDivElement>(null);
   useEffect(() => { end.current?.scrollIntoView({ block: "end" }); }, [msgs, form, open]);
-  const ask = (q: string) => { if (!q.trim()) return; setMsgs((m) => [...m, { from: "me", text: q }]); setInput(""); setThinking(true); setTimeout(() => { setMsgs((m) => [...m, { from: "bot", text: answer(q) }]); setThinking(false); }, 800); };
+  const ask = (q: string) => { if (!q.trim()) return; setForm(false); setMsgs((m) => [...m, { from: "me", text: q }]); setInput(""); setThinking(true); setTimeout(() => { setMsgs((m) => [...m, { from: "bot", text: answer(q) }]); setThinking(false); }, 800); };
   const quick = (label: string) => { if (label === "Fill out interest form") { setForm(true); setMsgs((m) => [...m, { from: "me", text: label }]); } else ask(label); };
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault(); const data = Object.fromEntries(new FormData(e.currentTarget));
