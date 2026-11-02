@@ -3,7 +3,7 @@ import Safe from "@/components/Safe";
 import DotField from "@/components/DotField";
 import GradientText from "@/components/GradientText";
 import IdeaPlanner from "@/components/IdeaPlanner";
-import ProjectStory from "@/components/ProjectStory";
+import HowItWorks from "@/components/HowItWorks";
 import ResumeCompare from "@/components/ResumeCompare";
 import ToolStrip from "@/components/ToolStrip";
 import CupTeaser from "@/components/CupTeaser";
@@ -33,9 +33,9 @@ export default function Home() {
       {/* HOW IT WORKS */}
       <section className="border-t border-white/10">
         <div className="wrap py-24">
-          <h2 className={H2}>From first lesson to final scoreboard.</h2>
-          <p className="mt-3 text-white/65 max-w-xl">Here&rsquo;s how an example project moves through the club. Scroll to follow it.</p>
-          <div className="mt-12"><ProjectStory /></div>
+          <h2 className={H2}>How the club works.</h2>
+          <p className="mt-3 text-white/65 max-w-xl">Four stages, from your first lesson to the end-of-year Cup. Pick one to see an example.</p>
+          <div className="mt-10"><HowItWorks /></div>
         </div>
       </section>
 
