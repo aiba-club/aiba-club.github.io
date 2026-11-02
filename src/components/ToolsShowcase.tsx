@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import GridMotion from "./GridMotion";
+import ToolStrip from "./ToolStrip";
 import BrandIcon from "./BrandIcon";
 import { TOOL_GROUPS, costOf } from "@/data/tools";
 import { LESSONS } from "@/data/lessons";
@@ -28,11 +28,10 @@ export default function ToolsShowcase() {
     if (!sel && d.open) d.close();
   }, [sel]);
 
-  const tiles = Array.from({ length: 28 }, (_, i) => { const t = ALL[i % ALL.length]; return <div key={i} className="flex h-full w-full items-center justify-center gap-3 text-2xl font-semibold text-white"><BrandIcon slug={t.icon} label={t.name} size={26} />{t.name}</div>; });
 
   return (
     <>
-      <div className="relative h-[42vh] min-h-[320px] overflow-hidden border-b border-line"><GridMotion items={tiles} rows={4} tileColor="#0a2a6b" textColor="#ffffff" /></div>
+      <div className="overflow-hidden border-b border-line py-12"><ToolStrip rows={3} /></div>
       <section className="wrap py-16">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div><h2 className="text-2xl md:text-4xl font-semibold tracking-tight">Pick a tool.</h2><p className="mt-2 text-white/65">{ALL.length} tools in {TOOL_GROUPS.length} groups. Tap one to see what we use it for and what it costs.</p></div>
