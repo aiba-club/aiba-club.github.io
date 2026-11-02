@@ -19,11 +19,11 @@ export default function Home() {
       {/* HERO: one promise, and a tool you can use right now */}
       <section className="relative overflow-hidden">
         <div aria-hidden className="hero-bg"><span className="grid" /><span className="glow g1" /><span className="glow g2" /></div>
-        <div className="wrap relative pt-32 md:pt-40 pb-20 text-center flex flex-col items-center">
-          <h1 className="font-semibold tracking-tight leading-[1.05] text-[clamp(2.5rem,5.8vw,4.8rem)] max-w-4xl">
-            Bring an idea.<br /><GradientText colors={["#ffffff", "#8cc8ff", "#cfe6ff"]} animationSpeed={7}>Build it with AI.</GradientText>
+        <div className="wrap relative pt-32 md:pt-44 pb-20 text-center flex flex-col items-center">
+          <h1 className="font-bold tracking-[-0.035em] leading-[0.98] text-[clamp(2.35rem,9vw,8rem)] max-w-6xl [text-shadow:0_0_60px_rgba(140,200,255,.25)]">
+            Bring an idea.<br /><GradientText colors={["#ffffff", "#8cc8ff", "#4f9bff", "#cfe6ff"]} animationSpeed={6}>Build it with AI.</GradientText>
           </h1>
-          <p className="mt-6 max-w-2xl text-base md:text-lg text-white/75">{CLUB.fullName} is a student club. Every {CLUB.meeting.day.replace(/s$/, "")} you learn one AI tool, then use it with a team to make something real. It&rsquo;s free, and you don&rsquo;t need any experience.</p>
+          <p className="mt-8 max-w-2xl text-base md:text-xl text-white/75">{CLUB.fullName} is a student club. Every {CLUB.meeting.day.replace(/s$/, "")} you learn one AI tool, then use it with a team to make something real. It&rsquo;s free, and you don&rsquo;t need any experience.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3"><Link href="#plan" className="btn btn-solid">Plan your first project ↓</Link><Link href="/contact" className="btn btn-line bg-black/30 backdrop-blur">Join the club</Link></div>
           <p className="mt-4 text-sm text-white/50">{CLUB.meeting.day}, {CLUB.meeting.time} · {CLUB.meeting.place}</p>
           <div className="mt-14 w-full"><IdeaPlanner /></div>
