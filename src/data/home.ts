@@ -21,9 +21,9 @@ export const OFFICERS = [
 ];
 
 export const WORK = [
-  { name: "[PROJECT NAME]", href: "/projects", shot: "/photos/idea-study-app.svg", alt: "[Screenshot of the project]", by: "[NAME] ([GRADE]), [NAME] ([GRADE])", does: "[One sentence on what it does and who it's for.]", result: "[One honest result, e.g. NUMBER classmates used it.]" },
-  { name: "[PROJECT NAME]", href: "/projects", shot: "/photos/idea-food-deals.svg", alt: "[Screenshot]", by: "[NAME] ([GRADE])", does: "[What it does.]", result: "[Result.]" },
-  { name: "[PROJECT NAME]", href: "/projects", shot: "/photos/idea-logo-service.svg", alt: "[Screenshot]", by: "[NAME] ([GRADE])", does: "[What it does.]", result: "[Result.]" },
+  { name: "[PROJECT NAME]", href: "/projects", shot: "/projects/study-buddy.png", alt: "[Screenshot of the project]", by: "[NAME] ([GRADE]), [NAME] ([GRADE])", does: "[One sentence on what it does and who it's for.]", result: "[One honest result, e.g. NUMBER classmates used it.]" },
+  { name: "[PROJECT NAME]", href: "/projects", shot: "/projects/campus-eats.png", alt: "[Screenshot]", by: "[NAME] ([GRADE])", does: "[What it does.]", result: "[Result.]" },
+  { name: "[PROJECT NAME]", href: "/projects", shot: "/projects/logo-lab.png", alt: "[Screenshot]", by: "[NAME] ([GRADE])", does: "[What it does.]", result: "[Result.]" },
 ];
 
 export const WEDNESDAY = [
