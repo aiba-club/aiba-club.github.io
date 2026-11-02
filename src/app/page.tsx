@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Safe from "@/components/Safe";
 import DotField from "@/components/DotField";
+import HeroScene from "@/components/HeroScene";
 import WordSwap from "@/components/WordSwap";
 import IdeaPlanner from "@/components/IdeaPlanner";
 import HowItWorks from "@/components/HowItWorks";
@@ -19,6 +20,7 @@ export default function Home() {
       {/* HERO: one promise, and a tool you can use right now */}
       <section className="relative overflow-hidden">
         <div aria-hidden className="hero-bg"><span className="grid" /><span className="glow g1" /><span className="glow g2" /></div>
+        <HeroScene />
         <div className="wrap relative pt-32 md:pt-44 pb-20 text-center flex flex-col items-center">
           <h1 className="font-semibold tracking-tight leading-[1.08]  max-w-5xl" style={{ fontSize: "clamp(2.3rem,5.4vw,4.6rem)" }}>
             Bring an idea.<br />Build <WordSwap words={["an app", "a site", "a brand", "a store", "a tool", "a game"]} /> with AI.
