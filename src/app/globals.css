@@ -61,8 +61,12 @@ html[data-theme="light"] dialog{filter:invert(1) hue-rotate(180deg)}
 .hs-bar{transform-origin:bottom;animation:hsbar 3.6s ease-in-out infinite}
 @keyframes hsbar{0%,100%{transform:scaleY(.75)}50%{transform:scaleY(1)}}
 .hs-caret{animation:hscaret 1s steps(1) infinite}
+.hs-dash{animation:hsdash 2.4s linear infinite}
+@keyframes hsdash{to{stroke-dashoffset:-20}}
+.hs-speck{animation:hsspeck 6s ease-in-out infinite;opacity:0}
+@keyframes hsspeck{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:.8;transform:translateY(-16px)}}
 @keyframes hscaret{50%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.hs-float,.hs-bar,.hs-caret{animation:none}}
+@media (prefers-reduced-motion:reduce){.hs-float,.hs-bar,.hs-caret,.hs-dash,.hs-speck{animation:none}}
 @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,24px)}}
 @media (prefers-reduced-motion:reduce){.orb::before,.orb[data-thinking="true"],.hero-bg .glow{animation:none}}
 

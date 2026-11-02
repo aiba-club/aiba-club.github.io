@@ -19,7 +19,17 @@ export default function HeroScene() {
     window.addEventListener("pointermove", on, { passive: true }); return () => window.removeEventListener("pointermove", on);
   }, []);
   return (
-    <div ref={ref} aria-hidden className="hero-scene pointer-events-none absolute inset-x-0 top-0 hidden h-[760px] overflow-hidden xl:block" style={{ ["--mx" as string]: 0, ["--my" as string]: 0 }}>
+    <div ref={ref} aria-hidden className="hero-scene pointer-events-none absolute inset-x-0 top-0 hidden h-[640px] overflow-hidden xl:block" style={{ ["--mx" as string]: 0, ["--my" as string]: 0 }}>
+      {/* blueprint details: dashed links between the pieces, registration marks and drifting specks */}
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <g fill="none" stroke="#8cc8ff" strokeOpacity=".35" strokeWidth="1.2" strokeDasharray="3 7" strokeLinecap="round" vectorEffect="non-scaling-stroke">
+          <path className="hs-dash" d="M9 34 C3 44 3 52 9 57" vectorEffect="non-scaling-stroke" />
+          <path className="hs-dash" d="M92 31 C99 44 98 54 91 60" vectorEffect="non-scaling-stroke" />
+          <path className="hs-dash" d="M20 24 C32 8 68 8 80 22" vectorEffect="non-scaling-stroke" />
+        </g>
+      </svg>
+      {[["12%", "9%"], ["88%", "44%"], ["30%", "76%"], ["72%", "82%"], ["50%", "6%"]].map(([l, t], i) => <span key={i} className="absolute font-mono text-sm text-[#8cc8ff]/40" style={{ left: l, top: t }}>+</span>)}
+      {[["18%", "46%", 0], ["80%", "12%", 1.4], ["63%", "70%", 2.8], ["38%", "30%", 4.2], ["94%", "78%", 5.6], ["6%", "84%", 7]].map(([l, t, d], i) => <span key={i} className="hs-speck absolute h-1 w-1 rounded-full bg-[#8cc8ff]" style={{ left: l as string, top: t as string, animationDelay: `${d}s` }} />)}
       {/* browser window */}
       <Card cls="left-[3%] top-[17%] w-[230px]" depth={18} delay="0s">
         <div className="flex gap-1.5"><i className="h-2 w-2 rounded-full bg-white/30" /><i className="h-2 w-2 rounded-full bg-white/30" /><i className="h-2 w-2 rounded-full bg-white/30" /></div>
@@ -42,10 +52,6 @@ export default function HeroScene() {
         <p className="font-mono text-[10px] uppercase tracking-widest text-[#8cc8ff]/70">Prompt</p>
         <p className="mt-2 text-sm text-white/85">Make me a study app<span className="hs-caret ml-0.5 inline-block h-4 w-[2px] translate-y-0.5 bg-[#8cc8ff]" /></p>
         <div className="mt-3 flex gap-2"><span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] text-white/70">ChatGPT</span><span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] text-white/70">Cursor</span></div>
-      </Card>
-      {/* toast */}
-      <Card cls="left-[24%] top-[84%] w-[190px]" depth={40} delay="-2s">
-        <p className="flex items-center gap-2 text-xs text-white/85"><span className="h-2 w-2 rounded-full bg-emerald-300" />New signup · just now</p>
       </Card>
     </div>
   );
