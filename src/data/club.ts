@@ -1,0 +1,14 @@
+// EDIT ME — placeholders marked TODO
+export const CLUB = {
+  name: "AIBA",
+  fullName: "AI Business Applications",
+  school: "our school", // TODO
+  meeting: { day: "Wednesdays", time: "during lunch", place: "Room 153" }, // TODO
+  links: { discord: "https://discord.gg/your-invite", email: "aiba.club.leadership@gmail.com", instagram: "https://instagram.com/aiba.club", instagramHandle: "@aiba.club" }, // TODO
+  formEndpoint: "", // TODO: Formspree URL; empty falls back to email
+  stats: [{ label: "Members", value: 120 }, { label: "Projects built", value: 18 }, { label: "Lessons taught", value: 24 }], // TODO
+};
+export const NAV = [
+  { href: "/lessons", label: "Lessons" }, { href: "/projects", label: "Projects" }, { href: "/tools", label: "Tools" },
+  { href: "/challenge", label: "Cup" }, { href: "/about", label: "About" }, { href: "/faq", label: "FAQ" },
+];
