@@ -5,7 +5,7 @@ import { CUP } from "@/data/challenge";
 
 export const metadata = { title: "AIBA Cup" };
 
-const TRACKS = [["Most revenue", "Which team earns the most money from what it built."], ["Most sales", "Which team makes the most individual sales."], ["Most users", "Which team gets the most people to sign up and use it."]];
+const PRIZES = [["Most revenue", "Awarded to the team that earns the most money from what it built."], ["Most sales", "Awarded to the team that makes the most individual sales."], ["Most users", "Awarded to the team that gets the most people to sign up and use it."]];
 
 export default function Challenge() {
   const lead = CUP.tracks[0].teams;
@@ -29,11 +29,11 @@ export default function Challenge() {
       <section className="wrap py-20 grid gap-14 lg:grid-cols-[1.1fr_1fr]">
         <div>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight max-w-lg">What it is.</h2>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/75">The AIBA Cup is where teams put what they built in front of real people and see how far it goes. For five weeks, teams share their numbers and compete on three tracks, and a public scoreboard shows who&rsquo;s ahead.</p>
-          <p className="mt-4 max-w-xl text-white/60">Rules, prizes and the full schedule will be posted here before it opens.</p>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/75">The AIBA Cup is where teams put what they built in front of real people and see how far it goes. For five weeks, teams share their numbers and compete for three prizes, and a public scoreboard shows who&rsquo;s ahead.</p>
+          <p className="mt-4 max-w-xl text-white/60">The rules, the prizes themselves and the full schedule will be posted here before it opens.</p>
           <div className="mt-8 flex flex-wrap gap-2" aria-label="Five weeks">{Array.from({ length: CUP.weeks }, (_, i) => <span key={i} className="rounded-full border border-white/15 px-4 py-1.5 font-mono text-xs text-white/55">Week {i + 1}</span>)}</div>
         </div>
-        <ul className="space-y-3">{TRACKS.map(([t, d], i) => <li key={t} className="rounded-[28px] border border-white/12 bg-white/[0.03] p-6"><p className="font-mono text-xs text-lb">Track 0{i + 1}</p><p className="mt-1 text-xl font-semibold">{t}</p><p className="mt-1 text-sm text-white/60">{d}</p></li>)}</ul>
+        <div><p className="font-mono text-xs uppercase tracking-[0.18em] text-lb">The prizes</p><ul className="mt-4 space-y-3">{PRIZES.map(([t, d]) => <li key={t} className="rounded-[28px] border border-white/12 bg-white/[0.03] p-6"><div className="flex items-start justify-between gap-4"><p className="text-xl font-semibold">{t}</p><span className="shrink-0 rounded-full border border-white/20 px-3 py-0.5 text-xs text-white/60">Prize to be announced</span></div><p className="mt-2 text-sm text-white/60">{d}</p></li>)}</ul></div>
       </section>
 
       {/* Blurred standings */}

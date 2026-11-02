@@ -6,7 +6,7 @@ const STEPS = [
   { k: "Learn", title: "Every Wednesday starts with one tool.", text: "A short lesson, then a live demo. You see it work, see where it breaks, and try it yourself.", points: ["Seven lessons, from prompting to pitching", "A video, slides and tutorial for each"], href: "/lessons", cta: "See the lessons" },
   { k: "Build", title: "Then you make something with it.", text: "Pick an idea, join a team and build a first version in a few meetings. Nobody expects it to be perfect.", points: ["Teams of 2 to 5, each with a role", "No coding experience needed"], href: "/projects", cta: "See what teams build" },
   { k: "Launch", title: "Then you put it in front of people.", text: "Send it to classmates, ask for feedback, and get your first users or your first sale.", points: ["Real users and real feedback", "A case-study page you can link"], href: "/projects", cta: "See case studies" },
-  { k: "Compete", title: "And you keep score.", text: "In March, teams race for five weeks in the AIBA Cup on revenue, sales and users. The scoreboard is public.", points: ["Three tracks, one trophy", "A five-week competition"], href: "/challenge", cta: "See the Cup" },
+  { k: "Compete", title: "And you keep score.", text: "In March, teams race for five weeks in the AIBA Cup for the most revenue, the most sales and the most users. The scoreboard is public.", points: ["Three prizes: most revenue, sales and users", "A five-week competition"], href: "/challenge", cta: "See the Cup" },
 ];
 
 function Chat() {
