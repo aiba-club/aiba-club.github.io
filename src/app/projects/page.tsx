@@ -31,7 +31,14 @@ export default function Projects() {
           <p className="mt-3 max-w-2xl text-white/65">These are not AIBA projects. They are apps on the market today, made by people with AI tools, to show what&rsquo;s possible.</p>
           <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {INSPIRATION.map((a) => (
-              <li key={a.name} className="flex flex-col rounded-[32px] border border-white/12 bg-white/[0.03] p-7">
+              <li key={a.name} className="flex flex-col overflow-hidden rounded-[32px] border border-white/12 bg-white/[0.03]">
+                <div className="relative h-60 overflow-hidden bg-[radial-gradient(circle_at_30%_20%,rgba(140,200,255,.35),rgba(10,42,107,.5))]">
+                  {a.images.length === 1
+                    ? <img src={a.images[0]} alt={`${a.name} screenshot`} loading="lazy" className="h-full w-full object-cover object-top" />
+                    : <div className="flex h-full items-end justify-center gap-4 px-6 pt-6">{a.images.map((src, i) => <img key={src} src={src} alt={`${a.name} screenshot ${i + 1}`} loading="lazy" className={"h-[92%] w-auto rounded-t-2xl border border-white/20 object-cover object-top shadow-[0_20px_40px_rgba(0,0,0,.45)] " + (i ? "translate-y-6" : "")} />)}</div>}
+                  <span className="absolute bottom-2 left-3 rounded-full bg-black/55 px-2.5 py-0.5 text-[11px] text-white/80 backdrop-blur">{a.credit}</span>
+                </div>
+                <div className="flex flex-1 flex-col p-7">
                 <div className="flex items-start justify-between gap-3"><h3 className="text-2xl font-semibold">{a.name}</h3><span className="shrink-0 rounded-full border border-white/20 px-3 py-0.5 text-xs text-white/60">{a.kind}</span></div>
                 <p className="mt-3 text-white/75">{a.what}</p>
                 <dl className="mt-5 space-y-3 text-sm">
@@ -40,6 +47,7 @@ export default function Projects() {
                   <div><dt className="font-mono text-[11px] uppercase tracking-widest text-lb">Why it matters</dt><dd className="mt-0.5 text-white/70">{a.fact}</dd></div>
                 </dl>
                 <a href={a.link} target="_blank" rel="noopener noreferrer" className="mt-auto pt-6 py-2.5 font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">{a.linkLabel} ↗</a>
+                </div>
               </li>
             ))}
           </ul>
