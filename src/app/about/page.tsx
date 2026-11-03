@@ -48,7 +48,6 @@ export default function About() {
           ))}
         </ul>
       </div></section>
-      <section className="border-t border-line"><div className="wrap py-16 flex flex-wrap items-center justify-between gap-6"><div><h2 className="text-2xl md:text-4xl font-semibold tracking-tight">Come to a meeting.</h2><p className="mt-2 text-white/65">{CLUB.meeting.day}, {CLUB.meeting.time}, {CLUB.meeting.place}.</p></div><Link href="/contact" className="btn btn-solid">Join the club →</Link></div></section>
     </>
   );
 }

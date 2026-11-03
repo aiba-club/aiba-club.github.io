@@ -62,7 +62,6 @@ export default function Projects() {
           </ul>
         </div>
       </section>
-      <section className="border-t border-line"><div className="wrap py-20 flex flex-wrap items-center justify-between gap-6"><div><h2 className="text-2xl md:text-4xl font-semibold tracking-tight">Have an idea?</h2><p className="mt-2 text-white/65">Bring it to any Wednesday. We&rsquo;ll help you find a team.</p></div><Link href="/contact" className="btn btn-solid">Pitch it →</Link></div></section>
     </>
   );
 }
