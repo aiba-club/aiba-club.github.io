@@ -23,7 +23,7 @@ export default function LaserCTA() {
           <div className="grid gap-3 sm:grid-cols-3">
             {[["When", `${CLUB.meeting.day}, ${CLUB.meeting.time}`], ["Where", CLUB.meeting.place], ["Cost", "Free. No experience needed."]].map(([k, v]) => <div key={k} className="rounded-[22px] border border-white/10 bg-white/[0.04] px-5 py-4"><p className="font-mono text-xs uppercase tracking-[0.16em] text-lb">{k}</p><p className="mt-1.5 text-lg font-medium leading-snug">{v}</p></div>)}
           </div>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-[#0b1730] shadow-[0_10px_30px_-8px_rgba(140,200,255,.6)] transition-colors hover:bg-[#cfe6ff]">Join the club</Link>
             <Link href="/faq" className="inline-flex items-center rounded-full border border-white/25 px-7 py-3.5 text-base font-medium text-white/90 transition-colors hover:bg-white/10">Read the FAQ</Link>
           </div>
