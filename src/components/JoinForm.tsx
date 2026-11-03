@@ -10,7 +10,7 @@ export default function JoinForm() {
     e.preventDefault(); const data = Object.fromEntries(new FormData(e.currentTarget));
     if (data.botcheck) return;
     setBusy(true); setErr(false);
-    const ok = await sendToClub(data, `New AIBA interest form: ${data.name}`);
+    const ok = await sendToClub(data, `New AIBA interest form${data.name ? ": " + data.name : ""}`);
     setBusy(false);
     if (ok) setDone(true); else setErr(true);
   }
@@ -19,8 +19,8 @@ export default function JoinForm() {
   return (
     <form onSubmit={submit} className="card-glass p-6 md:p-8 space-y-4">
       <p className="text-2xl font-semibold">Join the club</p>
-      <div className="grid sm:grid-cols-2 gap-4"><label className="block text-sm text-white/65">Name<input name="name" required className={f + " mt-1"} /></label><label className="block text-sm text-white/65">Grade<input name="grade" required className={f + " mt-1"} /></label></div>
-      <label className="block text-sm text-white/65">Email<input name="email" type="email" required className={f + " mt-1"} /></label>
+      <div className="grid sm:grid-cols-2 gap-4"><label className="block text-sm text-white/65">Name<input name="name" className={f + " mt-1"} /></label><label className="block text-sm text-white/65">Grade<input name="grade" className={f + " mt-1"} /></label></div>
+      <label className="block text-sm text-white/65">Email<input name="email" type="email" className={f + " mt-1"} /></label>
       <label className="block text-sm text-white/65">What are you interested in?<select name="interest" className={f + " mt-1 bg-[#050b1a]"}><option>Building apps and websites</option><option>Design and branding</option><option>Marketing and sales</option><option>Data and automation</option><option>Not sure yet</option></select></label>
       <label className="block text-sm text-white/65">Experience<select name="experience" className={f + " mt-1 bg-[#050b1a]"}><option>Total beginner</option><option>Some experience</option><option>Advanced</option></select></label>
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
