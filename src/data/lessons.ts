@@ -1,6 +1,15 @@
 // Add a lesson = add a line. status "done" lessons open to their own page; "upcoming" ones show blurred as not available yet.
-// When a presentation link is ready, set `slides` to its Google Slides embed URL (…/embed?start=false&loop=false) on that lesson.
-export type Lesson = { slug: string; date: string; title: string; summary: string; goal?: string; status: "done" | "upcoming"; slides?: string };
+// Each lesson page has four tabs. Fill these in on a lesson as they're ready; empty ones show "coming soon":
+//   slides: Google Slides embed URL (…/embed?start=false&loop=false)
+//   video: YouTube embed URL (https://www.youtube.com/embed/<id>)
+//   tutorial: { intro?, steps: [{ title, body }] }
+//   resources: [{ label, href, kind }]
+export type Lesson = {
+  slug: string; date: string; title: string; summary: string; goal?: string; status: "done" | "upcoming";
+  slides?: string; video?: string;
+  tutorial?: { intro?: string; steps: { title: string; body: string }[] };
+  resources?: { label: string; href: string; kind: string }[];
+};
 export const LESSONS: Lesson[] = [
   { slug: "intro-session", date: "Tue, Oct 6", title: "Intro session", summary: "What AIBA is, how the year works, and the proof log.", status: "done" },
   { slug: "freelancing-with-ai", date: "Tue, Oct 13", title: "Freelancing with AI", summary: "How to use AI tools to offer freelance services.", status: "done" },
