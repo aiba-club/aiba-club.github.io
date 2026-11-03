@@ -6,10 +6,12 @@ import { PROJECTS } from "@/data/projects";
 import { APPS } from "@/data/apps";
 export const metadata = { title: "Projects — AIBA" };
 export default function Projects() {
-  const items = APPS.map((a) => ({ image: a.image, title: a.name, description: `Built with ${a.builtWith}. ${a.what}`, link: a.link }));
+  // One sphere tile per App Store screenshot, interleaved so neighbours come from different apps.
+  const rounds = Math.max(...APPS.map((a) => a.shots));
+  const items = Array.from({ length: rounds }, (_, i) => APPS.filter((a) => i < a.shots).map((a) => ({ image: `/apps/${a.slug}-${i + 1}.jpg`, title: a.name, description: `Built with ${a.builtWith}. ${a.what}`, link: a.link }))).flat();
   return (
     <>
-      <PageHeader eyebrow="On the market" title="Real apps, made with AI." lede="Apps on the App Store whose makers say they built them with AI tools. Drag the sphere and tap one to open it. These are not AIBA projects; ours are below." />
+      <PageHeader eyebrow="On the market" title="Real apps, made with AI." lede="Apps on the App Store whose makers say they built them with AI tools. Every tile is a real App Store screenshot. Drag the sphere and tap one to open the app. These are not AIBA projects; ours are below." />
       <div className="h-[75vh] min-h-[500px] relative border-b border-line"><Safe><InfiniteMenu items={items} backgroundColor="#050b1a" accentColor="#8cc8ff" /></Safe></div>
       <section className="wrap py-20">
         <p className="font-mono text-xs uppercase tracking-[0.18em] text-lb">Student work</p>
