@@ -48,7 +48,7 @@ export default function Chatbot() {
           <form onSubmit={(e) => { e.preventDefault(); ask(input); }} className="p-3 flex gap-2"><input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask a question…" className={field} /><button className="btn btn-solid !py-2">Send</button></form>
         </div>
       )}
-      <button type="button" onClick={() => setOpen((o) => !o)} aria-label={open ? "Close assistant" : "Open assistant"} aria-expanded={open} style={{ background: "radial-gradient(circle at 50% 55%,#8cc8ff,#2f6fcf 55%,#0a2a6b)" }} className="relative z-[101] h-16 w-16 cursor-pointer touch-manipulation rounded-full transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lb"><AssistantOrb size={64} thinking={thinking} /></button>
+      <button type="button" onClick={() => setOpen((o) => !o)} aria-label={open ? "Close assistant" : "Open assistant"} aria-expanded={open} className="relative z-[101] h-16 w-16 cursor-pointer touch-manipulation rounded-full transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lb"><AssistantOrb size={64} thinking={thinking} /></button>
     </div>
   );
 }
