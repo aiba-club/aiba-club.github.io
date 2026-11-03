@@ -13,14 +13,14 @@ function plan(raw: string): { steps: Step[]; roles: string[]; kind: string } {
   const data = has(s, ["data", "dashboard", "spreadsheet", "analytics", "tracker"]);
   const sell = has(s, ["shop", "store", "sell", "merch", "food", "deal", "market", "tutor", "service"]);
   const build: Step = design
-    ? { week: "Week 2", title: "Design version one", text: "Pick colors and type, generate logo or product ideas, and put them in a one-page style sheet.", tools: ["Figma", "Canva", "Midjourney"], lesson: ["Lesson 04", "design-and-brand"] }
+    ? { week: "Week 2", title: "Design version one", text: "Pick colors and type, generate logo or product ideas, and put them in a one-page style sheet.", tools: ["Figma", "Canva", "Gemini"], lesson: ["Lesson 04", "design-and-brand"] }
     : data
-    ? { week: "Week 2", title: "Build the tracker", text: "Set up a sheet that updates itself and summarizes the numbers in plain English.", tools: ["Google Sheets", "Zapier", "Python"], lesson: ["Lesson 06", "data-and-automation"] }
-    : { week: "Week 2", title: "Build version one", text: "Describe it in plain English and let the AI draft a first version you can click through.", tools: ["v0", "Cursor", "Vercel"], lesson: ["Lesson 03", "build-a-website"] };
+    ? { week: "Week 2", title: "Build the tracker", text: "Set up a sheet that updates itself and summarizes the numbers in plain English.", tools: ["Google Sheets", "Zapier", "n8n"], lesson: ["Lesson 06", "data-and-automation"] }
+    : { week: "Week 2", title: "Build version one", text: "Describe it in plain English and let the AI draft a first version you can click through.", tools: ["Lovable", "Cursor", "Vercel"], lesson: ["Lesson 03", "build-a-website"] };
   const steps: Step[] = [
     { week: "Week 1", title: "Test the idea", text: "Talk to five classmates who have the problem. Ask what they do today, and don't pitch yet.", tools: ["ChatGPT", "Notion"], lesson: ["Lesson 02", "validate-an-idea"] },
     build,
-    { week: "Week 3", title: sell ? "Get your first customers" : "Put it in front of people", text: "Send it to ten people, track who replies, and fix what confuses them.", tools: ["CapCut", "Mailchimp"], lesson: ["Lesson 05", "marketing-and-sales"] },
+    { week: "Week 3", title: sell ? "Get your first customers" : "Put it in front of people", text: "Send it to ten people, track who replies, and fix what confuses them.", tools: ["CapCut", "Notion"], lesson: ["Lesson 05", "marketing-and-sales"] },
     { week: "Week 4", title: "Pitch it, enter the Cup", text: "Give a two-minute pitch, report your numbers, and compete on revenue, sales or users.", tools: ["Slides", "Canva"], lesson: ["Lesson 07", "pitch-and-launch"] },
   ];
   const roles = design ? ["Designer", "Builder", "Marketer"] : data ? ["Analyst", "Builder", "Marketer"] : ["Builder", "Designer", "Marketer"];

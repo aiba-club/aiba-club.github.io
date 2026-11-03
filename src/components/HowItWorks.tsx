@@ -31,7 +31,7 @@ function Build() {
         <p className="mt-3 text-3xl font-semibold leading-tight tracking-tight">Turn your notes into flashcards.</p>
         <p className="mt-3 max-w-xs text-white/60">Paste a page of notes. Get a quiz in seconds.</p>
         <span className="mt-6 inline-block rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b1730]">Try it free</span>
-        <p className="mt-8 font-mono text-xs text-white/45">Built in 40 minutes with v0 and Vercel. Example.</p>
+        <p className="mt-8 font-mono text-xs text-white/45">Built in 40 minutes with Lovable and Vercel. Example.</p>
       </div>
     </div>
   );

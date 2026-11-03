@@ -12,11 +12,11 @@ const ACTIVITIES = [
   ["Officer, AIBA", "Helped plan [NUMBER] weekly meetings and recruited [NUMBER] new members."],
 ];
 const PROJECTS = [
-  ["[PROJECT NAME]", "A [WHAT IT IS] for [WHO IT'S FOR]. [NUMBER] users, $[AMOUNT] in revenue. Built with v0, Cursor and Vercel.", "aiba-club.github.io/projects/[project]"],
+  ["[PROJECT NAME]", "A [WHAT IT IS] for [WHO IT'S FOR]. [NUMBER] users, $[AMOUNT] in revenue. Built with Lovable, Cursor and Vercel.", "aiba-club.github.io/projects/[project]"],
   ["[SECOND PROJECT]", "A [WHAT IT IS]. Designed the brand in Figma and ran outreach to [NUMBER] people, with a [PERCENT]% reply rate.", ""],
 ];
 const SKILLS = ["Prompt writing", "Building apps with AI", "Web deployment", "Brand design", "Customer outreach", "Spreadsheet analysis", "Workflow automation", "Pitching", "Team leadership"];
-const TOOLS = ["ChatGPT", "Claude", "Cursor", "v0", "Vercel", "Figma", "Canva", "Notion", "Google Sheets", "Zapier", "n8n"];
+const TOOLS = ["ChatGPT", "Claude", "Cursor", "Lovable", "Vercel", "Figma", "Canva", "Notion", "Google Sheets", "Zapier", "n8n"];
 const OTHER = [["Awards", "AIBA Cup, [PLACE], [TRACK] track"], ["Certification", "Completed the 7-lesson AI business curriculum, AIBA"], ["Reference", "[ADVISOR NAME], faculty advisor, AIBA"]];
 
 const CALLOUTS = [

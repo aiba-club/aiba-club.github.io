@@ -4,8 +4,8 @@ import { useState } from "react";
 // Logos we ship ourselves in /public/logos. "color" ones are shown as-is; the rest are single-color shapes
 // painted with the current text color so they work in light and dark mode.
 const LOCAL: Record<string, "mono" | "color"> = {
-  openai: "mono", midjourney: "mono", capcut: "mono", grok: "mono", copilot: "mono", bolt: "mono", runway: "mono", lovable: "mono",
-  gamma: "mono", heygen: "mono", gohighlevel: "mono", youware: "mono", canva: "color",
+  openai: "mono", capcut: "mono", grok: "mono", copilot: "mono", bolt: "mono", runway: "mono", lovable: "mono",
+  gohighlevel: "mono", youware: "mono", canva: "color",
   higgsfield: "mono", googlevids: "mono", aistudio: "mono",
 };
 

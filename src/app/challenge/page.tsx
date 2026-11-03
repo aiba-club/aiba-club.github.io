@@ -14,8 +14,7 @@ export default function Challenge() {
       <header className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0 opacity-70 [mask-image:linear-gradient(black_50%,transparent)]"><Strands colors={["#8cc8ff", "#2f6fcf", "#ffffff"]} glass={false} /></div>
         <div className="wrap relative pt-36 pb-16 lg:pb-24">
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm text-white/80 backdrop-blur"><span className="h-2 w-2 rounded-full bg-amber-300" />Not open yet · opens {CUP.startLabel}</p>
-          <h1 className="mt-6 max-w-4xl text-balance text-5xl md:text-7xl lg:text-[5.5rem] font-semibold tracking-tight leading-[1.02]">Build it. Launch it. <span className="text-[#cfe6ff]">Win the Cup.</span></h1>
+          <h1 className="max-w-4xl text-balance text-5xl md:text-7xl lg:text-[5.5rem] font-semibold tracking-tight leading-[1.02]">Build it. Launch it. <span className="text-[#cfe6ff]">Win the Cup.</span></h1>
           <p className="mt-7 max-w-2xl text-lg md:text-xl leading-relaxed text-white/75">The AIBA Cup is a {CUP.weeks}-week competition for teams that built something. You get real people to try it, you track what happens, and the numbers decide who wins.</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link href="/contact" className="rounded-full bg-white px-6 py-3 font-semibold text-[#0b1730] transition-colors hover:bg-[#cfe6ff]">Join the club</Link>

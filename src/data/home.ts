@@ -11,7 +11,7 @@ export const HERO = {
 };
 
 export const ABOUT = `${CLUB.fullName} is a club at ${CLUB.school}. Each Wednesday we learn one AI tool, then use it to build something with a team: an app, a brand, a small business. There's no fee, no experience needed, and nothing to sign up for to try it.`;
-export const TOOLS_LINE = "ChatGPT, Claude, Cursor, v0, Figma, Canva, Notion, Vercel and dozens more, most with a free version.";
+export const TOOLS_LINE = "ChatGPT, Claude, Cursor, Lovable, Figma, Canva, Notion, Vercel and dozens more, most with a free version.";
 
 export const OFFICERS = [
   { name: "[NAME]", role: "President", grade: "[GRADE]", built: "[What they have built or run.]", photo: "/photos/officer-1.svg" },
