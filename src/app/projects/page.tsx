@@ -53,7 +53,7 @@ export default function Projects() {
                     <div><dt className="font-mono text-xs uppercase tracking-widest text-lb">Made by</dt><dd className="mt-0.5 text-white/70">{a.maker}</dd></div>
                     <div><dt className="font-mono text-xs uppercase tracking-widest text-lb">Built with</dt><dd className="mt-0.5 text-white/70">{a.builtWith}</dd></div>
                   </dl>
-                  <div className="mt-auto flex flex-wrap gap-x-5 pt-6">
+                  <div className="mt-auto flex flex-wrap gap-3 pt-6">
                     <a href={a.link} target="_blank" rel="noopener noreferrer" className="pill-link group/pl">App Store <Arr up /></a>
                     {a.source && <a href={a.source.url} target="_blank" rel="noopener noreferrer" className="pill-link pill-quiet group/pl">{a.source.label} <Arr up /></a>}
                   </div>
