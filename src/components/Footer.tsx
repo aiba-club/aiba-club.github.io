@@ -30,7 +30,7 @@ export default function Footer() {
         <Safe className="absolute inset-0"><MetallicPaint text="AIBA" fontWeight={900} scale={1} rotation={0} color="#8cc8ff" backgroundColor="#040813" /></Safe>
       </div>
       <div className="wrap py-6 border-t border-line flex flex-wrap gap-3 justify-between text-sm text-mute">
-        <span>© 2026 {CLUB.fullName}. Student-run.</span>
+        <span>© 2026 {CLUB.fullName}.</span>
         <span className="flex items-center gap-4"><ThemeToggle /><a href="#top" className="inline-block py-2.5 hover:text-white">Back to top ↑</a></span>
       </div>
     </footer>

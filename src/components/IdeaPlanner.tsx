@@ -33,8 +33,8 @@ export default function IdeaPlanner() {
   const submit = (e: React.FormEvent) => { e.preventDefault(); if (draft.trim()) setIdea(draft.trim()); };
   return (
     <div id="plan" className="mx-auto w-full max-w-5xl overflow-hidden rounded-[32px] border border-white/15 bg-[#0a1226] text-left shadow-[0_30px_80px_rgba(0,0,0,.45)]">
-      <div className="grid lg:grid-cols-[340px_1fr]">
-        <div className="border-b lg:border-b-0 lg:border-r border-white/10 p-6 md:p-8">
+      <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[340px_minmax(0,1fr)]">
+        <div className="min-w-0 border-b lg:border-b-0 lg:border-r border-white/10 p-5 sm:p-6 md:p-8">
           <p className="font-mono text-xs uppercase tracking-[0.14em] text-lb">Try it · plan your first project</p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight">What would you build?</h2>
           <form onSubmit={submit} className="mt-5 flex gap-2">

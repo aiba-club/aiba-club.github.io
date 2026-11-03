@@ -53,7 +53,7 @@ export default function ResumeCompare() {
 
   return (
     <div className="mt-12">
-      <div className="grid items-start gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
+      <div className="grid grid-cols-[minmax(0,1fr)] items-start gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
         <div>
           <div role="tablist" aria-label="Compare" className="mb-6 inline-flex rounded-full border border-white/15 p-1">
             {[[false, "Without AIBA"], [true, "With AIBA"]].map(([v, l]) => <button key={String(l)} role="tab" aria-selected={after === v} onClick={() => setAfter(v as boolean)} className={"rounded-full px-5 py-2.5 text-sm font-medium transition-colors " + (after === v ? "bg-white text-black" : "text-white/65 hover:text-white")}>{l as string}</button>)}

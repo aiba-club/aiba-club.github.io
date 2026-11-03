@@ -22,7 +22,7 @@ export default function Lessons() {
                 {open ? (
                   <>
                     {l.goal && <div className="mt-5 rounded-[22px] border border-white/10 px-4 py-3"><p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Goal</p><p className="mt-1 text-sm font-medium">{l.goal}</p></div>}
-                    <span className="pill-link group/pl mt-auto self-start group-hover:bg-[#8cc8ff] group-hover:text-[#050b1a]"><span className="mr-0">Open lesson</span> <Arr /></span>
+                    <span className="mt-auto pt-6 self-start"><span className="pill-link group/pl group-hover:bg-[#8cc8ff] group-hover:text-[#050b1a]">Open lesson <Arr /></span></span>
                   </>
                 ) : (
                   <div className="relative mt-5 overflow-hidden rounded-[22px] border border-white/10">

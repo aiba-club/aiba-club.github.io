@@ -30,7 +30,7 @@ export default function Chatbot() {
   }
   const field = "w-full rounded-lg bg-white/5 border border-line px-3 py-2 text-sm outline-none focus:border-lb";
   return (
-    <div className="fixed bottom-4 right-4 z-[100] flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 z-[60] flex flex-col items-end gap-3">
       {open && (
         <div className="w-[min(92vw,360px)] h-[min(70vh,600px)] flex flex-col rounded-2xl border border-line bg-black/90 backdrop-blur-xl overflow-hidden">
           <div className="relative border-b border-line">
