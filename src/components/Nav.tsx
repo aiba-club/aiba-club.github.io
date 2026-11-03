@@ -12,7 +12,7 @@ const MAP = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 const MAP_URI = "data:image/svg+xml," + encodeURIComponent(MAP);
 
 const LINKS = [{ href: "/", label: "Home" }, ...NAV];
-const SOCIAL = [["discord", "Discord", CLUB.links.discord], ["instagram", "Instagram", CLUB.links.instagram], ["gmail", "Email", `mailto:${CLUB.links.email}`]] as const;
+const SOCIAL = [["discord", "Discord", CLUB.links.discord], ["gmail", "Email", `mailto:${CLUB.links.email}`]] as const;
 
 export default function Nav() {
   const path = usePathname();

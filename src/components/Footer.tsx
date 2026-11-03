@@ -8,7 +8,7 @@ import LogoMark from "./LogoMark";
 
 export default function Footer() {
   const links = [...NAV, { href: "/contact", label: "Contact" }];
-  const social = [["discord", "Discord", CLUB.links.discord], ["instagram", CLUB.links.instagramHandle, CLUB.links.instagram], ["gmail", "Email us", `mailto:${CLUB.links.email}`]];
+  const social = [["discord", "Discord", CLUB.links.discord], ["gmail", "Email us", `mailto:${CLUB.links.email}`]];
   return (
     <footer className="keep-dark border-t border-line bg-[#040813]">
       <div className="wrap pt-14">

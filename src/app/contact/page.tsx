@@ -14,7 +14,6 @@ export default function Contact() {
   const links = [
     { name: "Discord", slug: "discord", href: CLUB.links.discord, handle: "Join the server", note: "Announcements, lesson recordings and team chats. Fastest reply." },
     { name: "Email", slug: "gmail", href: `mailto:${CLUB.links.email}`, handle: CLUB.links.email, note: "For parents, sponsors and teachers.", copy: true },
-    { name: "Instagram", slug: "instagram", href: CLUB.links.instagram, handle: CLUB.links.instagramHandle, note: "Photos from meetings and project launches." },
   ];
   const card = { background: "#050b1a", borderColor: "rgba(255,255,255,0.12)", borderRadius: "16px", glareColor: "#8cc8ff", glareOpacity: 0.2 };
   return (
