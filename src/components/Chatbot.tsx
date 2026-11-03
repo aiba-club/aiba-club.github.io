@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import AssistantOrb from "./AssistantOrb";
 import { FAQ } from "@/data/faq";
 import { CLUB } from "@/data/club";
+import { sendToClub } from "@/lib/submit";
 
 type Msg = { from: "bot" | "me"; text: string };
 const STOP = new Set("the a an is are do i we you to of for in on and or how what when where can does my it me".split(" "));
@@ -22,8 +23,9 @@ export default function Chatbot() {
   const quick = (label: string) => { if (label === "Fill out interest form") { setForm(true); setMsgs((m) => [...m, { from: "me", text: label }]); } else ask(label); };
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault(); const data = Object.fromEntries(new FormData(e.currentTarget));
-    if (CLUB.formEndpoint) await fetch(CLUB.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
-    else window.location.href = `mailto:${CLUB.links.email}?subject=AIBA interest&body=${encodeURIComponent(Object.entries(data).map(([k, v]) => `${k}: ${v}`).join("\n"))}`;
+    if (data.botcheck) return;
+    const ok = await sendToClub(data, `New AIBA interest form (assistant): ${data.name}`);
+    if (!ok) { setMsgs((m) => [...m, { from: "bot", text: `That didn't send. Try again, or email ${CLUB.links.email}.` }]); return; }
     setSent(true); setForm(false); setMsgs((m) => [...m, { from: "bot", text: "Thanks! We'll be in touch soon." }]);
   }
   const field = "w-full rounded-lg bg-white/5 border border-line px-3 py-2 text-sm outline-none focus:border-lb";
@@ -41,7 +43,7 @@ export default function Chatbot() {
             {form && (<form onSubmit={submit} className="space-y-2">
               <input name="name" required placeholder="Name" className={field} /><input name="email" type="email" required placeholder="Email" className={field} /><input name="grade" required placeholder="Grade" className={field} /><input name="interests" placeholder="Interests" className={field} />
               <select name="experience" className={field + " bg-black"}><option>Beginner</option><option>Some experience</option><option>Advanced</option></select>
-              <button className="btn btn-solid w-full justify-center">Submit</button></form>)}
+              <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" /><button className="btn btn-solid w-full justify-center">Submit</button></form>)}
             <div ref={end} />
           </div>
           <div className="px-3 pt-2 flex flex-wrap gap-2">{["Fill out interest form", "What projects can I join?", "When do we meet?"].map((q) => <button key={q} onClick={() => quick(q)} disabled={sent && q.startsWith("Fill")} className="text-xs rounded-full border border-line px-3 py-1 text-white/75 hover:border-lb hover:text-lb">{q}</button>)}</div>
