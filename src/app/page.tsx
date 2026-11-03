@@ -10,6 +10,7 @@ import CupTeaser from "@/components/CupTeaser";
 import FaqPreview from "@/components/FaqPreview";
 import LaserCTA from "@/components/LaserCTA";
 import { CLUB } from "@/data/club";
+import Arr from "@/components/Arr";
 
 const H2 = "text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl";
 
@@ -50,7 +51,7 @@ export default function Home() {
 
       {/* TOOLS */}
       <section className="border-t border-white/10 py-24">
-        <div className="wrap mb-16 md:mb-20 flex flex-wrap items-end justify-between gap-6"><div><h2 className={H2}>The tools you&rsquo;ll learn.</h2><p className="mt-4 text-white/65 max-w-xl">Most have a free version.</p></div><Link href="/tools" className="py-2 font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">All tools →</Link></div>
+        <div className="wrap mb-16 md:mb-20 flex flex-wrap items-end justify-between gap-6"><div><h2 className={H2}>The tools you&rsquo;ll learn.</h2><p className="mt-4 text-white/65 max-w-xl">Most have a free version.</p></div><Link href="/tools" className="pill-link group/pl">All tools <Arr /></Link></div>
         <ToolStrip />
       </section>
 

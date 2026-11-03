@@ -78,3 +78,9 @@ html[data-theme="light"] dialog{filter:invert(1) hue-rotate(180deg)}
 @keyframes cdblink{0%,100%{opacity:.8}50%{opacity:.2}}
 .cd-colon{animation:cdblink 1s steps(1) infinite}
 @media (prefers-reduced-motion:reduce){.cd-colon{animation:none}}
+
+/* Link pills: a rounded chip instead of an underlined link */
+.pill-link{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(140,200,255,.45);background:rgba(140,200,255,.1);padding:.5rem 1rem;font-size:.875rem;font-weight:600;line-height:1.2;color:#8cc8ff;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.pill-link:hover{background:#8cc8ff;color:#050b1a;border-color:#8cc8ff}
+.pill-quiet{border-color:rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.7)}
+.pill-quiet:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}

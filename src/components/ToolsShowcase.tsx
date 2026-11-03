@@ -5,6 +5,7 @@ import ToolStrip from "./ToolStrip";
 import BrandIcon from "./BrandIcon";
 import { TOOL_GROUPS, costOf } from "@/data/tools";
 import { LESSONS } from "@/data/lessons";
+import Arr from "@/components/Arr";
 
 const ALL = TOOL_GROUPS.flatMap((g) => g.tools.map((t) => ({ ...t, group: g.group })));
 const SUB = {
@@ -56,7 +57,7 @@ export default function ToolsShowcase() {
           })}
         </ul>
       </section>
-      <section className="border-t border-line"><div className="wrap py-14 flex flex-wrap items-center justify-between gap-6"><div><h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Not sure where to start?</h2><p className="mt-2 text-white/65">Start with ChatGPT or Claude. Every other tool builds on knowing how to ask well.</p></div><Link href="/lessons/intro-to-ai-tools" className="btn btn-solid">Open Lesson 01 →</Link></div></section>
+      <section className="border-t border-line"><div className="wrap py-14 flex flex-wrap items-center justify-between gap-6"><div><h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Not sure where to start?</h2><p className="mt-2 text-white/65">Start with ChatGPT or Claude. Every other tool builds on knowing how to ask well.</p></div><Link href="/lessons/intro-to-ai-tools" className="btn btn-solid">Open Lesson 01 <Arr /></Link></div></section>
 
       <dialog ref={dlg} onClose={() => setSel(null)} onClick={(e) => { if (e.target === dlg.current) setSel(null); }} className="m-auto w-[min(92vw,420px)] max-h-[88vh] overflow-y-auto rounded-[28px] border border-white/15 bg-[#0a1226] p-0 text-white backdrop:bg-black/60 backdrop:backdrop-blur-sm">
         {tool && cost && (
@@ -72,8 +73,8 @@ export default function ToolsShowcase() {
               {lessons.length > 0 && <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Used in</dt><dd className="mt-1 flex flex-wrap gap-2">{lessons.map((l) => <Link key={l.slug} href={`/lessons/${l.slug}`} className="rounded-full border border-white/20 px-3 py-0.5 text-sm text-lb hover:border-lb">Lesson {l.n}</Link>)}</dd></div>}
             </dl>
             <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
-              {tool.url ? <a href={tool.url} target="_blank" rel="noreferrer" className="text-sm font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">Official pricing and details ↗</a> : <span className="text-xs text-white/40">Prices change. Check their site before paying.</span>}
-              <button onClick={() => setSel(null)} className="text-sm text-white/60 underline underline-offset-4 hover:text-white">Close</button>
+              {tool.url ? <a href={tool.url} target="_blank" rel="noreferrer" className="pill-link group/pl">Official pricing and details <Arr up /></a> : <span className="text-xs text-white/40">Prices change. Check their site before paying.</span>}
+              <button onClick={() => setSel(null)} className="pill-link pill-quiet group/pl">Close</button>
             </div>
           </div>
         )}

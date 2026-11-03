@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { LESSONS } from "@/data/lessons";
+import Arr from "@/components/Arr";
 
 
 export default function LessonCards() {
@@ -44,7 +45,7 @@ export default function LessonCards() {
             <ul className="mt-5 space-y-2">{l.bullets.map((b) => <li key={b} className="flex gap-3 text-[15px] text-white/85"><span className="mt-2.5 h-px w-4 shrink-0 bg-lb" />{b}</li>)}</ul>
             <div className="mt-6 rounded-2xl border border-white/12 bg-white/[0.03] p-4"><p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">You&rsquo;ll make</p><p className="mt-1 font-medium">{l.makes}</p></div>
             <p className="mt-5 flex flex-wrap gap-2">{l.tools.map((t) => <span key={t} className="rounded-full border border-white/15 px-3 py-0.5 text-xs text-white/65">{t}</span>)}</p>
-            <div className="mt-7 flex flex-wrap items-center gap-4"><Link href={`/lessons/${l.slug}`} className="btn btn-solid">Open lesson →</Link><button onClick={() => setSel(null)} className="text-sm text-white/60 underline underline-offset-4 hover:text-white">Close</button></div>
+            <div className="mt-7 flex flex-wrap items-center gap-4"><Link href={`/lessons/${l.slug}`} className="btn btn-solid">Open lesson <Arr /></Link><button onClick={() => setSel(null)} className="pill-link pill-quiet group/pl">Close</button></div>
           </div>
         )}
       </dialog>

@@ -43,7 +43,7 @@ export default function SpreadTheWord() {
 
           <div className="mt-4 flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4">
             <img src="/gallery/qr.svg" alt="QR code that opens aiba-club.github.io" className="h-24 w-24 shrink-0 rounded-xl bg-white p-1.5" />
-            <div><p className="font-semibold">Scan to open the site</p><p className="mt-0.5 text-sm text-white/60">Show it on your phone or{" "}<a href="/gallery/qr.svg" download="AIBA-qr.svg" className="inline-block py-2 text-lb underline underline-offset-4 hover:text-white">download the QR code</a>.</p></div>
+            <div><p className="font-semibold">Scan to open the site</p><p className="mt-0.5 text-sm text-white/60">Show it on your phone or{" "}<a href="/gallery/qr.svg" download="AIBA-qr.svg" className="pill-link group/pl !py-0.5 !px-2.5">download the QR code</a>.</p></div>
           </div>
         </div>
       </div>

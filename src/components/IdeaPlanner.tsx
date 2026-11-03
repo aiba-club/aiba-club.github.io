@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Arr from "@/components/Arr";
 
 type Step = { week: string; title: string; text: string; tools: string[]; lesson: [string, string] };
 const CHIPS = ["A study app", "A food deals page", "A logo service", "A sales dashboard", "A tutoring marketplace"];
@@ -54,7 +55,7 @@ export default function IdeaPlanner() {
                 <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-lb" />
                 <div className="flex flex-wrap items-baseline gap-x-3"><span className="font-mono text-xs text-lb">{s.week}</span><span className="font-semibold">{s.title}</span></div>
                 <p className="mt-1 text-sm text-white/65 max-w-md">{s.text}</p>
-                <p className="mt-2 flex flex-wrap items-center gap-2">{s.tools.map((t) => <span key={t} className="rounded-full border border-white/12 px-2.5 py-0.5 text-xs text-white/65">{t}</span>)}<Link href={`/lessons/${s.lesson[1]}`} className="ml-1 inline-block py-2.5 text-xs text-lb underline underline-offset-4 hover:text-white">{s.lesson[0]} →</Link></p>
+                <p className="mt-2 flex flex-wrap items-center gap-2">{s.tools.map((t) => <span key={t} className="rounded-full border border-white/12 px-2.5 py-0.5 text-xs text-white/65">{t}</span>)}<Link href={`/lessons/${s.lesson[1]}`} className="pill-link group/pl ml-1 !py-1 !px-3 !text-xs">{s.lesson[0]} <Arr /></Link></p>
               </li>
             ))}
           </ol>

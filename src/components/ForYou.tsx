@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Arr from "@/components/Arr";
 
 const WHO = [
   { w: "I've never coded", a: "Perfect. Most of what we use needs no code, and when it does the AI writes it and we learn to read it. Our first lessons assume you know nothing.", cta: ["Start with Lesson 01", "/lessons/intro-to-ai-tools"] },
@@ -17,7 +18,7 @@ export default function ForYou() {
           <li key={x.w} className="border-b border-white/15"><button role="tab" aria-selected={i === k} onClick={() => setI(k)} className={"flex w-full items-center justify-between py-5 text-left text-xl md:text-2xl font-semibold tracking-tight transition-colors " + (i === k ? "text-white" : "text-white/45 hover:text-white/80")}>{x.w}<span className={i === k ? "text-lb" : "text-white/25"}>→</span></button></li>
         ))}
       </ul>
-      <div role="tabpanel" className="md:pt-5"><p className="text-xl md:text-2xl leading-relaxed text-white/85 max-w-xl">{WHO[i].a}</p><Link href={WHO[i].cta[1]} className="mt-7 inline-block font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">{WHO[i].cta[0]} →</Link></div>
+      <div role="tabpanel" className="md:pt-5"><p className="text-xl md:text-2xl leading-relaxed text-white/85 max-w-xl">{WHO[i].a}</p><Link href={WHO[i].cta[1]} className="pill-link group/pl">{WHO[i].cta[0]} <Arr /></Link></div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import InfiniteMenu from "@/components/InfiniteMenu";
 import PageHeader from "@/components/PageHeader";
 import { IDEA_GROUPS, BIG_PROJECTS } from "@/data/projectIdeas";
 import { APPS } from "@/data/apps";
+import Arr from "@/components/Arr";
 export const metadata = { title: "Projects — AIBA" };
 export default function Projects() {
   // One sphere tile per App Store screenshot, interleaved so neighbours come from different apps.
@@ -31,7 +32,7 @@ export default function Projects() {
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-lb">Big goals</p><h2 className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight">Finish something real.</h2><p className="mt-4 text-white/65">The larger projects members can take on from start to finish.</p>
             <dl className="mt-8 grid max-w-sm grid-cols-2 gap-3">{[[String(BIG_PROJECTS.length), "big goals"], [String(IDEA_GROUPS.length), "categories"]].map(([n, l]) => <div key={l} className="rounded-[24px] border border-white/12 bg-white/[0.04] px-5 py-4"><dt className="text-3xl font-semibold">{n}</dt><dd className="mt-1 text-xs uppercase tracking-[0.14em] text-white/55">{l}</dd></div>)}</dl>
-            <div className="mt-4 max-w-sm rounded-[28px] border border-white/12 bg-white/[0.03] p-6"><p className="text-lg font-semibold">Not sure where to start?</p><p className="mt-2 text-white/65">Pick the one that sounds fun, or bring your own idea to any Wednesday. We&rsquo;ll help you find a team and a first step.</p><Link href="/contact" className="mt-4 inline-block font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">Join the club →</Link></div>
+            <div className="mt-4 max-w-sm rounded-[28px] border border-white/12 bg-white/[0.03] p-6"><p className="text-lg font-semibold">Not sure where to start?</p><p className="mt-2 text-white/65">Pick the one that sounds fun, or bring your own idea to any Wednesday. We&rsquo;ll help you find a team and a first step.</p><Link href="/contact" className="pill-link group/pl">Join the club <Arr /></Link></div>
           </div>
           <ol className="grid gap-2.5 sm:grid-cols-2">{BIG_PROJECTS.map((x, i) => <li key={x} className="flex gap-4 rounded-[24px] border border-white/12 bg-white/[0.03] px-5 py-4"><span className="font-mono text-sm text-lb">{String(i + 1).padStart(2, "0")}</span><span className="text-white/80">{x}</span></li>)}</ol>
         </div>
@@ -53,8 +54,8 @@ export default function Projects() {
                     <div><dt className="font-mono text-xs uppercase tracking-widest text-lb">Built with</dt><dd className="mt-0.5 text-white/70">{a.builtWith}</dd></div>
                   </dl>
                   <div className="mt-auto flex flex-wrap gap-x-5 pt-6">
-                    <a href={a.link} target="_blank" rel="noopener noreferrer" className="py-2.5 font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">App Store ↗</a>
-                    {a.source && <a href={a.source.url} target="_blank" rel="noopener noreferrer" className="py-2.5 text-white/60 underline underline-offset-4 hover:text-white">{a.source.label} ↗</a>}
+                    <a href={a.link} target="_blank" rel="noopener noreferrer" className="pill-link group/pl">App Store <Arr up /></a>
+                    {a.source && <a href={a.source.url} target="_blank" rel="noopener noreferrer" className="pill-link pill-quiet group/pl">{a.source.label} <Arr up /></a>}
                   </div>
                 </div>
               </li>

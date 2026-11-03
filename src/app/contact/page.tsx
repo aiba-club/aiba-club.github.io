@@ -8,6 +8,7 @@ import JoinForm from "@/components/JoinForm";
 import CopyButton from "@/components/CopyButton";
 import BrandIcon from "@/components/BrandIcon";
 import { CLUB } from "@/data/club";
+import Arr from "@/components/Arr";
 export const metadata = { title: "Contact — AIBA" };
 export default function Contact() {
   const links = [
@@ -26,7 +27,7 @@ export default function Contact() {
               <li key={l.name} className="card-glass !rounded-2xl p-5 flex flex-wrap sm:flex-nowrap items-center gap-x-5 gap-y-3 hover:border-lb/50 transition-colors">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10"><BrandIcon slug={l.slug} label={l.name} size={26} /></span>
                 <a href={l.href} target="_blank" rel="noreferrer" className="min-w-0 flex-1"><span className="block text-lg font-semibold">{l.name}</span><span className="block text-white/60 text-sm truncate">{l.handle}</span><span className="block text-white/45 text-sm mt-0.5">{l.note}</span></a>
-                {l.copy ? <CopyButton text={CLUB.links.email} /> : <a href={l.href} target="_blank" rel="noreferrer" aria-label={`Open ${l.name}`} className="grid h-11 w-11 place-items-center text-white/50 hover:text-lb text-xl">↗</a>}
+                {l.copy ? <CopyButton text={CLUB.links.email} /> : <a href={l.href} target="_blank" rel="noreferrer" aria-label={`Open ${l.name}`} className="grid h-11 w-11 place-items-center text-white/50 hover:text-lb text-xl"><Arr up /></a>}
               </li>
             ))}
           </ul>
@@ -35,7 +36,7 @@ export default function Contact() {
             <GlareHover width="100%" height="auto" {...card}><div className="p-6"><p className="eyebrow mb-2">Where</p><p className="text-xl font-semibold">{CLUB.meeting.place}</p><p className="text-white/65">{CLUB.school} · [street address]</p></div></GlareHover>
           </div>
           <SpreadTheWord />
-          <p className="text-white/65">Questions first? Read the <Link href="/faq" className="text-lb underline underline-offset-4">FAQ</Link> or ask the assistant in the corner.</p>
+          <p className="text-white/65">Questions first? Read the <Link href="/faq" className="pill-link group/pl !py-0.5 !px-2.5">FAQ</Link> or ask the assistant in the corner.</p>
         </div>
         <div className="space-y-6 lg:sticky lg:top-28 self-start">
           <JoinForm />

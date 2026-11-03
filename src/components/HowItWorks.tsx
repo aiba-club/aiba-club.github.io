@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Arr from "@/components/Arr";
 
 const STEPS = [
   { k: "Learn", title: "Every Wednesday starts with one tool.", text: "A short lesson, then a live demo. You see it work, see where it breaks, and try it yourself.", points: ["Seven lessons, from prompting to pitching", "A video, slides and tutorial for each"], href: "/lessons", cta: "See the lessons" },
@@ -85,7 +86,7 @@ export default function HowItWorks() {
           <h3 className="mt-3 text-2xl md:text-3xl font-semibold leading-[1.1] tracking-tight">{s.title}</h3>
           <p className="mt-4 max-w-md text-white/70">{s.text}</p>
           <ul className="mt-5 space-y-2">{s.points.map((p) => <li key={p} className="flex items-center gap-3 text-[15px] text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full bg-lb" />{p}</li>)}</ul>
-          <Link href={s.href} className="mt-5 w-fit py-2 font-semibold text-lb underline decoration-2 underline-offset-4 hover:text-white">{s.cta} →</Link>
+          <Link href={s.href} className="pill-link group/pl">{s.cta} <Arr /></Link>
         </div>
         <div className="border-t border-white/10 bg-[#0a1226] lg:border-l lg:border-t-0">
           <div key={`v${i}`} className="h-[340px] md:h-[400px]" style={{ animation: "fadeUp .35s both" }} aria-hidden><View /></div>
