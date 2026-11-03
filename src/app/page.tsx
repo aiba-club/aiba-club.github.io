@@ -21,7 +21,7 @@ export default function Home() {
         <div aria-hidden className="hero-bg"><span className="grid" /><span className="glow g1" /><span className="glow g2" /><span className="beam b1" /><span className="beam b2" /><span className="beam b3" /><span className="floor" /></div>
         <div className="wrap relative pt-32 md:pt-44 pb-20 text-center flex flex-col items-center">
           <h1 className="font-semibold tracking-tight leading-[1.08]  max-w-5xl" style={{ fontSize: "clamp(2.3rem,5.4vw,4.6rem)" }}>
-            Bring an idea.<br />Build your next <WordSwap words={["app", "site", "brand", "store", "game", "tool"]} />
+            Bring an idea.<br />Build your next <WordSwap words={["app", "site", "brand", "store", "game", "tool", "bot", "startup", "podcast", "course", "agency", "shop"]} />
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-xl text-white/75">{CLUB.fullName} is a student club. Every {CLUB.meeting.day.replace(/s$/, "")} you learn one AI tool, then use it with a team to make something real. It&rsquo;s free, and you don&rsquo;t need any experience.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3"><Link href="#plan" className="btn btn-solid">Plan your first project ↓</Link><Link href="/contact" className="btn btn-line bg-black/30 backdrop-blur">Join the club</Link></div>
