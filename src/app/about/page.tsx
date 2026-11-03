@@ -39,11 +39,11 @@ export default function About() {
 
       <section className="border-y border-line"><div className="wrap py-16">
         <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">Who runs it.</h2>
-        <p className="mt-2 text-white/65">Student officers plan the lessons and projects. {ABOUT.advisor.name} is our {ABOUT.advisor.role.toLowerCase()}.</p>
-        <ul className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {ABOUT.officers.map((o, i) => (
+        <p className="mt-2 text-white/65">AIBA is student-led, with a faculty sponsor.</p>
+        <ul className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 max-w-5xl gap-5">
+          {[...ABOUT.officers, ABOUT.advisor].map((o, i) => (
             <li key={i}><GlareHover width="100%" height="auto" background="#0a1226" borderColor="rgba(255,255,255,0.12)" borderRadius="16px" glareColor="#8cc8ff" glareOpacity={0.2}>
-              <div className="p-6"><div className="h-14 w-14 rounded-full bg-gradient-to-br from-lb to-db" aria-hidden /><p className="mt-4 text-lg font-semibold">{o.name}</p><p className="text-lb text-sm">{o.role} · {o.grade}</p><p className="mt-2 text-white/60 text-sm">{o.bio}</p></div>
+              <div className="w-full p-6 text-left"><div className="grid h-14 w-14 place-items-center rounded-full border border-white/20 bg-white/10 text-lg font-semibold" aria-hidden>{o.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}</div><p className="mt-4 text-lg font-semibold">{o.name}</p><p className="text-lb text-sm">{o.role}</p></div>
             </GlareHover></li>
           ))}
         </ul>

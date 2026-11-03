@@ -1,4 +1,3 @@
-// TODO: replace every placeholder with your real officers.
 export const ABOUT = {
   mission: "AIBA exists so any student can learn the AI tools that are changing business, and then use them on something real before they graduate.",
   principles: [
@@ -13,10 +12,8 @@ export const ABOUT = {
     { t: "Compete in the Cup", d: "Put it in front of real users and compete on revenue, sales and sign-ups." },
   ],
   officers: [
-    { name: "[NAME]", role: "President", grade: "12th", bio: "[One line about them and what they built.]" },
-    { name: "[NAME]", role: "Vice President", grade: "11th", bio: "[One line.]" },
-    { name: "[NAME]", role: "Head of Lessons", grade: "11th", bio: "[One line.]" },
-    { name: "[NAME]", role: "Head of Projects", grade: "12th", bio: "[One line.]" },
+    { name: "Ruben Babasyan", role: "Founder and President" },
+    { name: "Santiago Areolla Rodriguez", role: "Co-founder" },
   ],
-  advisor: { name: "[ADVISOR NAME]", role: "Faculty advisor" },
+  advisor: { name: "Ms. Ehrlich", role: "Sponsor" },
 };
