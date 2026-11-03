@@ -79,3 +79,6 @@ html[data-theme="light"] dialog{filter:invert(1) hue-rotate(180deg)}
 
 /* Phones: bigger tap area for the menu button */
 @media (max-width:767px){.staggered-menu-header .sm-toggle{min-height:44px;min-width:56px;padding:12px 4px}}
+@keyframes cdblink{0%,100%{opacity:.8}50%{opacity:.2}}
+.cd-colon{animation:cdblink 1s steps(1) infinite}
+@media (prefers-reduced-motion:reduce){.cd-colon{animation:none}}
