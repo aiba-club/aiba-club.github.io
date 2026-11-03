@@ -4,15 +4,18 @@ import InfiniteMenu from "@/components/InfiniteMenu";
 import PageHeader from "@/components/PageHeader";
 import { PROJECTS } from "@/data/projects";
 import { INSPIRATION } from "@/data/inspiration";
+import { APPS } from "@/data/apps";
 export const metadata = { title: "Projects — AIBA" };
 export default function Projects() {
-  const items = PROJECTS.map((p) => ({ image: p.image, title: p.title, description: p.description, link: `/projects/${p.slug}` }));
+  const items = APPS.map((a) => ({ image: a.image, title: a.name, description: a.what, link: a.link }));
   return (
     <>
-      <PageHeader eyebrow="Student work" title="Things we built." lede="Every project here was made by members, with AI tools, in a few weeks. Drag the sphere to explore, or pick one below." />
+      <PageHeader eyebrow="On the market" title="Real apps, in real pockets." lede="Thirty apps people use every day. Drag the sphere and tap one to see it in the App Store. These are not AIBA projects; ours are below." />
       <div className="h-[75vh] min-h-[500px] relative border-b border-line"><Safe><InfiniteMenu items={items} backgroundColor="#050b1a" accentColor="#8cc8ff" /></Safe></div>
       <section className="wrap py-20">
-        <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">All projects.</h2>
+        <p className="font-mono text-xs uppercase tracking-[0.18em] text-lb">Student work</p>
+        <h2 className="mt-3 text-2xl md:text-4xl font-semibold tracking-tight">Things we built.</h2>
+        <p className="mt-3 max-w-2xl text-white/65">Sample projects made by members with AI tools, in a few weeks.</p>
         <ul className="mt-10 grid sm:grid-cols-2 gap-6">
           {PROJECTS.map((p) => (
             <li key={p.slug}><Link href={`/projects/${p.slug}`} className="group block">
