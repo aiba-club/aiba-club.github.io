@@ -9,5 +9,4 @@ export const APPS: App[] = [
   { slug: "allegramente", name: "AllegraMente", what: "A free brain training app with short exercises and no tracking.", maker: "Roberto D'Angelo", category: "Education", builtWith: "Claude Code", link: store(6761313217), image: "/apps/allegramente-1.jpg", shots: 10 },
   { slug: "bloomday", name: "BloomDay", what: "A gentle habit tracker where finishing tasks grows a little garden.", maker: "Ezgi Acar, who is not a developer", category: "Productivity", builtWith: "Claude Code", link: store(6760038056), image: "/apps/bloomday-1.jpg", shots: 10 },
   { slug: "baselinebody", name: "BaselineBody", what: "Daily mobility, breathwork and recovery routines.", maker: "Escape Velocity Studio, a solo developer", category: "Health and fitness", builtWith: "Claude", link: store(6757976640), image: "/apps/baselinebody-1.jpg", shots: 5 },
-  { slug: "dualshot-recorder", name: "DualShot Recorder", what: "Record vertical and horizontal video at the same time.", maker: "DDJR Productions", category: "Photo and video", builtWith: "AI coding tools (vibe coded)", link: store(6761159805), image: "/apps/dualshot-recorder-1.jpg", shots: 2 },
 ];
