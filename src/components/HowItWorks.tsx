@@ -4,8 +4,8 @@ import Link from "next/link";
 import Arr from "@/components/Arr";
 
 const STEPS = [
-  { k: "Learn", title: "Every Wednesday starts with one tool.", text: "A short lesson, then a live demo. You see it work, see where it breaks, and try it yourself.", points: ["Seven lessons, from prompting to pitching", "A video, slides and tutorial for each"], href: "/lessons", cta: "See the lessons" },
-  { k: "Build", title: "Then you make something with it.", text: "Pick an idea, join a team and build a first version in a few meetings. Nobody expects it to be perfect.", points: ["Teams of 2 to 5, each with a role", "No coding experience needed"], href: "/projects", cta: "See what teams build" },
+  { k: "Learn", title: "Every Wednesday starts with one tool.", text: "A short lesson, then a live demo. You see it work, see where it breaks, and try it yourself.", points: ["One tool at a time, from idea to launch", "Slides for every lesson"], href: "/lessons", cta: "See the lessons" },
+  { k: "Build", title: "Then you make something with it.", text: "Pick an idea, join a team and build a first version in a few meetings. Nobody expects it to be perfect.", points: ["Teams of 2 to 5, each with a role", "No experience needed"], href: "/projects", cta: "See what teams build" },
   { k: "Launch", title: "Then you put it in front of people.", text: "Send it to classmates, ask for feedback, and get your first users or your first sale.", points: ["Real users and real feedback", "A case-study page you can link"], href: "/projects", cta: "See case studies" },
   { k: "Compete", title: "And you keep score.", text: "In March, teams race for five weeks in the AIBA Cup for the most revenue, the most sales and the most users. The scoreboard is public.", points: ["Three prizes: most revenue, sales and users", "A five-week competition"], href: "/challenge", cta: "See the Cup" },
 ];
@@ -13,7 +13,7 @@ const STEPS = [
 function Chat() {
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 font-mono text-xs uppercase tracking-widest text-white/50"><span>Lesson 01 · Prompting</span><span>Example</span></div>
+      <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 font-mono text-xs uppercase tracking-widest text-white/50"><span>Example lesson</span><span>Example</span></div>
       <div className="flex-1 space-y-3 p-5 text-[15px]">
         <p className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-white/10 p-3">I&rsquo;m in 10th grade. Give me 3 business ideas that use AI and cost nothing to start.</p>
         <div className="max-w-[90%] rounded-2xl rounded-bl-md border border-white/12 p-3 text-white/85"><p>1. A study-notes app that makes flashcards.</p><p className="mt-1">2. A deals page for cheap food near school.</p><p className="mt-1">3. A logo service for school clubs.</p></div>

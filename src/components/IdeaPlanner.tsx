@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Arr from "@/components/Arr";
 
-type Step = { week: string; title: string; text: string; tools: string[]; lesson: [string, string] };
+type Step = { week: string; title: string; text: string; tools: string[] };
 const CHIPS = ["A study app", "A food deals page", "A logo service", "A sales dashboard", "A tutoring marketplace"];
 
 const has = (s: string, words: string[]) => words.some((w) => s.includes(w));
@@ -13,15 +12,15 @@ function plan(raw: string): { steps: Step[]; roles: string[]; kind: string } {
   const data = has(s, ["data", "dashboard", "spreadsheet", "analytics", "tracker"]);
   const sell = has(s, ["shop", "store", "sell", "merch", "food", "deal", "market", "tutor", "service"]);
   const build: Step = design
-    ? { week: "Week 2", title: "Design version one", text: "Pick colors and type, generate logo or product ideas, and put them in a one-page style sheet.", tools: ["Figma", "Canva", "Gemini"], lesson: ["Lesson 04", "design-and-brand"] }
+    ? { week: "Week 2", title: "Design version one", text: "Pick colors and type, generate logo or product ideas, and put them in a one-page style sheet.", tools: ["Figma", "Canva", "Gemini"] }
     : data
-    ? { week: "Week 2", title: "Build the tracker", text: "Set up a sheet that updates itself and summarizes the numbers in plain English.", tools: ["Google Sheets", "Zapier", "n8n"], lesson: ["Lesson 06", "data-and-automation"] }
-    : { week: "Week 2", title: "Build version one", text: "Describe it in plain English and let the AI draft a first version you can click through.", tools: ["Lovable", "Cursor", "Vercel"], lesson: ["Lesson 03", "build-a-website"] };
+    ? { week: "Week 2", title: "Build the tracker", text: "Set up a sheet that updates itself and summarizes the numbers in plain English.", tools: ["Google Sheets", "Zapier", "n8n"] }
+    : { week: "Week 2", title: "Build version one", text: "Describe it in plain English and let the AI draft a first version you can click through.", tools: ["Lovable", "Cursor", "Vercel"] };
   const steps: Step[] = [
-    { week: "Week 1", title: "Test the idea", text: "Talk to five classmates who have the problem. Ask what they do today, and don't pitch yet.", tools: ["ChatGPT", "Notion"], lesson: ["Lesson 02", "validate-an-idea"] },
+    { week: "Week 1", title: "Test the idea", text: "Talk to five classmates who have the problem. Ask what they do today, and don't pitch yet.", tools: ["ChatGPT", "Notion"] },
     build,
-    { week: "Week 3", title: sell ? "Get your first customers" : "Put it in front of people", text: "Send it to ten people, track who replies, and fix what confuses them.", tools: ["CapCut", "Notion"], lesson: ["Lesson 05", "marketing-and-sales"] },
-    { week: "Week 4", title: "Pitch it, enter the Cup", text: "Give a two-minute pitch, report your numbers, and compete on revenue, sales or users.", tools: ["Slides", "Canva"], lesson: ["Lesson 07", "pitch-and-launch"] },
+    { week: "Week 3", title: sell ? "Get your first customers" : "Put it in front of people", text: "Send it to ten people, track who replies, and fix what confuses them.", tools: ["CapCut", "Notion"] },
+    { week: "Week 4", title: "Pitch it, enter the Cup", text: "Give a two-minute pitch, report your numbers, and compete on revenue, sales or users.", tools: ["Slides", "Canva"] },
   ];
   const roles = design ? ["Designer", "Builder", "Marketer"] : data ? ["Analyst", "Builder", "Marketer"] : ["Builder", "Designer", "Marketer"];
   return { steps, roles, kind: design ? "Design project" : data ? "Data project" : sell ? "Business project" : "Product project" };
@@ -55,7 +54,7 @@ export default function IdeaPlanner() {
                 <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-lb" />
                 <div className="flex flex-wrap items-baseline gap-x-3"><span className="font-mono text-xs text-lb">{s.week}</span><span className="font-semibold">{s.title}</span></div>
                 <p className="mt-1 text-sm text-white/65 max-w-md">{s.text}</p>
-                <p className="mt-2 flex flex-wrap items-center gap-2">{s.tools.map((t) => <span key={t} className="rounded-full border border-white/12 px-2.5 py-0.5 text-xs text-white/65">{t}</span>)}<Link href={`/lessons/${s.lesson[1]}`} className="pill-link group/pl ml-1 !py-1 !px-3 !text-xs">{s.lesson[0]} <Arr /></Link></p>
+                <p className="mt-2 flex flex-wrap items-center gap-2">{s.tools.map((t) => <span key={t} className="rounded-full border border-white/12 px-2.5 py-0.5 text-xs text-white/65">{t}</span>)}</p>
               </li>
             ))}
           </ol>

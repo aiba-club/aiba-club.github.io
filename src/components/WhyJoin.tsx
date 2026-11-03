@@ -30,7 +30,7 @@ function Visual({ i: j }: { i: number }) {
       {[["Prompting", "90%"], ["Building with AI", "75%"], ["Design and branding", "60%"], ["Marketing and sales", "55%"], ["Reading data", "50%"]].map(([k, w]) => (
         <div key={k}><div className="flex justify-between text-sm"><span>{k}</span></div><div className="mt-2 h-2.5 rounded-full bg-white/10"><div className="h-full rounded-full bg-gradient-to-r from-[#2f6fcf] to-[#8cc8ff]" style={{ width: w }} /></div></div>
       ))}
-      <p className="text-xs text-white/45">Skills covered across the seven lessons.</p>
+      <p className="text-xs text-white/45">Skills covered across our lessons.</p>
     </div>
   );
   if (i === 3) return (

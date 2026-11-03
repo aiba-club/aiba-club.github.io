@@ -4,9 +4,9 @@ import Link from "next/link";
 import Arr from "@/components/Arr";
 
 const WHO = [
-  { w: "I've never coded", a: "Perfect. Most of what we use needs no code, and when it does the AI writes it and we learn to read it. Our first lessons assume you know nothing.", cta: ["Start with Lesson 01", "/lessons/intro-to-ai-tools"] },
+  { w: "I've never coded", a: "Perfect. Most of what we use needs no code, and when it does the AI writes it and we learn to read it. Our first lessons assume you know nothing.", cta: ["See the lessons", "/lessons"] },
   { w: "I already build things", a: "Good. Lead a team, teach a lesson, or take on a harder project. The Cup is a real test of whether what you make can earn money or users.", cta: ["See the Cup", "/challenge"] },
-  { w: "I'm not sure yet", a: "Come to one meeting. There is nothing to sign and nothing to prepare. If it isn't for you, you've lost 40 minutes.", cta: ["When and where", "/contact"] },
+  { w: "I'm not sure yet", a: "Come to one meeting. There is nothing to sign and nothing to prepare. If it isn't for you, you've lost one lunch.", cta: ["When and where", "/contact"] },
   { w: "I'm a parent or teacher", a: "AIBA is student-run with a faculty advisor. It's free, meets at lunch on Wednesdays in Room 153, and every project is built in the open. Email us with any questions.", cta: ["Contact us", "/contact"] },
 ];
 export default function ForYou() {

@@ -55,7 +55,7 @@ export default function FeatureGrid() {
 
       <Tile className="lg:col-span-2" title="Older members who've been through it" body="Newer members ask, older members answer. Nobody has to know everything on day one, and the people two grades up were beginners recently.">
         <Label>In the Discord</Label>
-        <div className="mt-3 space-y-3 text-sm"><p className="max-w-[80%] bg-white/10 p-3">I have an idea but I don&rsquo;t know how to start building it. Where do I begin?</p><p className="ml-auto max-w-[80%] border border-lb/40 bg-lb/10 p-3">Same here last year. Start with Lesson 03 and describe it to Lovable in plain English. I&rsquo;ll look at it with you Wednesday.</p></div>
+        <div className="mt-3 space-y-3 text-sm"><p className="max-w-[80%] bg-white/10 p-3">I have an idea but I don&rsquo;t know how to start building it. Where do I begin?</p><p className="ml-auto max-w-[80%] border border-lb/40 bg-lb/10 p-3">Same here last year. Start with the app dev lessons and describe it to Lovable in plain English. I&rsquo;ll look at it with you Wednesday.</p></div>
       </Tile>
 
       <Tile title="Skills that carry over" body="You practice prompting, building, design, selling and reading data, the things almost every job now asks about.">
