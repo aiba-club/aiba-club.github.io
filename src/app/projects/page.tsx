@@ -2,7 +2,7 @@ import Link from "next/link";
 import Safe from "@/components/Safe";
 import InfiniteMenu from "@/components/InfiniteMenu";
 import PageHeader from "@/components/PageHeader";
-import { PROJECTS } from "@/data/projects";
+import { IDEA_GROUPS, BIG_PROJECTS } from "@/data/projectIdeas";
 import { APPS } from "@/data/apps";
 export const metadata = { title: "Projects — AIBA" };
 export default function Projects() {
@@ -11,22 +11,26 @@ export default function Projects() {
   const items = Array.from({ length: rounds }, (_, i) => APPS.filter((a) => i < a.shots).map((a) => ({ image: `/apps/${a.slug}-${i + 1}.jpg`, title: a.name, description: `Built with ${a.builtWith}. ${a.what}`, link: a.link }))).flat();
   return (
     <>
-      <PageHeader eyebrow="On the market" title="Real apps, made with AI." lede="Apps on the App Store whose makers say they built them with AI tools. Every tile is a real App Store screenshot. Drag the sphere and tap one to open the app. These are not AIBA projects; ours are below." />
+      <PageHeader eyebrow="On the market" title="Real apps, made with AI." lede="Apps on the App Store whose makers say they built them with AI tools. Every tile is a real App Store screenshot. Drag the sphere and tap one to open the app. These are not AIBA projects. The projects you can do are below." />
       <div className="h-[75vh] min-h-[500px] relative border-b border-line"><Safe><InfiniteMenu items={items} backgroundColor="#050b1a" accentColor="#8cc8ff" /></Safe></div>
       <section className="wrap py-20">
-        <p className="font-mono text-xs uppercase tracking-[0.18em] text-lb">Student work</p>
-        <h2 className="mt-3 text-2xl md:text-4xl font-semibold tracking-tight">Things we built.</h2>
-        <p className="mt-3 max-w-2xl text-white/65">Sample projects made by members with AI tools, in a few weeks.</p>
-        <ul className="mt-10 grid sm:grid-cols-2 gap-6">
-          {PROJECTS.map((p) => (
-            <li key={p.slug}><Link href={`/projects/${p.slug}`} className="group block">
-              <div className="overflow-hidden rounded-2xl border border-line"><img src={p.image} alt={p.title} className="w-full aspect-[3/2] object-cover group-hover:scale-105 transition-transform duration-500" /></div>
-              <div className="mt-4 flex items-center justify-between gap-4"><h3 className="text-2xl font-semibold group-hover:text-lb transition-colors">{p.title}</h3><span className={"rounded-full border px-3 py-0.5 text-xs " + (p.status === "Live" ? "border-lb text-lb" : "border-line text-white/60")}>{p.status}</span></div>
-              <p className="mt-1 text-white/65">{p.description}</p>
-              <p className="mt-2 text-sm text-white/45">{p.tools.join(" · ")}</p>
-            </Link></li>
+        <p className="font-mono text-xs uppercase tracking-[0.18em] text-lb">What you can build</p>
+        <h2 className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight">Projects we&rsquo;ll do.</h2>
+        <p className="mt-3 max-w-2xl text-white/65">Pick one from any category, or bring your own idea. Every project ends with something real you can show people.</p>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {IDEA_GROUPS.map((g) => (
+            <div key={g.title} className="rounded-[28px] border border-white/12 bg-white/[0.03] p-7">
+              <h3 className="text-xl font-semibold">{g.title}</h3>
+              <ul className="mt-4 space-y-2.5">{g.items.map((x) => <li key={x} className="flex gap-3 text-white/70"><span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lb" />{x}</li>)}</ul>
+            </div>
           ))}
-        </ul>
+        </div>
+      </section>
+      <section className="border-t border-line">
+        <div className="wrap py-20 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div><p className="font-mono text-xs uppercase tracking-[0.18em] text-lb">Big goals</p><h2 className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight">Finish something real.</h2><p className="mt-4 text-white/65">The larger projects members can take on from start to finish.</p></div>
+          <ol className="grid gap-2.5 sm:grid-cols-2">{BIG_PROJECTS.map((x, i) => <li key={x} className="flex gap-4 rounded-[24px] border border-white/12 bg-white/[0.03] px-5 py-4"><span className="font-mono text-sm text-lb">{String(i + 1).padStart(2, "0")}</span><span className="text-white/80">{x}</span></li>)}</ol>
+        </div>
       </section>
       <section className="border-t border-line">
         <div className="wrap py-20">
