@@ -21,7 +21,7 @@ export default function ToolsShowcase() {
   const shown = group === "All" ? ALL : ALL.filter((t) => t.group === group);
   const tool = ALL.find((t) => t.name === sel) ?? null;
   const cost = tool ? costOf(tool.name) : null;
-  const lessons = tool ? LESSONS.filter((l) => l.tools.some((x) => x.toLowerCase().includes(tool.name.toLowerCase()))) : [];
+  const lessons = tool ? LESSONS.filter((l) => l.status === "done" && (l.tools ?? []).some((x) => x.toLowerCase().includes(tool.name.toLowerCase()))) : [];
 
   useEffect(() => {
     const d = dlg.current; if (!d) return;
@@ -70,7 +70,7 @@ export default function ToolsShowcase() {
               <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">What we use it for</dt><dd className="mt-1 text-white/85">{tool.use}</dd></div>
               <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Subscription needed?</dt><dd className="mt-1.5 flex items-center gap-3"><span className={"rounded-full border px-3 py-0.5 text-sm font-medium " + SUB[cost.sub][2]}>{SUB[cost.sub][0]}</span><span className="text-white/60 text-sm">{SUB[cost.sub][1]}</span></dd></div>
               <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Cost</dt><dd className="mt-1 font-medium">{cost.price}</dd><dd className="mt-1 text-sm text-white/60">{cost.note}</dd></div>
-              {lessons.length > 0 && <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Used in</dt><dd className="mt-1 flex flex-wrap gap-2">{lessons.map((l) => <Link key={l.slug} href={`/lessons/${l.slug}`} className="rounded-full border border-white/20 px-3 py-0.5 text-sm text-lb hover:border-lb">Lesson {l.n}</Link>)}</dd></div>}
+              {lessons.length > 0 && <div><dt className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Used in</dt><dd className="mt-1 flex flex-wrap gap-2">{lessons.map((l) => <Link key={l.slug} href={`/lessons/${l.slug}`} className="rounded-full border border-white/20 px-3 py-0.5 text-sm text-lb hover:border-lb">{l.title}</Link>)}</dd></div>}
             </dl>
             <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
               {tool.url ? <a href={tool.url} target="_blank" rel="noreferrer" className="pill-link group/pl">Official pricing and details <Arr up /></a> : <span className="text-xs text-white/40">Prices change. Check their site before paying.</span>}

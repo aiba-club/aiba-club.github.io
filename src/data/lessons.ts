@@ -4,11 +4,13 @@
 //   video: YouTube embed URL (https://www.youtube.com/embed/<id>)
 //   tutorial: { intro?, steps: [{ title, body }] }
 //   resources: [{ label, href, kind }]
+//   tools: names from src/data/tools.ts, e.g. ["ChatGPT", "Cursor"]. Shows the lesson under "Used in" on the Tools page.
 export type Lesson = {
   slug: string; date: string; title: string; summary: string; goal?: string; status: "done" | "upcoming";
   slides?: string; video?: string;
   tutorial?: { intro?: string; steps: { title: string; body: string }[] };
   resources?: { label: string; href: string; kind: string }[];
+  tools?: string[];
 };
 export const LESSONS: Lesson[] = [
   { slug: "intro-session", date: "Tue, Oct 6", title: "Intro session", summary: "What AIBA is, how the year works, and the proof log.", status: "done" },
