@@ -1,3 +1,4 @@
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Counter from "@/components/Counter";
@@ -11,7 +12,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
   return (
     <div className="pt-36">
       <div className="wrap">
-        <Link href="/projects" className="inline-block py-3 text-sm text-mute hover:text-white">← All projects</Link>
+        <Link href="/projects" className="group inline-flex items-center gap-2 py-3 text-sm text-mute hover:text-white"><ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" strokeWidth={1.75} />All projects</Link>
         <div className="mt-8 flex flex-wrap items-center gap-3 text-sm"><span className="eyebrow">{p.kind} · {p.year}</span><span className={"rounded-full border px-3 py-0.5 " + (p.status === "Live" ? "border-lb text-lb" : "border-line text-white/60")}>{p.status}</span></div>
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mt-3">{p.title}</h1>
         <p className="mt-5 text-lg md:text-xl text-white/75 max-w-3xl">{p.description}</p>
@@ -25,7 +26,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
           <h2 className="mt-12 text-3xl font-semibold tracking-tight">Tools used.</h2><div className="mt-4 flex flex-wrap gap-2">{p.tools.map((t) => <span key={t} className="rounded-full border border-line px-4 py-1.5">{t}</span>)}</div></div>
         <div><h2 className="text-3xl font-semibold tracking-tight">How it got built.</h2><ol className="mt-6 border-l border-line">{p.built.map((b) => <li key={b.when} className="relative pl-8 pb-8"><span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-lb" /><p className="text-lb text-sm">{b.when}</p><p className="text-white/80">{b.what}</p></li>)}</ol></div>
       </div>
-      <Link href={`/projects/${nx.slug}`} className="block border-t border-line py-12 hover:text-lb"><div className="wrap"><div className="text-sm text-mute">Next project →</div><div className="text-3xl md:text-5xl font-semibold tracking-tight">{nx.title}</div></div></Link>
+      <Link href={`/projects/${nx.slug}`} className="block border-t border-line py-12 hover:text-lb"><div className="wrap"><div className="inline-flex items-center gap-2 text-sm text-mute">Next project<ArrowRight className="h-4 w-4" strokeWidth={1.75} /></div><div className="text-3xl md:text-5xl font-semibold tracking-tight">{nx.title}</div></div></Link>
     </div>
   );
 }

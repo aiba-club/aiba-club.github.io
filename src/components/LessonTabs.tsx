@@ -1,4 +1,5 @@
 "use client";
+import { ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 import BrandIcon from "@/components/BrandIcon";
 import type { Lesson } from "@/data/lessons";
@@ -44,7 +45,7 @@ function ToolCard({ t }: { t: KitTool }) {
       <div className="flex items-center gap-3"><BrandIcon slug={t.icon} label={t.name} size={26} /><span className="text-lg font-medium">{t.name}</span></div>
       <p className="mt-4 leading-relaxed text-white/70">{t.role}</p>
       {t.note && <p className="mt-3 text-sm leading-relaxed text-white/50">{t.note}</p>}
-      <div className="mt-auto pt-6"><a href={t.href} target="_blank" rel="noreferrer" className="btn btn-line !px-4 !py-2 text-sm">Open {t.name} ↗</a></div>
+      <div className="mt-auto pt-6"><a href={t.href} target="_blank" rel="noreferrer" className="btn btn-line !px-4 !py-2 text-sm">Open {t.name}<ArrowUpRight className="h-4 w-4" strokeWidth={1.75} /></a></div>
     </div>
   );
 }
@@ -85,7 +86,7 @@ export default function LessonTabs({ lesson }: { lesson: Lesson }) {
               <div className="aspect-video overflow-hidden rounded-[28px] border border-line"><iframe src={lesson.slides} className="h-full w-full" allowFullScreen title={`${lesson.title} slides`} /></div>
               <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[20px] border border-line px-5 py-4">
                 <p className="text-sm text-white/60">Slides not loading, or want them full screen?</p>
-                <a href={lesson.slides.replace(/\/embed.*$/, "/edit?usp=sharing").replace(/\/preview$/, "/view")} target="_blank" rel="noreferrer" className="btn btn-line !px-4 !py-2 text-sm">Open slides in a new tab ↗</a>
+                <a href={lesson.slides.replace(/\/embed.*$/, "/edit?usp=sharing").replace(/\/preview$/, "/view")} target="_blank" rel="noreferrer" className="btn btn-line !px-4 !py-2 text-sm">Open slides in a new tab<ArrowUpRight className="h-4 w-4" strokeWidth={1.75} /></a>
               </div>
             </div>
           )
@@ -199,7 +200,7 @@ export default function LessonTabs({ lesson }: { lesson: Lesson }) {
                 <section>
                   <Heading n={withPrompts.length ? "03" : "01"} title="Slides and links" />
                   <ul className="max-w-3xl divide-y divide-line border-y border-line">
-                    {links.map((r) => <li key={r.label}><a href={r.href} target="_blank" rel="noreferrer" className="flex items-center justify-between gap-6 py-5 hover:text-lb"><span>{r.label}</span><span className="shrink-0 text-sm text-white/45">{r.kind} ↗</span></a></li>)}
+                    {links.map((r) => <li key={r.label}><a href={r.href} target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-6 py-5 hover:text-lb"><span>{r.label}</span><span className="inline-flex shrink-0 items-center gap-1.5 text-sm text-white/45 group-hover:text-lb">{r.kind}<ArrowUpRight className="h-4 w-4" strokeWidth={1.75} /></span></a></li>)}
                   </ul>
                 </section>
               )}
