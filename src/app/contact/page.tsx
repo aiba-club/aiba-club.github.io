@@ -1,3 +1,4 @@
+import { CalendarDays, Clock, MapPin, School } from "lucide-react";
 import Link from "next/link";
 import GlareHover from "@/components/GlareHover";
 import ReflectiveCard from "@/components/ReflectiveCard";
@@ -31,8 +32,8 @@ export default function Contact() {
             ))}
           </ul>
           <div className="grid sm:grid-cols-2 gap-4">
-            <GlareHover width="100%" height="auto" {...card}><div className="p-6"><p className="eyebrow mb-2">When</p><p className="text-xl font-semibold">{CLUB.meeting.day}</p><p className="text-white/65">{CLUB.meeting.time}</p></div></GlareHover>
-            <GlareHover width="100%" height="auto" {...card}><div className="p-6"><p className="eyebrow mb-2">Where</p><p className="text-xl font-semibold">{CLUB.meeting.place}</p><p className="text-white/65">{CLUB.school} · [street address]</p></div></GlareHover>
+            <GlareHover width="100%" height="auto" {...card}><div className="flex items-start gap-4 p-6"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-white/[0.04] text-lb"><CalendarDays className="h-5 w-5" strokeWidth={1.75} /></span><div><p className="eyebrow mb-2">When</p><p className="text-xl font-semibold">{CLUB.meeting.day}</p><p className="mt-1 inline-flex items-center gap-1.5 text-white/65"><Clock className="h-4 w-4" strokeWidth={1.75} />{CLUB.meeting.time}</p></div></div></GlareHover>
+            <GlareHover width="100%" height="auto" {...card}><div className="flex items-start gap-4 p-6"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-white/[0.04] text-lb"><MapPin className="h-5 w-5" strokeWidth={1.75} /></span><div><p className="eyebrow mb-2">Where</p><p className="text-xl font-semibold">{CLUB.meeting.place}</p><p className="mt-1 inline-flex items-center gap-1.5 text-white/65"><School className="h-4 w-4" strokeWidth={1.75} />{CLUB.school}</p></div></div></GlareHover>
           </div>
           <SpreadTheWord />
           <p className="text-white/65">Questions first? Read the <Link href="/faq" className="pill-link group/pl !py-0.5 !px-2.5">FAQ</Link> or ask the assistant in the corner.</p>

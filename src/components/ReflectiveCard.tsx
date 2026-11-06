@@ -1133,7 +1133,7 @@ const ReflectiveCard = ({
   return (
     <div
       ref={rootRef}
-      className={`relative box-border max-w-full touch-pan-y select-none ${className}`.trim()}
+      className={`keep-dark relative box-border max-w-full touch-pan-y select-none ${className}`.trim()}
       style={{ ...cardStyle, ...style }}
     >
       <div ref={bodyRef} className="relative box-border h-full w-full overflow-hidden" style={BODY_STYLE}>
