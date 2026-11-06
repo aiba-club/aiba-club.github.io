@@ -8,7 +8,8 @@
 export type Video = { id: string; title: string; by: string; mins: number; about: string };
 export type Step = { title: string; body: string[]; prompt?: { tool: string; text: string }; tip?: string };
 export type Prompt = { title: string; step?: number; when: string; text: string };
-export type KitTool = { name: string; icon: string; href: string; role: string; note?: string; prompts?: Prompt[] };
+// pasteInto: where the prompts go when it is not the tool itself (Supabase prompts go into Claude Code).
+export type KitTool = { name: string; icon: string; href: string; role: string; note?: string; pasteInto?: string; prompts?: Prompt[] };
 export type Guide = {
   videos?: Video[];
   tutorial?: { intro?: string; steps: Step[] };
@@ -26,6 +27,66 @@ const slides = (personal: string, school: string, n: number, pptx = false) => {
 
 export const GUIDES: Record<string, Guide> = {
   "intro-session": {
+    tutorial: {
+      intro: "AIBA is about using AI to build, sell and solve real problems, not just learning how AI works. Do these before the first build lesson so you're ready to go.",
+      steps: [
+        {
+          title: "Join the Discord",
+          body: [
+            "Every prompt, slide deck and answer to \u201cmy thing broke\u201d gets posted in the AIBA Discord. Join it and turn on notifications for announcements.",
+          ],
+        },
+        {
+          title: "Make your accounts",
+          body: [
+            "Sign up for Claude (claude.ai), ChatGPT (chatgpt.com) and Perplexity (perplexity.ai). The free versions are enough to start. Some tools, like Claude and ChatGPT, have paid plans that give you more use, but you don't need them on day one.",
+            "Check each tool's age rules when you sign up. Use your real birth date. If a tool needs a parent's permission, ask them.",
+          ],
+        },
+        {
+          title: "Bring a device every week",
+          body: [
+            "Most meetings have a build activity, and you can't do it without a laptop or phone. A laptop is best. Anything you don't finish, you can keep working on at home and bring back next week.",
+          ],
+        },
+        {
+          title: "Learn the four parts of a good prompt",
+          body: [
+            "Almost every prompt in this club has four parts. Role: who the AI should act as. Goal: what you want. Context: who it's for and the facts it needs. Format: what the answer should look like.",
+            "Try it now. Ask Claude the same question twice, once in one line and once with all four parts, and compare the answers.",
+          ],
+          prompt: { tool: "Claude", text: "Role: You are a business coach for high school students.\nGoal: Help me find 3 ways I could make my first $100 with AI this semester.\nContext: I'm in [GRADE], I'm good at [SOMETHING YOU'RE GOOD AT], and I have about [HOURS] hours a week.\nFormat: A short list. For each idea: what I'd sell, who would buy it, and the first step I'd take this week." },
+        },
+        {
+          title: "Start thinking about your business",
+          body: [
+            "This year builds up to the end-of-year competition: you'll create a business on your own or with a team, use AI to build and market it, and compete for the most money made and the most sales.",
+            "Start a note on your phone. Every time you or a friend complains about something, write it down. Those are business ideas.",
+          ],
+        },
+      ],
+    },
+    kit: [
+      {
+        name: "Claude", icon: "anthropic", href: "https://claude.ai", role: "Thinking, planning and writing. We use it in almost every lesson.",
+        prompts: [
+          { title: "Four-part prompt practice", step: 4, when: "Right after you make your account, to see how much the prompt matters.", text: "Role: You are a business coach for high school students.\nGoal: Help me find 3 ways I could make my first $100 with AI this semester.\nContext: I'm in [GRADE], I'm good at [SOMETHING YOU'RE GOOD AT], and I have about [HOURS] hours a week.\nFormat: A short list. For each idea: what I'd sell, who would buy it, and the first step I'd take this week." },
+          { title: "Turn complaints into business ideas", step: 5, when: "Once your note has a few complaints in it.", text: "Here are problems I've heard people complain about:\n[PASTE YOUR LIST]\nFor each one, suggest an app, website or service that could fix it, who would pay for it, and roughly how much. Then tell me which one is the easiest to start as a student." },
+        ],
+      },
+      {
+        name: "ChatGPT", icon: "openai", href: "https://chatgpt.com", role: "Brainstorming, images and screen designs.",
+        prompts: [
+          { title: "Improve my prompt", step: 4, when: "Any time an answer comes back generic. Paste your prompt in and let it fix it.", text: "Here is a prompt I wrote:\n[PASTE YOUR PROMPT]\nRewrite it using Role, Goal, Context and Format so I get a much more useful answer. Ask me for any details you need first." },
+        ],
+      },
+      {
+        name: "Perplexity", icon: "perplexity", href: "https://www.perplexity.ai", role: "Research with sources. Good for checking facts and finding competitors.",
+        prompts: [
+          { title: "Check if an idea already exists", step: 5, when: "When you have a business idea and want to know who else does it.", text: "Is there already an app, website or business that [YOUR IDEA]? List the main ones, what they charge and what people complain about. Show your sources." },
+        ],
+      },
+    ],
     links: slides("1V4XKkLo5uc1SPFOwIqpwd-rVMAlZi_KyQvn3oBzHEB0", "1XaPeAmTWsA9yI0EK8bfCufeXiZL3zgp4CpIegWvzawM", 1),
   },
 
@@ -295,7 +356,8 @@ export const GUIDES: Record<string, Guide> = {
           title: "Get set up before you start",
           body: [
             "You need three things: your app from App dev day 1, a GitHub account (github.com) and a Vercel account (vercel.com). Sign up for Vercel with your GitHub account so the two are already connected.",
-            "You will build with Claude Code. Open your app's folder in it so it can see and change your files.",
+            "You will build with Claude Code, which needs a paid Claude plan. No paid plan? Use Google AI Studio instead: it's free, and there's a prompt for it in Resources.",
+            "Built your Day 1 app in YouWare or in a Claude chat? Then there is no folder on your computer yet. Make a new empty folder, open it in Claude Code, and paste your Day 1 build prompt first so it rebuilds the app there. Then do the next step.",
           ],
         },
         {
@@ -371,6 +433,7 @@ export const GUIDES: Record<string, Guide> = {
         name: "Claude Code", icon: "anthropic", href: "https://claude.com/product/claude-code", role: "Builds, fixes and ships your app. It works right inside your project's files.",
         prompts: [
           { title: "The one big prompt", step: 2, when: "The first thing you paste today. Fill in every [BRACKET] first.", text: "Build on my app [NAME]. It helps [WHO] [DO WHAT].\nAdd a landing page with a headline, 3 benefits, Free vs Pro ($5/month) pricing and a \"Try it free\" button. Put the app at /app.\nAdd a Pro plan: $5 for 30 days by Venmo (venmo.com/u/[NAME]), Cash App (cash.app/$[TAG]/5) or Zelle ([EMAIL/PHONE]), with a code in the payment note. Add login if I need it.\nSecurity system: connect to the email inbox [EMAIL] that gets the payment alerts. When an alert comes in, only trust the real Venmo, Cash App or bank sender, check the code and the $5 amount, then turn on Pro for that user automatically. Log every payment.\nLock [PRO FEATURE] on the server, keep my API keys out of the browser, and get it ready to deploy on Vercel." },
+          { title: "Rebuild my Day 1 app here", step: 1, when: "Only if your Day 1 app lives in YouWare or a Claude chat, not in a folder.", text: "I built the first version of my app somewhere else. Rebuild it here as a web app I can deploy on Vercel. Here is the build prompt I used:\n[PASTE YOUR DAY 1 BUILD PROMPT]\nKeep it simple and make the main action work first." },
           { title: "Run it on my computer", step: 3, when: "After the build, before you put it online.", text: "Start my app on my computer and give me the link to open it. Tell me what to click to test the landing page, the app and the Pro plan." },
           { title: "Push to GitHub", step: 6, when: "When it works on your computer.", text: "Create a GitHub repo called [APP-NAME] and push my code. Make sure no passwords, API keys or .env files get uploaded." },
           { title: "Which keys does Vercel need?", step: 7, when: "Before you click Deploy, if your app uses Supabase or email.", text: "List every environment variable my app needs on Vercel. For each one, tell me what it's for and exactly where I find the value. Don't print the actual secret values." },
@@ -382,7 +445,7 @@ export const GUIDES: Record<string, Guide> = {
       },
       {
         name: "Supabase", icon: "supabase", href: "https://supabase.com/dashboard", role: "Free database and user accounts, so people can sign up and keep their data.",
-        note: "Create a free project here first. Then use these prompts in Claude Code.",
+        note: "Create a free project here first. Then paste these prompts into Claude Code.", pasteInto: "Claude Code",
         prompts: [
           { title: "Add email and Google sign-in", step: 5, when: "When your app needs each user to have their own account.", text: "Add user accounts to my app with Supabase. I created a project called [PROJECT NAME]. Add sign up and log in with email, and \"Continue with Google\". Save each user's [DATA] so it's there when they come back. Tell me exactly which keys to copy from Supabase and where to put them, and keep the secret keys out of the browser." },
           { title: "Save Pro status in the database", step: 4, when: "After sign-in works, so Pro stays on when they log in again.", text: "Store each user's plan (free or pro) and the date Pro ends in Supabase. Only the server can change it. Check it on the server every time someone opens a Pro feature." },

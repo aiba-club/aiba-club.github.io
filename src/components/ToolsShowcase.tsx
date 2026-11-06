@@ -57,7 +57,7 @@ export default function ToolsShowcase() {
           })}
         </ul>
       </section>
-      <section className="border-t border-line"><div className="wrap py-14 flex flex-wrap items-center justify-between gap-6"><div><h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Not sure where to start?</h2><p className="mt-2 text-white/65">Start with ChatGPT or Claude. Every other tool builds on knowing how to ask well.</p></div><Link href="/lessons/intro-to-ai-tools" className="btn btn-solid">Open Lesson 01 <Arr /></Link></div></section>
+      <section className="border-t border-line"><div className="wrap py-14 flex flex-wrap items-center justify-between gap-6"><div><h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Not sure where to start?</h2><p className="mt-2 text-white/65">Start with ChatGPT or Claude. Every other tool builds on knowing how to ask well.</p></div><Link href="/lessons/intro-session" className="btn btn-solid">Start with lesson 1 <Arr /></Link></div></section>
 
       <dialog ref={dlg} onClose={() => setSel(null)} onClick={(e) => { if (e.target === dlg.current) setSel(null); }} className="m-auto w-[min(92vw,420px)] max-h-[88vh] overflow-y-auto rounded-[28px] border border-white/15 bg-[#0a1226] p-0 text-white backdrop:bg-black/60 backdrop:backdrop-blur-sm">
         {tool && cost && (

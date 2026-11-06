@@ -2,6 +2,7 @@ import Link from "next/link";
 import Topography from "@/components/Topography";
 import PageHeader from "@/components/PageHeader";
 import Arr from "@/components/Arr";
+import LessonProgress from "@/components/LessonProgress";
 import { LESSONS } from "@/data/lessons";
 
 export const metadata = { title: "Lessons — AIBA" };
@@ -22,6 +23,7 @@ export default function Lessons() {
                 {open ? (
                   <>
                     {l.goal && <div className="mt-5 rounded-[22px] border border-white/10 px-4 py-3"><p className="font-mono text-xs uppercase tracking-[0.14em] text-white/45">Goal</p><p className="mt-1 text-sm font-medium">{l.goal}</p></div>}
+                    <LessonProgress slug={l.slug} total={l.tutorial?.steps.length ?? 0} />
                     <span className="mt-auto pt-6 self-start"><span className="pill-link group/pl group-hover:bg-[#8cc8ff] group-hover:text-[#050b1a]">Open lesson <Arr /></span></span>
                   </>
                 ) : (
@@ -45,7 +47,7 @@ export default function Lessons() {
             );
           })}
         </ul>
-        <p className="mt-8 text-sm text-white/50">More lessons will be added through the year. Slides are posted on each lesson page after we teach it.</p>
+        <p className="mt-8 text-sm text-white/50">More lessons will be added through the year. Each lesson page has the slides, short videos, a step-by-step tutorial and prompts you can copy.</p>
       </div>
     </>
   );
