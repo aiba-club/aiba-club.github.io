@@ -30,7 +30,7 @@ export default function ProfileWindow() {
               <div className="mt-3 rounded-xl border border-lb/40 bg-lb/[0.07] p-4">
                 <p className="font-semibold">[Project name]</p>
                 <p className="mt-1 text-sm text-white/65">An AI app used by [NUMBER] classmates. Built in 3 weeks with a team of 3.</p>
-                <div className="mt-3 flex flex-wrap gap-2">{["Lovable", "Cursor", "Vercel"].map((t) => <span key={t} className="rounded-full border border-white/15 px-2.5 py-0.5 text-xs text-white/70">{t}</span>)}</div>
+                <div className="mt-3 flex flex-wrap gap-2">{["YouWare", "Claude", "Vercel"].map((t) => <span key={t} className="rounded-full border border-white/15 px-2.5 py-0.5 text-xs text-white/70">{t}</span>)}</div>
               </div>
               <p className="mt-6 text-xs uppercase tracking-widest text-white/45">Recognition</p>
               <div className="mt-3 flex items-center gap-3 rounded-xl border border-white/10 p-4"><span className="grid h-10 w-10 place-items-center rounded-full bg-db text-lb font-semibold">1st</span><div><p className="text-sm font-medium">AIBA Cup · Most users</p><p className="text-xs text-white/50">[Year]</p></div></div>

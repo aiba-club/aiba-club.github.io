@@ -12,15 +12,15 @@ function plan(raw: string): { steps: Step[]; roles: string[]; kind: string } {
   const data = has(s, ["data", "dashboard", "spreadsheet", "analytics", "tracker"]);
   const sell = has(s, ["shop", "store", "sell", "merch", "food", "deal", "market", "tutor", "service"]);
   const build: Step = design
-    ? { week: "Week 2", title: "Design version one", text: "Pick colors and type, generate logo or product ideas, and put them in a one-page style sheet.", tools: ["Figma", "Canva", "Gemini"] }
+    ? { week: "Week 2", title: "Design version one", text: "Pick colors and type, generate logo or product ideas, and put them in a one-page style sheet.", tools: ["Figma", "Gemini"] }
     : data
     ? { week: "Week 2", title: "Build the tracker", text: "Set up a sheet that updates itself and summarizes the numbers in plain English.", tools: ["Google Sheets", "Zapier", "n8n"] }
-    : { week: "Week 2", title: "Build version one", text: "Describe it in plain English and let the AI draft a first version you can click through.", tools: ["Lovable", "Cursor", "Vercel"] };
+    : { week: "Week 2", title: "Build version one", text: "Describe it in plain English and let the AI draft a first version you can click through.", tools: ["YouWare", "Claude", "Vercel"] };
   const steps: Step[] = [
     { week: "Week 1", title: "Test the idea", text: "Talk to five classmates who have the problem. Ask what they do today, and don't pitch yet.", tools: ["ChatGPT", "Notion"] },
     build,
     { week: "Week 3", title: sell ? "Get your first customers" : "Put it in front of people", text: "Send it to ten people, track who replies, and fix what confuses them.", tools: ["CapCut", "Notion"] },
-    { week: "Week 4", title: "Pitch it, enter the Cup", text: "Give a two-minute pitch, report your numbers, and compete on revenue, sales or users.", tools: ["Slides", "Canva"] },
+    { week: "Week 4", title: "Pitch it, enter the Cup", text: "Give a two-minute pitch, report your numbers, and compete on revenue, sales or users.", tools: ["Slides", "Figma"] },
   ];
   const roles = design ? ["Designer", "Builder", "Marketer"] : data ? ["Analyst", "Builder", "Marketer"] : ["Builder", "Designer", "Marketer"];
   return { steps, roles, kind: design ? "Design project" : data ? "Data project" : sell ? "Business project" : "Product project" };

@@ -20,7 +20,6 @@ export const COST: Record<string, Cost> = {
   GitHub: { sub: "no", price: "Free plan", note: "Free for public and private projects. Paid plans add team features." },
   Vercel: { sub: "no", price: "Free Hobby plan", note: "The free plan is enough for a school project site." },
   Supabase: { sub: "no", price: "Free plan", note: "Free projects can pause after a week of no use." },
-  GoHighLevel: { sub: "optional", price: "Paid platform", note: "It is a business tool without a long-term free plan. Check their site for current prices." },
   Stripe: { sub: "no", price: "No monthly fee. You pay a fee on each payment.", note: "Check Stripe for the current fee in your country." },
 };
 export const costOf = (name: string): Cost => COST[name] ?? DEFAULT_COST;
@@ -39,11 +38,8 @@ export const TOOL_GROUPS: { group: string; tools: Tool[] }[] = [
     { name: "Google AI Studio", icon: "aistudio", use: "Try Google's Gemini models and build prompts, free in the browser.", url: "https://aistudio.google.com" },
   ] },
   { group: "Building", tools: [
-    { name: "Cursor", icon: "cursor", use: "An AI code editor for building apps.", url: "https://cursor.com/pricing" },
-    { name: "Bolt", icon: "bolt", use: "Build a full web app from a prompt, in the browser." },
-    { name: "Lovable", icon: "lovable", use: "Turn a prompt into a full web app with a database." },
     { name: "YouWare", icon: "youware", use: "Describe an app and get a working version you can share." },
-    { name: "Replit", icon: "replit", use: "Build and run code in the browser, with an AI helper." },
+    { name: "Base44", icon: "base44", use: "Build a website or app with logins and a database by chatting with AI.", url: "https://base44.com/pricing" },
     { name: "GitHub", icon: "github", use: "Store your code and work on it as a team.", url: "https://github.com/pricing" },
     { name: "Firebase", icon: "firebase", use: "Add logins and a simple database to your app.", url: "https://firebase.google.com/pricing" },
     { name: "Supabase", icon: "supabase", use: "A free database and user accounts for your project.", url: "https://supabase.com/pricing" },
@@ -55,15 +51,12 @@ export const TOOL_GROUPS: { group: string; tools: Tool[] }[] = [
   ] },
   { group: "Design and media", tools: [
     { name: "Figma", icon: "figma", use: "Interface and brand design.", url: "https://www.figma.com/pricing/" },
-    { name: "Canva", icon: "canva", use: "Quick social graphics and decks.", url: "https://www.canva.com/pricing/" },
-    { name: "Runway", icon: "runway", use: "Generate and edit video with AI." },
     { name: "Google Vids", icon: "googlevids", use: "Turn a script into a short video with slides, stock media and an AI voice.", url: "https://workspace.google.com/products/vids/" },
     { name: "Higgsfield", icon: "higgsfield", use: "Make AI videos and cinematic images from a prompt or a photo.", url: "https://higgsfield.ai/pricing" },
     { name: "ElevenLabs", icon: "elevenlabs", use: "Realistic AI voices for videos and demos." },
     { name: "Suno", icon: "suno", use: "Make original music and jingles from a text prompt." },
   ] },
   { group: "Sales and marketing", tools: [
-    { name: "GoHighLevel", icon: "gohighlevel", use: "Funnels, texts, emails and booking in one platform." },
     { name: "Notion", icon: "notion", use: "Planning and content calendars.", url: "https://www.notion.com/pricing" },
     { name: "CapCut", icon: "capcut", use: "Short-form video editing." },
     { name: "Shopify", icon: "shopify", use: "Open an online store." },

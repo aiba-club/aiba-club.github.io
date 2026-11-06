@@ -23,7 +23,7 @@ export default function LessonTabs({ lesson }: { lesson: Lesson }) {
   const resources = lesson.resources ?? [];
   return (
     <div className="mt-10">
-      <div role="tablist" aria-label="Lesson sections" className="flex gap-1 overflow-x-auto border-b border-line">
+      <div role="tablist" aria-label="Lesson sections" className="no-scrollbar flex gap-1 overflow-x-auto border-b border-line">
         {TABS.map((t, i) => (
           <button key={t} ref={(el) => { refs.current[i] = el; }} role="tab" id={`tab-${t}`} aria-selected={tab === t} aria-controls={`panel-${t}`} tabIndex={tab === t ? 0 : -1} onKeyDown={(e) => key(e, i)} onClick={() => setTab(t)}
             className={"-mb-px whitespace-nowrap border-b-2 px-4 py-3 transition-colors sm:px-5 " + (tab === t ? "border-lb font-medium text-white" : "border-transparent text-white/55 hover:text-white")}>{t}</button>
@@ -31,10 +31,10 @@ export default function LessonTabs({ lesson }: { lesson: Lesson }) {
       </div>
       <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`} className="pt-8">
         {tab === "Presentation" && (lesson.slides
-          ? <div><div className="aspect-video max-w-4xl overflow-hidden rounded-[28px] border border-line"><iframe src={lesson.slides} className="h-full w-full" allowFullScreen title={`${lesson.title} slides`} /></div><p className="mt-3 text-sm text-white/50">Slides not loading? <a href={lesson.slides.replace(/\/embed.*$/, "/pub")} target="_blank" rel="noreferrer" className="pill-link group/pl !py-0.5 !px-2.5 !text-xs">Open in a new tab</a></p></div>
+          ? <div><div className="aspect-video max-w-4xl overflow-hidden rounded-[28px] border border-line"><iframe src={lesson.slides} className="h-full w-full" allowFullScreen title={`${lesson.title} slides`} /></div><p className="mt-3 text-sm text-white/50">Slides not loading? <a href={lesson.slides.replace(/\/embed.*$/, "/edit?usp=sharing").replace(/\/preview$/, "/view")} target="_blank" rel="noreferrer" className="pill-link group/pl !py-0.5 !px-2.5 !text-xs">Open in a new tab</a></p></div>
           : <Soon what="Presentation" />)}
         {tab === "Video" && (lesson.video
-          ? <div className="aspect-video max-w-4xl overflow-hidden rounded-[28px] border border-line"><iframe src={lesson.video} className="h-full w-full" allowFullScreen title={`${lesson.title} video`} /></div>
+          ? <div className="aspect-video max-w-4xl overflow-hidden rounded-[28px] border border-line"><iframe src={lesson.video} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen title={`${lesson.title} video`} /></div>
           : <Soon what="Video" />)}
         {tab === "Tutorial" && (steps.length
           ? (

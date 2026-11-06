@@ -1,17 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Logos we ship ourselves in /public/logos. "color" ones are shown as-is; the rest are single-color shapes
 // painted with the current text color so they work in light and dark mode.
 const LOCAL: Record<string, "mono" | "color"> = {
-  openai: "mono", capcut: "mono", grok: "mono", copilot: "mono", bolt: "mono", runway: "mono", lovable: "mono",
-  gohighlevel: "mono", youware: "mono", canva: "color",
+  openai: "mono", capcut: "mono", grok: "mono", copilot: "mono", youware: "mono",
   higgsfield: "mono", googlevids: "mono", aistudio: "mono",
 };
 
 // Brand marks from simpleicons.org (white) for everything else; falls back to a letter tile if offline.
 export default function BrandIcon({ slug, label, size = 28 }: { slug: string; label: string; size?: number }) {
   const [bad, setBad] = useState(false);
+  const img = useRef<HTMLImageElement>(null);
+  // An icon can fail before React is listening for errors, so check once on mount too.
+  useEffect(() => { const i = img.current; if (i && i.complete && i.naturalWidth === 0) setBad(true); }, []);
   const kind = LOCAL[slug];
   if (kind === "mono") {
     const url = `url(/logos/${slug}.svg)`;
@@ -19,5 +21,5 @@ export default function BrandIcon({ slug, label, size = 28 }: { slug: string; la
   }
   if (kind === "color") return <img src={`/logos/${slug}.svg`} alt="" width={size} height={size} style={{ width: size, height: size }} />;
   if (bad) return <span aria-hidden className="grid place-items-center rounded-md bg-white/15 text-sm font-semibold" style={{ width: size, height: size }}>{label[0]}</span>;
-  return <img className="no-reinvert" src={`https://cdn.simpleicons.org/${slug}/ffffff`} alt="" width={size} height={size} style={{ width: size, height: size }} onError={() => setBad(true)} />;
+  return <img ref={img} className="no-reinvert" src={`https://cdn.simpleicons.org/${slug}/ffffff`} alt="" width={size} height={size} style={{ width: size, height: size }} onError={() => setBad(true)} />;
 }
