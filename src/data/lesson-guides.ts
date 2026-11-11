@@ -463,4 +463,165 @@ export const GUIDES: Record<string, Guide> = {
     ],
     links: slides("1Hyiq-vZSXGE2hTFSGQS0IZxaDwCC_b7O-iS233r89OA", "1JdwqgFsaW4HiXvWVrcx6Zda9niONB19erTxW3o3nAjU", 4),
   },
+
+  /* ------------------------------------------------------------------ Meeting 5 */
+  "ai-services-for-local-businesses": {
+    videos: [
+      { id: "kmp4iFCf8Jo", title: "Watch me book 3 to 5 meetings a day (web design cold calling)", by: "Pavlo", mins: 15, about: "Real, unedited cold calls to local business owners. Listen to how short and casual the opener is, and how fast he gets to the one problem he noticed." },
+      { id: "e6fbe8BSdeo", title: "Cold calling strategies for selling websites", by: "Pavlo", mins: 13, about: "What to say, when to call, and how to keep going after a no. Lines up with steps 7 to 9 of the tutorial." },
+      { id: "0ezv6zRdM7c", title: "How I book 3 to 5 meetings a day selling websites", by: "Pavlo", mins: 16, about: "More real calls, with owners pushing back (“we already have a website”, “send me a sample”, “I'm driving”) and how he stays chill and still gets a next step. Then how he follows up when nobody answers." },
+    ],
+    tutorial: {
+      intro: "Today is about actually getting clients. You'll pick something to sell, find 25 businesses that need it, practice with Claude, then pick up the phone. When someone says yes, Claude Code builds it and you text them the link within 10 minutes.",
+      steps: [
+        {
+          title: "Pick what you'll sell",
+          body: [
+            "You don't only have to sell websites. Review replies ($30 to $50 a month) are the easiest first sell: no website needed, and you can write them on your phone. Other options: a Google page cleanup ($40 one time), Instagram posts ($50 to $100 a month), a digital menu ($50), a quote or booking form ($50), a simple one-page website ($100 to $200), or site updates ($20 a month).",
+            "Monthly services are better than one-time jobs because the money keeps coming. Keep prices low: cheap and easy to say yes to beats expensive and ignored. Do the first one free, and raise your prices after 3 happy clients.",
+          ],
+          tip: "Never take money before the owner has seen the work, and have a parent help with payments.",
+        },
+        {
+          title: "Pick one niche",
+          body: [
+            "Call the same type of business all week, with the same script. You get better fast because you hear the same questions again and again.",
+            "For your first client, call restaurants and salons: there are lots of them, owners pick up, and they need review replies, menus and posts. Once you have results to show, try roofers, HVAC and plumbers, dentists, med spas, auto repair or real estate agents. One customer is worth a lot to them, so they pay more, but they're also pickier.",
+          ],
+          tip: "Dentists and med spas handle patient information. Never ask for or touch patient data.",
+        },
+        {
+          title: "Start with people you know",
+          body: [
+            "Your first client might be someone you already know. Write down 20 people: your parents and their friends, relatives who own a business, your coach, tutor, barber or dentist, places you go every week, and friends' parents.",
+            "Text them first. It's practice with lower stakes, and one real result gives you proof for every cold call after that. After every job, ask: “Do you know anyone else who might want this?”",
+          ],
+          prompt: { tool: "Claude", text: "Write a short, friendly text to [PERSON], who owns [BUSINESS]. I'm [YOUR NAME], [HOW THEY KNOW YOU]. I'm starting a small business doing [SERVICE] for local businesses and I'd love to do one for them for free so I have a real example. Casual, under 50 words, no pressure." },
+        },
+        {
+          title: "Find 25 leads in 30 minutes",
+          body: [
+            "Open Google Maps and search “[niche] in [town]”, like “roofers in Glendale”. Open each listing. No website button? That's a lead. Sort the reviews by newest: no owner replies? Lead. Only a few old or blurry photos? Lead.",
+            "The perfect lead has something like 4 stars and 30 reviews but zero owner replies: they have customers, they just aren't managing their reputation. Skip businesses that already have a great site and reply to every review.",
+            "Put every lead in a Google Sheet with columns for business name, phone, the problem you saw, and what happened when you called. You can also find businesses in your town's Facebook groups, on Nextdoor, or by searching your town under Places on Instagram.",
+          ],
+        },
+        {
+          title: "Find the one problem for each lead",
+          body: [
+            "Before you call, know exactly what you'd fix. Copy their Google reviews and some text from their website (if they have one) and paste it into Claude. Ask for the one most obvious thing you could fix, and one casual sentence to say about it on the call.",
+            "Write that sentence in your sheet next to their number so it's right there when you dial.",
+          ],
+          prompt: { tool: "Claude", text: "Here are [BUSINESS]'s Google reviews and website text: [PASTE REVIEWS AND WEBSITE TEXT]. What's the most obvious thing I could fix with [SERVICE]? Give me one casual sentence to say on a call." },
+        },
+        {
+          title: "Write your script",
+          body: [
+            "Your script is short: who you are, that it's a cold call, the one problem you saw, and an offer to make it free in about 10 minutes. Being a student is your advantage. Owners get sales calls all day from adults with scripts, so be upfront: “I'm a junior at [school], I'm making websites for local businesses, so the first one's free.”",
+            "Another opener that works: ask for advice first. “I'm not selling anything right now. Can I ask one question? What's the hardest part of getting new customers?” Then offer to help with exactly what they said.",
+          ],
+          prompt: { tool: "Claude", text: "Write a 30-second cold call script for [NICHE] owners. I'm a high school student offering [SERVICE]. Honest opener, one specific problem, offer to make it free in 10 minutes. Sound casual, not salesy." },
+        },
+        {
+          title: "Practice 5 calls with Claude first",
+          body: [
+            "Open the Claude app on your phone and turn on voice mode. Ask it to play a busy, skeptical owner who interrupts you and pushes back. Do the whole call out loud, then ask it what you did wrong.",
+            "Do at least 5 practice calls before your first real one. The first real call is way less scary when you've already heard “not interested” five times.",
+          ],
+          prompt: { tool: "Claude", text: "Pretend you're the busy owner of a [TYPE OF BUSINESS]. I'm cold calling you. Be skeptical, interrupt me, push back. After, tell me exactly what I did wrong." },
+        },
+        {
+          title: "Call at the right time",
+          body: [
+            "In general, 10 to 11 AM is the best time to call and 2 to 3 PM is second best. Avoid before 9 AM, 12 to 1 PM and after 4 PM. Thursday is the best day, then Tuesday. Monday and Friday are the worst.",
+            "Local businesses run on their own clock, so match their slow hours. Restaurants: 2 to 4 PM, between lunch and dinner, which is perfect right after school. Roofers, HVAC and plumbers: early morning or end of day. Salons: midday, between appointments. Never call during their rush.",
+          ],
+        },
+        {
+          title: "Make the call",
+          body: [
+            "Call, don't email. A call gets you a yes or no in 2 minutes. Keep it casual, like you're talking to a friend's parent, not like a salesman. Example: “Hey, is this Maria? Hey Maria, I'm Alex, I go to [school]. Honestly this is a cold call, but I'll be quick. So Rosa's has a lot of Google reviews, but none of them have replies. Want me to do your 3 newest ones right now? Free. I'll text them to you.”",
+            "Don't build anything before the call. Offer it on the call, and say you can make it, not that you already did. If an owner asks to see it and it doesn't exist yet, you lose the deal. If they say yes, get their name, the best number to text, and what they want on it.",
+          ],
+        },
+        {
+          title: "Handle pushback",
+          body: [
+            "You'll hear no way more than yes. That's normal. “Not interested” usually means “I'm busy and don't know you”, not “I'd never want this”. One polite try is fine: “Fair enough. Can I text you a free sample anyway, in case it's useful later?”",
+            "“Just send me an email”: “For sure. Real quick though, what would you want it to fix?” “How much?”: “The first one's free. After that it's $40 a month if you want it.” “You're a kid”: “I am. That's why the first one's free. You only pay if it's good.” “We already have someone”: “Got it. If that ever changes, I'm around.”",
+            "A clear no is a no. Say thanks, write “no” in your sheet and call the next one. Never argue.",
+          ],
+          prompt: { tool: "Claude", text: "An owner told me \"[WHAT THEY SAID].\" Give me 3 short, casual things I could say back that keep the door open without being pushy." },
+        },
+        {
+          title: "Build it in 10 minutes and text the link",
+          body: [
+            "They said yes. Make a new folder, open it in Claude Code, and paste the build prompt with their real info from their Google page: name, services, hours, phone, address and 3 real reviews. Add anything the owner told you on the call.",
+            "Open it and check how it looks at phone size. Ask Claude Code to fix anything that's off. Then tell it to deploy to Vercel and you'll get a live link. Text it right away: “Hey Mike, it's Alex. Here's your site. What would you change?” Then call: “Did you get a chance to look at it?”",
+          ],
+          prompt: { tool: "Claude Code", text: "Build a one-page website for [BUSINESS], a [TYPE] in [TOWN]. Here's their info: [PASTE NAME, SERVICES, HOURS, PHONE, ADDRESS, 3 GOOD REVIEWS FROM GOOGLE]. Mobile-first, big \"Call now\" button at the top, services section, reviews and a map. Clean and modern, colors that fit a [TYPE]. Footer: \"Site by [YOUR NAME].\" Set it up so I can deploy it on Vercel." },
+          tip: "Practice this whole loop once on a made-up business before you start calling, so the first real yes isn't the first time you've done it. Only use real info: never make up reviews, prices or claims.",
+        },
+        {
+          title: "Call back, then follow up",
+          body: [
+            "No answer isn't a no. Owners miss calls because they're busy. Day 0: call, leave a 15-second voicemail, call again later. Day 2: call again (“Hey Maria, it's Alex again, the student who called about your reviews”). Day 4: text. Day 7: call one more time, or walk in. Day 14: a last friendly text. After that, stop.",
+            "Right after every real call, write quick notes and paste them into Claude to see what to say differently next time.",
+          ],
+          prompt: { tool: "Claude", text: "Write 2 short follow-up texts to [OWNER] at [BUSINESS] after I called about [SERVICE]. Casual, friendly, not pushy. Under 30 words each." },
+          tip: "Don't record calls without permission.",
+        },
+        {
+          title: "Turn the free sample into a paying client",
+          body: [
+            "Deliver when you said you would. Then ask: “Did this work for you? Anything you'd change?” If they like it, make the offer: “Want me to keep doing this every month? It's $40.” Put it in one email: what you'll do, the price and when they pay. Have a parent help with payments.",
+            "Always ask for a referral: “Know another owner who might want this?” Even if they don't pay, ask if you can use the work as a portfolio example.",
+          ],
+        },
+        {
+          title: "This week's challenge",
+          body: [
+            "Pick one niche. Make 30 calls, phone first, and only text or email if they ask. Build for every yes and text the link the same day. Everyone who didn't answer gets two more calls.",
+            "Next meeting we start with results: how many calls, how many no's, any yeses. The person with the most no's gets celebrated too, because that's who's actually doing the work. Post your results in the Discord.",
+          ],
+        },
+      ],
+    },
+    kit: [
+      {
+        name: "Claude", icon: "anthropic", href: "https://claude.ai", role: "Prep and practice. Find the problem, write your script, practice calls in voice mode and review how they went.",
+        note: "Use the Claude app on your phone for practice calls: tap the voice button.",
+        prompts: [
+          { title: "Text someone you know", step: 3, when: "Before any cold calls. Start with your list of 20 people.", text: "Write a short, friendly text to [PERSON], who owns [BUSINESS]. I'm [YOUR NAME], [HOW THEY KNOW YOU]. I'm starting a small business doing [SERVICE] for local businesses and I'd love to do one for them for free so I have a real example. Casual, under 50 words, no pressure." },
+          { title: "Find the problem", step: 5, when: "Before you call each lead.", text: "Here are [BUSINESS]'s Google reviews and website text: [PASTE REVIEWS AND WEBSITE TEXT]. What's the most obvious thing I could fix with [SERVICE]? Give me one casual sentence to say on a call." },
+          { title: "Niche script", step: 6, when: "Once you've picked your niche, before practice calls.", text: "Write a 30-second cold call script for [NICHE] owners. I'm a high school student offering [SERVICE]. Honest opener, one specific problem, offer to make it free in 10 minutes. Sound casual, not salesy." },
+          { title: "Practice the call (voice mode)", step: 7, when: "5 times before your first real call. Turn on voice mode.", text: "Pretend you're the busy owner of a [TYPE OF BUSINESS]. I'm cold calling you. Be skeptical, interrupt me, push back. After, tell me exactly what I did wrong." },
+          { title: "Handle a no", step: 10, when: "When an owner says something you didn't know how to answer.", text: "An owner told me \"[WHAT THEY SAID].\" Give me 3 short, casual things I could say back that keep the door open without being pushy." },
+          { title: "Review my call", step: 12, when: "Right after each real call, while you remember it.", text: "Here's what I said and what the owner said: [NOTES FROM THE CALL]. What should I say differently next time?" },
+          { title: "Call-back texts", step: 12, when: "Day 4 and day 14 of following up.", text: "Write 2 short follow-up texts to [OWNER] at [BUSINESS] after I called about [SERVICE]. Casual, friendly, not pushy. Under 30 words each." },
+          { title: "Write a post for local groups", step: 4, when: "If you want owners to come to you. Read the group's rules first.", text: "Write a short, friendly post for my town's Facebook community group. I'm a [GRADE] at [SCHOOL] and I make affordable [SERVICE] for local businesses. The first one is free so they can see if they like it. Ask business owners to DM me. Casual, under 60 words, one emoji max." },
+        ],
+      },
+      {
+        name: "Claude Code", icon: "anthropic", href: "https://claude.com/product/claude-code", role: "Builds what you sell: websites, menus, forms, review replies and posts. Then puts it online.",
+        note: "Set up Claude Code and Vercel before you call anyone, so you can deliver within 10 minutes of a yes.",
+        prompts: [
+          { title: "Build their site", step: 11, when: "Right after they say yes. Copy their info from their Google page.", text: "Build a one-page website for [BUSINESS], a [TYPE] in [TOWN]. Here's their info: [PASTE NAME, SERVICES, HOURS, PHONE, ADDRESS, 3 GOOD REVIEWS FROM GOOGLE]. Mobile-first, big \"Call now\" button at the top, services section, reviews and a map. Clean and modern, colors that fit a [TYPE]. Footer: \"Site by [YOUR NAME].\" Set it up so I can deploy it on Vercel." },
+          { title: "Put it online", step: 11, when: "When the site looks right at phone size. The first time, it asks you to log in to Vercel.", text: "Deploy this to Vercel and give me the live link." },
+          { title: "Owner wants changes", step: 13, when: "When the owner texts back with changes. Same link, updated site.", text: "The owner wants: [PASTE WHAT THEY SAID]. Update the site to match. Don't change anything else. Then redeploy to Vercel." },
+          { title: "Their own domain", step: 13, when: "When the owner buys a domain like theirbusiness.com.", text: "The owner bought [DOMAIN.COM]. Walk me through connecting it to my Vercel project, step by step." },
+          { title: "Review replies ($30 to 50 a month)", step: 1, when: "The easiest first sell. No website needed.", text: "Here are [BUSINESS]'s 10 newest Google reviews: [PASTE REVIEWS]. Write a reply to each in the owner's voice. Short, warm, mention something specific from each review. No corporate language." },
+          { title: "Digital menu ($50)", step: 1, when: "For restaurants. Attach a clear photo of their menu to the message.", text: "Here's a photo of [RESTAURANT]'s menu (attached). Turn it into a clean mobile menu page with sections and prices. Add it to the site at /menu." },
+          { title: "Quote form ($50)", step: 1, when: "For roofers, plumbers, cleaners and anyone who gives estimates. Make a free Formspree account first.", text: "Add a \"Get a free quote\" form with name, phone and what they need. Send each request to [OWNER EMAIL] using Formspree." },
+          { title: "Google page description ($40)", step: 1, when: "Part of a Google page cleanup. The owner pastes it into their Google Business Profile.", text: "Write a Google Business Profile description for [BUSINESS], a [TYPE] in [TOWN]. They do [SERVICES]. Under 750 characters, friendly, mention the town, no hype words." },
+          { title: "Instagram posts ($50 to 100 a month)", step: 1, when: "For salons, restaurants and anyone who lives on Instagram.", text: "Write 12 Instagram captions for [BUSINESS], a [TYPE] in [TOWN]. Mix: 4 showing their work, 4 tips for customers, 4 about the owner/team. Short, casual, 3–5 local hashtags each." },
+        ],
+      },
+      { name: "Google Maps", icon: "googlemaps", href: "https://maps.google.com", role: "Find leads. No website, no review replies or bad photos means a business needs you.", note: "Search “[niche] in [town]” and open every listing." },
+      { name: "Google Sheets", icon: "googlesheets", href: "https://sheets.new", role: "Track every lead and call: name, phone, problem, what happened, when to call back.", note: "sheets.new opens a blank sheet right away." },
+      { name: "Vercel", icon: "vercel", href: "https://vercel.com", role: "Puts the site online. Claude Code deploys it and you get a free live link to text the owner.", note: "Log in once before your first call." },
+      { name: "Formspree", icon: "formspree", href: "https://formspree.io", role: "Sends quote form requests straight to the owner's email. Free to start." },
+    ],
+    links: slides("1FbUyjLLXqA5xxpHiqDO7RsDmKYSq7x1SWeIItjsmN7E", "1qPX9tI-FOApT0hj8h8vvJde-Z1vPHIQMeDZ2sqU3M7Q", 5),
+  },
 };

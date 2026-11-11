@@ -29,7 +29,7 @@ function PromptText({ text }: { text: string }) {
     if (!part.startsWith("[")) return part;
     const k = part.slice(1, -1), v = vals[k] ?? "";
     // Pasted research or reviews can be long and have line breaks, so those get a box of their own.
-    if (k.startsWith("PASTE")) return <textarea key={i} aria-label={k} value={v} placeholder={k.toLowerCase().replace(/^paste/, "Paste")} onChange={(e) => set(k, e.target.value)} rows={v ? 4 : 2}
+    if (/^(PASTE|NOTES)/.test(k)) return <textarea key={i} aria-label={k} value={v} placeholder={k.toLowerCase().replace(/^paste/, "Paste")} onChange={(e) => set(k, e.target.value)} rows={v ? 4 : 2}
       className="my-1 block w-full resize-y rounded-lg border border-dashed border-lb/40 bg-lb/[0.07] px-3 py-2 font-mono text-[13px] text-white placeholder:text-lb/70 outline-none focus:border-lb" />;
     return <input key={i} aria-label={k} value={v} placeholder={k} onChange={(e) => set(k, e.target.value)} size={Math.min(48, Math.max(3, (v || k).length))}
       className={"mx-0.5 max-w-full rounded-md px-1.5 py-0.5 align-baseline font-mono text-[13px] outline-none transition-colors focus:ring-1 focus:ring-lb " + (v ? "bg-white/10 text-white" : "bg-lb/15 text-lb placeholder:text-lb")} />;

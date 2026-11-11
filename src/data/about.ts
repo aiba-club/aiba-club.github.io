@@ -13,7 +13,7 @@ export const ABOUT = {
   ],
   officers: [
     { name: "Ruben Babasyan", role: "Founder and President" },
-    { name: "Santiago Areolla Rodriguez", role: "Co-founder" },
+    { name: "Santiago Arreola Rodriguez", role: "Co-founder" },
   ],
   advisor: { name: "Ms. Ehrlich", role: "Sponsor" },
 };
