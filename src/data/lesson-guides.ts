@@ -624,4 +624,132 @@ export const GUIDES: Record<string, Guide> = {
     ],
     links: slides("1FbUyjLLXqA5xxpHiqDO7RsDmKYSq7x1SWeIItjsmN7E", "1qPX9tI-FOApT0hj8h8vvJde-Z1vPHIQMeDZ2sqU3M7Q", 5),
   },
+
+  /* ------------------------------------------------------------------ Chrome extension lesson */
+  "ai-chrome-extension": {
+    videos: [
+      { id: "lOBgdz-YfZY", title: "Build and publish your first Chrome extension in 5 minutes", by: "ambITious | AI", mins: 5, about: "Claude Code builds a right-click “explain this” extension, it gets tested in Chrome, then published to the Chrome Web Store. The whole lesson in 5 minutes." },
+      { id: "rTd2eLRaBns", title: "Watch me build a custom Chrome extension with Claude", by: "Nico | AI Ranking", mins: 7, about: "Claude writes every file, then he loads it into Chrome and fixes what's off. This is steps 6 to 8 of the tutorial." },
+      { id: "1ugna6gUpA8", title: "How to publish a Chrome extension to the Chrome Web Store", by: "Paper Code", mins: 6, about: "The developer account, uploading your zip, the store listing and sending it for review. Step 10 of the tutorial." },
+      { id: "ty9ZcimL6VE", title: "How I built a $20K/month AI Chrome extension", by: "Starter Story", mins: 13, about: "A real founder on how he picked the idea, got his first users and started charging. Proof that a small browser tool can be a real business." },
+    ],
+    tutorial: {
+      intro: "A Chrome extension is a small tool that lives in the browser. People use Chrome all day, so a tool that saves them a few minutes every day is easy to say yes to. You'll pick an idea, check it with Claude, build it with Claude Code, test it in Chrome, add a paid plan and publish it.",
+      steps: [
+        {
+          title: "Understand what an extension can do",
+          body: [
+            "An extension can add a button next to the address bar that opens a little popup, change or read the page you're on, add an option to the right-click menu, or run quietly in the background (like a timer or a blocker).",
+            "Good extensions do one job well. Examples: summarize the page you're on, save highlights from any article, block distracting sites during homework, turn a recipe page into just the ingredients, or rewrite a selected email so it sounds friendlier.",
+          ],
+        },
+        {
+          title: "Pick an idea from your own browser",
+          body: [
+            "Think about what you do in Chrome every day that's annoying or slow. Copying the same thing over and over? Opening the same 5 tabs? Getting distracted? Your own repeated problem is the easiest one to build for.",
+            "Write it as one sentence: “My extension [does what] for [who].” If it takes more than one sentence, it's too big for a first version.",
+          ],
+        },
+        {
+          title: "Research what already exists",
+          body: [
+            "Search the Chrome Web Store for your idea, or let Claude do it. Find 3 to 5 extensions that already do something similar, what they charge, and how they make money.",
+            "Don't panic if something similar exists. That proves people want it. Your job is to find the one thing they do badly and do it better.",
+          ],
+          prompt: { tool: "Claude", text: "I'm about to build a Chrome extension that [DOES X]. Search for 3-5 extensions that already do something similar, tell me what they charge and how they make money, and point out one gap or weakness I could do better." },
+        },
+        {
+          title: "Check the idea before you code",
+          body: [
+            "Ask Claude for an honest opinion: is this actually useful, has it been done to death, and would a real person install it? Ask for one tweak that would make it stand out.",
+            "Then ask 3 friends: “Would you install this?” If nobody would, change the idea now. It's a lot cheaper than finding out after you build it.",
+          ],
+          prompt: { tool: "Claude", text: "I want to build a Chrome extension that [ONE-SENTENCE IDEA]. Before writing any code, tell me honestly: is this actually useful, has it been done to death, and would a real person install it? Suggest one tweak that would make it stand out." },
+        },
+        {
+          title: "Plan the free and paid versions",
+          body: [
+            "The simplest model is a free version that's actually useful, plus one paid feature for people who use it a lot. For example: 5 summaries a day free, unlimited for $3 a month.",
+            "The free version has to give real value on its own, or nobody will keep it long enough to upgrade. Decide this before you build so Claude Code builds it in from the start.",
+          ],
+          prompt: { tool: "Claude", text: "My extension does [X] for [WHO IT'S FOR]. Based on what similar tools charge, suggest a simple pricing model (free tier + one paid feature), and tell me exactly what the free version should include so people still get real value without paying." },
+        },
+        {
+          title: "Build it with Claude Code",
+          body: [
+            "Make a new empty folder and open it in Claude Code. Paste the build prompt with your idea and your free and paid features. Claude Code writes all the files, including manifest.json, which is the file that tells Chrome what your extension is and what it's allowed to do.",
+            "Keep the first version small: the one main job, working well. You can add more after people start using it.",
+          ],
+          prompt: { tool: "Claude Code", text: "Build a Chrome extension (Manifest V3) called [NAME]. It [WHAT IT DOES] for [WHO]. Main way to use it: [POPUP BUTTON / RIGHT-CLICK MENU / RUNS ON CERTAIN PAGES]. Free version: [FREE FEATURES]. Paid feature, locked for now: [PAID FEATURE]. Keep it simple and clean, ask for as few permissions as possible, add placeholder icons, and tell me exactly how to load it in Chrome." },
+          tip: "Ask for as few permissions as possible. Extensions that want to “read and change all your data on all websites” scare people off, and take longer to get approved.",
+        },
+        {
+          title: "Load it into Chrome",
+          body: [
+            "Open a new tab and go to chrome://extensions. Turn on Developer mode (top right). Click Load unpacked and choose your extension's folder. It shows up in the list, and you can pin it with the puzzle icon next to the address bar.",
+            "Every time Claude Code changes the files, go back to chrome://extensions and click the reload arrow on your extension, then refresh the page you're testing on.",
+          ],
+        },
+        {
+          title: "Fix errors",
+          body: [
+            "If something doesn't work, look for a red Errors button on your extension's card in chrome://extensions. Copy the exact error. In Claude Code, paste it and say what you were doing when it broke. It can see your files, so it fixes them directly.",
+            "Using the Claude chat instead? Paste the error plus your manifest.json and the file that broke, so it has everything it needs.",
+          ],
+          prompt: { tool: "Claude", text: "My Chrome extension isn't working. Here's the error from chrome://extensions: [PASTE EXACT ERROR]. Here's my manifest.json and [FILE NAME]: [PASTE CODE]. Walk me through what's wrong and fix it." },
+        },
+        {
+          title: "Add the paid plan",
+          body: [
+            "ExtensionPay is a service made for this. It handles the Stripe payments and remembers who paid, so you don't need your own server. Make a free account at extensionpay.com, register your extension, then ask Claude Code to connect it and unlock your paid feature for people who pay.",
+            "Test it in Stripe's test mode first, with Stripe's test card, before you take any real money.",
+          ],
+          prompt: { tool: "Claude Code", text: "Add a paid plan to my extension with ExtensionPay. My extension ID on ExtensionPay is [EXTENSIONPAY ID]. Free users get [FREE FEATURES]. Paying users ($[PRICE]/month) unlock [PAID FEATURE]. Add an \"Upgrade\" button in the popup that opens the payment page, show \"Pro\" once they've paid, and tell me how to test it in test mode." },
+          tip: "Stripe needs an adult to own the account. If you're under 18, set up ExtensionPay and Stripe with a parent.",
+        },
+        {
+          title: "Publish it on the Chrome Web Store",
+          body: [
+            "Ask Claude Code to make a zip of your extension and real icons. Sign up for a Chrome Web Store developer account (one-time $5 fee, and you may need a parent to register it), click New item and upload the zip.",
+            "Fill in the listing: description, at least one screenshot (1280 by 800), a category, and the privacy questions about what data you collect. Then submit it for review. Review can take a few days, so submit early.",
+          ],
+          prompt: { tool: "Claude", text: "Write a Chrome Web Store listing for my extension: [NAME], which does [WHAT IT DOES]. Give me a short description (under 132 characters), a longer description, and 3 bullet points of key features — no made-up claims or fake stats." },
+        },
+        {
+          title: "Get 10 installs, then ask each to upgrade",
+          body: [
+            "Once it's approved, send the store link to people who have the problem it solves. Post it in the AIBA Discord, group chats and anywhere your users hang out. Ask each person to try it for a few days.",
+            "Then ask what they think and whether they'd pay for the paid feature. Every “no” tells you what to fix. The goal this week: 10 installs, and ask every one of them to upgrade.",
+          ],
+          tip: "While you wait for review, friends can test it by loading your folder with Load unpacked, just like you did.",
+        },
+      ],
+    },
+    kit: [
+      {
+        name: "Claude", icon: "anthropic", href: "https://claude.ai", role: "Research, check the idea, plan pricing and write the store listing. Turn on web search for the research prompt.",
+        prompts: [
+          { title: "Research competitors before building", step: 3, when: "As soon as you have your one-sentence idea.", text: "I'm about to build a Chrome extension that [DOES X]. Search for 3-5 extensions that already do something similar, tell me what they charge and how they make money, and point out one gap or weakness I could do better." },
+          { title: "Validate the idea before coding", step: 4, when: "After the research, before you open Claude Code.", text: "I want to build a Chrome extension that [ONE-SENTENCE IDEA]. Before writing any code, tell me honestly: is this actually useful, has it been done to death, and would a real person install it? Suggest one tweak that would make it stand out." },
+          { title: "Plan the monetization", step: 5, when: "Before you build, so the paid feature is part of the plan.", text: "My extension does [X] for [WHO IT'S FOR]. Based on what similar tools charge, suggest a simple pricing model (free tier + one paid feature), and tell me exactly what the free version should include so people still get real value without paying." },
+          { title: "Debug a broken extension", step: 8, when: "When you see a red Errors button in chrome://extensions and you're using the chat, not Claude Code.", text: "My Chrome extension isn't working. Here's the error from chrome://extensions: [PASTE EXACT ERROR]. Here's my manifest.json and [FILE NAME]: [PASTE CODE]. Walk me through what's wrong and fix it." },
+          { title: "Write the store listing", step: 10, when: "Right before you upload to the Chrome Web Store.", text: "Write a Chrome Web Store listing for my extension: [NAME], which does [WHAT IT DOES]. Give me a short description (under 132 characters), a longer description, and 3 bullet points of key features — no made-up claims or fake stats." },
+          { title: "Ask users for feedback", step: 11, when: "A few days after someone installs it.", text: "Write a short, casual message to a friend who installed my Chrome extension [NAME]. Ask what they liked, what was confusing, and whether they'd pay $[PRICE]/month for [PAID FEATURE]. Under 50 words." },
+        ],
+      },
+      {
+        name: "Claude Code", icon: "anthropic", href: "https://claude.com/product/claude-code", role: "Writes every file of the extension, fixes errors, adds payments and packages it for the store.",
+        prompts: [
+          { title: "Build the extension", step: 6, when: "In a new empty folder, once you've checked the idea and picked your free and paid features.", text: "Build a Chrome extension (Manifest V3) called [NAME]. It [WHAT IT DOES] for [WHO]. Main way to use it: [POPUP BUTTON / RIGHT-CLICK MENU / RUNS ON CERTAIN PAGES]. Free version: [FREE FEATURES]. Paid feature, locked for now: [PAID FEATURE]. Keep it simple and clean, ask for as few permissions as possible, add placeholder icons, and tell me exactly how to load it in Chrome." },
+          { title: "Fix an error", step: 8, when: "When something breaks. Claude Code can see your files, so you only need the error.", text: "My extension shows this error in chrome://extensions:\n[PASTE EXACT ERROR]\nIt happened when I [WHAT YOU DID]. Find the cause and fix it." },
+          { title: "Change one thing", step: 7, when: "After you've tried it in Chrome and want something different.", text: "When I [WHAT YOU DID], [WHAT HAPPENED]. I want it to [WHAT YOU WANT INSTEAD]. Change only that." },
+          { title: "Add the paid plan", step: 9, when: "After you've made an ExtensionPay account and registered your extension.", text: "Add a paid plan to my extension with ExtensionPay. My extension ID on ExtensionPay is [EXTENSIONPAY ID]. Free users get [FREE FEATURES]. Paying users ($[PRICE]/month) unlock [PAID FEATURE]. Add an \"Upgrade\" button in the popup that opens the payment page, show \"Pro\" once they've paid, and tell me how to test it in test mode." },
+          { title: "Get it ready for the store", step: 10, when: "When it works and you're ready to publish.", text: "Get my extension ready for the Chrome Web Store: make proper icons in every size the store needs, remove any permissions I don't use, check the manifest for problems, and make a zip file I can upload. Then list what I'll need to fill in on the store listing, including the privacy questions." },
+          { title: "Write a privacy policy", step: 10, when: "If the store asks for one (it will if you collect any user data).", text: "Write a short, honest privacy policy for my Chrome extension [NAME]. It collects [WHAT DATA, OR \"NO DATA\"] and uses it to [WHY]. Make it a simple web page I can host for free and link from the store listing." },
+        ],
+      },
+      { name: "Chrome Web Store", icon: "googlechrome", href: "https://chrome.google.com/webstore/devconsole", role: "Where you publish. Upload the zip, write the listing and submit for review.", note: "One-time $5 developer fee. Check the age rules, and ask a parent to register if needed." },
+      { name: "ExtensionPay", icon: "extensionpay", href: "https://extensionpay.com", role: "Adds Stripe payments to an extension without your own server, and remembers who paid.", note: "Under 18? A parent needs to own the Stripe account." },
+    ],
+  },
 };
