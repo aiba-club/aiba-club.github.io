@@ -640,14 +640,16 @@ export const GUIDES: Record<string, Guide> = {
           title: "Understand what an extension can do",
           body: [
             "An extension can add a button next to the address bar that opens a little popup, change or read the page you're on, add an option to the right-click menu, or run quietly in the background (like a timer or a blocker).",
-            "Good extensions do one job well. Examples: summarize the page you're on, save highlights from any article, block distracting sites during homework, turn a recipe page into just the ingredients, or rewrite a selected email so it sounds friendlier.",
+            "Good extensions do one job well, and some are huge businesses. Grammarly checks your writing on any site (free checks, paid Premium). Honey applies coupon codes at checkout and earns a commission from stores. Loom, Momentum and Tactiq all have a free version and charge for extras.",
+            "Why it's a good first business: the Chrome Web Store puts your tool in front of people already searching for it, AI can write almost all of the code in one sitting, and it's cheap to try a few ideas and see which one gets installs.",
           ],
         },
         {
           title: "Pick an idea from your own browser",
           body: [
             "Think about what you do in Chrome every day that's annoying or slow. Copying the same thing over and over? Opening the same 5 tabs? Getting distracted? Your own repeated problem is the easiest one to build for.",
-            "Write it as one sentence: “My extension [does what] for [who].” If it takes more than one sentence, it's too big for a first version.",
+            "A good idea passes three checks: it solves one annoying problem people have every week, it works on a site they already visit, and you could build a rough version in one sitting.",
+            "Ideas to steal: a focus-mode blocker with a streak tracker, a tool that summarizes a long video into bullet points, one that compares a product's price across your open tabs, or one that reminds a business's customers to leave a review. Write yours as one sentence: \u201cMy extension [does what] for [who].\u201d If it takes more than one sentence, it's too big for a first version.",
           ],
         },
         {
@@ -681,7 +683,7 @@ export const GUIDES: Record<string, Guide> = {
             "Keep the first version small: the one main job, working well. You can add more after people start using it.",
           ],
           prompt: { tool: "Claude Code", text: "Build a Chrome extension (Manifest V3) called [NAME]. It [WHAT IT DOES] for [WHO]. Main way to use it: [POPUP BUTTON / RIGHT-CLICK MENU / RUNS ON CERTAIN PAGES]. Free version: [FREE FEATURES]. Paid feature, locked for now: [PAID FEATURE]. Keep it simple and clean, ask for as few permissions as possible, add placeholder icons, and tell me exactly how to load it in Chrome." },
-          tip: "Ask for as few permissions as possible. Extensions that want to “read and change all your data on all websites” scare people off, and take longer to get approved.",
+          tip: "No Claude Code? The Claude chat works too: use the class demo prompt in Resources and it gives you every file to save into one folder. Either way, ask for as few permissions as possible. Extensions that want to \u201cread and change all your data on all websites\u201d scare people off and take longer to get approved.",
         },
         {
           title: "Load it into Chrome",
@@ -701,7 +703,8 @@ export const GUIDES: Record<string, Guide> = {
         {
           title: "Add the paid plan",
           body: [
-            "ExtensionPay is a service made for this. It handles the Stripe payments and remembers who paid, so you don't need your own server. Make a free account at extensionpay.com, register your extension, then ask Claude Code to connect it and unlock your paid feature for people who pay.",
+            "There are a few ways to get paid: freemium (free core, paid pro features), a one-time unlock through Gumroad or Stripe, affiliate commissions when someone buys through you, one labeled sponsor spot, or building one for a local business that pays you. Freemium is the easiest to start with.",
+            "For freemium, ExtensionPay is a service made for this. It handles the Stripe payments and remembers who paid, so you don't need your own server. Make a free account at extensionpay.com, register your extension, then ask Claude Code to connect it and unlock your paid feature for people who pay.",
             "Test it in Stripe's test mode first, with Stripe's test card, before you take any real money.",
           ],
           prompt: { tool: "Claude Code", text: "Add a paid plan to my extension with ExtensionPay. My extension ID on ExtensionPay is [EXTENSIONPAY ID]. Free users get [FREE FEATURES]. Paying users ($[PRICE]/month) unlock [PAID FEATURE]. Add an \"Upgrade\" button in the popup that opens the payment page, show \"Pro\" once they've paid, and tell me how to test it in test mode." },
@@ -712,9 +715,17 @@ export const GUIDES: Record<string, Guide> = {
           body: [
             "Ask Claude Code to make a zip of your extension and real icons. Register for a Chrome Web Store developer account at chrome.google.com/webstore/devconsole/register (one-time $5 fee, and you may need a parent to register it). Then click New item and upload the zip.",
             "Fill in the listing: description, at least one screenshot (1280 by 800), a category, and the privacy questions about what data you collect. Then submit it for review. Review can take a few days, so submit early.",
+            "Don't want to pay the $5? Zip the folder and send it to friends: they turn on Developer mode, click Load unpacked and it works, totally free. Or publish on Microsoft Edge's store, which is free, and Chrome users can still install it from there.",
             "Want more users? Microsoft Edge and Opera run Chrome extensions, so you can usually upload the same zip to their stores for free. Firefox is free too but needs a few small changes, so ask Claude Code to make a Firefox version. Safari needs a Mac and Apple's $99-a-year developer program, so save it for later. All the links are in Resources.",
           ],
           prompt: { tool: "Claude", text: "Write a Chrome Web Store listing for my extension: [NAME], which does [WHAT IT DOES]. Give me a short description (under 132 characters), a longer description, and 3 bullet points of key features — no made-up claims or fake stats." },
+        },
+        {
+          title: "Get found",
+          body: [
+            "Nail the listing: a clear title, a description with the words people would search for, and real screenshots. Then ask 5 to 10 friends to install it and leave an honest rating, because the first reviews matter most.",
+            "Share it where your users already are: a subreddit or Discord about the exact problem it solves. Short TikToks or Reels work too, like a funny storytime with gameplay in the background. Keep shipping updates and reply to every review: extensions that are clearly maintained rank higher.",
+          ],
         },
         {
           title: "Get 10 installs, then ask each to upgrade",
@@ -722,7 +733,7 @@ export const GUIDES: Record<string, Guide> = {
             "Once it's approved, send the store link to people who have the problem it solves. Post it in the AIBA Discord, group chats and anywhere your users hang out. Ask each person to try it for a few days.",
             "Then ask what they think and whether they'd pay for the paid feature. Every “no” tells you what to fix. The goal this week: 10 installs, and ask every one of them to upgrade.",
           ],
-          tip: "While you wait for review, friends can test it by loading your folder with Load unpacked, just like you did.",
+          tip: "This week: pick one idea, pay the $5 store fee (or use a free option), build it and test it at chrome://extensions, then submit it for review. While you wait, friends can test it with Load unpacked.",
         },
       ],
     },
@@ -732,10 +743,11 @@ export const GUIDES: Record<string, Guide> = {
         prompts: [
           { title: "Research competitors before building", step: 3, when: "As soon as you have your one-sentence idea.", text: "I'm about to build a Chrome extension that [DOES X]. Search for 3-5 extensions that already do something similar, tell me what they charge and how they make money, and point out one gap or weakness I could do better." },
           { title: "Validate the idea before coding", step: 4, when: "After the research, before you open Claude Code.", text: "I want to build a Chrome extension that [ONE-SENTENCE IDEA]. Before writing any code, tell me honestly: is this actually useful, has it been done to death, and would a real person install it? Suggest one tweak that would make it stand out." },
+          { title: "Class demo: focus-mode site blocker", step: 6, when: "The extension we build together in class. Paste it into Claude (chat) and save every file it gives you into one folder.", text: "Build a Chrome extension that blocks a list of websites I pick until a timer runs out. I want a popup to add sites and start the timer, a background script that enforces the block, and a simple options page. Comment the code so a beginner can follow it, and give me every file I need." },
           { title: "Plan the monetization", step: 5, when: "Before you build, so the paid feature is part of the plan.", text: "My extension does [X] for [WHO IT'S FOR]. Based on what similar tools charge, suggest a simple pricing model (free tier + one paid feature), and tell me exactly what the free version should include so people still get real value without paying." },
           { title: "Debug a broken extension", step: 8, when: "When you see a red Errors button in chrome://extensions and you're using the chat, not Claude Code.", text: "My Chrome extension isn't working. Here's the error from chrome://extensions: [PASTE EXACT ERROR]. Here's my manifest.json and [FILE NAME]: [PASTE CODE]. Walk me through what's wrong and fix it." },
           { title: "Write the store listing", step: 10, when: "Right before you upload to the Chrome Web Store.", text: "Write a Chrome Web Store listing for my extension: [NAME], which does [WHAT IT DOES]. Give me a short description (under 132 characters), a longer description, and 3 bullet points of key features — no made-up claims or fake stats." },
-          { title: "Ask users for feedback", step: 11, when: "A few days after someone installs it.", text: "Write a short, casual message to a friend who installed my Chrome extension [NAME]. Ask what they liked, what was confusing, and whether they'd pay $[PRICE]/month for [PAID FEATURE]. Under 50 words." },
+          { title: "Ask users for feedback", step: 12, when: "A few days after someone installs it.", text: "Write a short, casual message to a friend who installed my Chrome extension [NAME]. Ask what they liked, what was confusing, and whether they'd pay $[PRICE]/month for [PAID FEATURE]. Under 50 words." },
         ],
       },
       {
@@ -758,6 +770,7 @@ export const GUIDES: Record<string, Guide> = {
       { name: "Safari", icon: "safari", href: "https://developer.apple.com/documentation/safariservices/converting-a-web-extension-for-safari", role: "Publish for Safari on Mac and iPhone. Apple converts your extension into an app with Xcode.", note: "Needs a Mac and the Apple Developer Program ($99 a year). Save this one for later." },
     ],
     links: [
+      ...slides("1bXJxlcZikTa2zzz4qHJ2_xMvrM752WORZ_17xVKISzQ", "1GxTRIbQLhTg7cgfF4Uagii97ofPFOe1fpZvD9ENNd94", 6),
       { label: "Register for the Chrome Web Store ($5 one time)", href: "https://chrome.google.com/webstore/devconsole/register", kind: "Store" },
       { label: "Chrome Web Store developer dashboard", href: "https://chrome.google.com/webstore/devconsole", kind: "Store" },
       { label: "Microsoft Edge: create a developer account (free)", href: "https://learn.microsoft.com/en-us/microsoft-edge/extensions/publish/create-dev-account", kind: "Store" },
