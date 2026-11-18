@@ -628,7 +628,7 @@ export const GUIDES: Record<string, Guide> = {
   /* ------------------------------------------------------------------ Chrome extension lesson */
   "ai-chrome-extension": {
     videos: [
-      { id: "lOBgdz-YfZY", title: "Build and publish your first Chrome extension in 5 minutes", by: "ambITious | AI", mins: 5, about: "Claude Code builds a right-click “explain this” extension, it gets tested in Chrome, then published to the Chrome Web Store. The whole lesson in 5 minutes." },
+      { id: "SbgolE1kPDI", title: "Use Claude to build Chrome extensions (zero coding skills needed)", by: "Paul J Lipsky", mins: 19, about: "He builds a Chrome extension from scratch with Claude, with no coding experience, step by step: describing the idea, getting the files, loading it into Chrome and fixing what breaks. Steps 6 to 8 of the tutorial." },
       { id: "356Iq9NkDI4", title: "How to build a Chrome extension with Claude and make money", by: "Panstag", mins: 8, about: "From idea to code with Claude, then testing, publishing and ways to make money from it. Steps 2 to 10 of the tutorial in 8 minutes." },
       { id: "7BbNHBucSIg", title: "Create and publish your first Chrome extension (2026)", by: "The Coding Bus", mins: 5, about: "Builds a full-page screenshot extension, then walks through the Chrome Web Store dashboard, upload and review. Step 10 of the tutorial." },
       { id: "Z-aDxX0o9P4", title: "I monetized 100+ Chrome extensions. Here\u2019s what works", by: "Vitalii Vasianovych", mins: 12, about: "Which ways of charging actually work for extensions (and which ones get you in trouble), from someone who has launched over 100. Helps with steps 5 and 9." },
