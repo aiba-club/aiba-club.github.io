@@ -93,7 +93,7 @@ export const GUIDES: Record<string, Guide> = {
   /* ------------------------------------------------------------------ Meeting 2 */
   "freelancing-with-ai": {
     videos: [
-      { id: "h6hbCtA4dXQ", title: "Build a full website just by chatting with YouWare", by: "AI Expert", mins: 8, about: "Watch a site get built from one prompt, then changed by describing what to fix. This is step 5 and 6 of the tutorial." },
+      { id: "BkVUDuQtEYI", title: "YouWare built this website for me (fully working, no code)", by: "Ben's Cyber Life", mins: 10, about: "A full site built by chatting with YouWare, then changed by describing what to fix. This is steps 5 and 6 of the tutorial." },
       { id: "MRXDI-U7TU0", title: "A complete website in 5 minutes with YouWare", by: "How Tech", mins: 5, about: "A faster run through the same flow: describe the site, generate it, edit it and publish it." },
       { id: "mUAPt0FM-kQ", title: "Rebuild a real local business website with Claude", by: "Profit Studio", mins: 15, about: "Find an outdated local business site, plan a better one with Claude, and fix the copy and the mobile layout. This is how you make a sample for a real client." },
     ],
@@ -218,7 +218,7 @@ export const GUIDES: Record<string, Guide> = {
   "app-dev-day-1": {
     videos: [
       { id: "x9TFKNgaDjo", title: "How to find app ideas people will actually pay for", by: "SJCodes", mins: 9, about: "Find a real problem by reading what people complain about, which is exactly the niche and gap part of this lesson." },
-      { id: "OlP57plalDo", title: "Design a mobile app from scratch with AI", by: "Steven Cravotta", mins: 5, about: "Generate app screens with AI and improve them round by round before you build." },
+      { id: "19bVwESg7TU", title: "How to design your app UI in 6 minutes with AI", by: "Steven Cravotta", mins: 6, about: "Generate app screens with AI and improve them round by round before you build. Step 8 of the tutorial." },
       { id: "Y-QCP2EMml4", title: "Build complete apps with Claude", by: "TechPP", mins: 5, about: "Turn a plain-English description into a working app you can click through and share." },
     ],
     tutorial: {
@@ -347,7 +347,7 @@ export const GUIDES: Record<string, Guide> = {
     videos: [
       { id: "uEZ3kNbc-wc", title: "Make a Claude Code website live with GitHub and Vercel", by: "Duncan Rogoff", mins: 7, about: "Build with Claude Code, push it to GitHub and deploy it on Vercel. The exact flow from steps 6 and 7." },
       { id: "5OdmR1-3jvQ", title: "Add logins and a database with Supabase and Claude Code", by: "SkillAgents AI", mins: 6, about: "Create a Supabase project and add email sign-up, login and saved data, all through plain-English prompts." },
-      { id: "sB6bPOvvlgw", title: "Set up “Sign in with Google” in Supabase", by: "Arielle Phoenix", mins: 6, about: "The Google Cloud and Supabase settings you need so the Google button works." },
+      { id: "zNpKCd754og", title: "Add Google login to any website or app with Supabase", by: "Profit Studio", mins: 14, about: "The Google Cloud and Supabase settings you need so the \u201cContinue with Google\u201d button works, step by step." },
     ],
     tutorial: {
       intro: "Today your app gets a real link anyone can open, a landing page, and a way to take payments. One prompt does most of the build. The rest is connecting GitHub and Vercel.",
@@ -467,8 +467,8 @@ export const GUIDES: Record<string, Guide> = {
   /* ------------------------------------------------------------------ Meeting 5 */
   "ai-services-for-local-businesses": {
     videos: [
-      { id: "kmp4iFCf8Jo", title: "Watch me book 3 to 5 meetings a day (web design cold calling)", by: "Pavlo", mins: 15, about: "Real, unedited cold calls to local business owners. Listen to how short and casual the opener is, and how fast he gets to the one problem he noticed." },
-      { id: "e6fbe8BSdeo", title: "Cold calling strategies for selling websites", by: "Pavlo", mins: 13, about: "What to say, when to call, and how to keep going after a no. Lines up with steps 7 to 9 of the tutorial." },
+      { id: "zIR6APkKhco", title: "How to book 3 to 5 meetings a day cold calling (full script)", by: "Pavlo", mins: 12, about: "His full cold call script, line by line, with real calls to local business owners. Listen to how short and casual the opener is, and how fast he gets to the one problem he noticed." },
+      { id: "QpJIlQ9MgbA", title: "If you\u2019re at zero clients, just do this", by: "Pavlo", mins: 16, about: "What to do when you have no clients and no results to show yet. Pairs with steps 3 and 13: start warm, give the first one free, and turn it into proof." },
       { id: "0ezv6zRdM7c", title: "How I book 3 to 5 meetings a day selling websites", by: "Pavlo", mins: 16, about: "More real calls, with owners pushing back (“we already have a website”, “send me a sample”, “I'm driving”) and how he stays chill and still gets a next step. Then how he follows up when nobody answers." },
     ],
     tutorial: {
@@ -629,9 +629,9 @@ export const GUIDES: Record<string, Guide> = {
   "ai-chrome-extension": {
     videos: [
       { id: "lOBgdz-YfZY", title: "Build and publish your first Chrome extension in 5 minutes", by: "ambITious | AI", mins: 5, about: "Claude Code builds a right-click “explain this” extension, it gets tested in Chrome, then published to the Chrome Web Store. The whole lesson in 5 minutes." },
-      { id: "rTd2eLRaBns", title: "Watch me build a custom Chrome extension with Claude", by: "Nico | AI Ranking", mins: 7, about: "Claude writes every file, then he loads it into Chrome and fixes what's off. This is steps 6 to 8 of the tutorial." },
-      { id: "1ugna6gUpA8", title: "How to publish a Chrome extension to the Chrome Web Store", by: "Paper Code", mins: 6, about: "The developer account, uploading your zip, the store listing and sending it for review. Step 10 of the tutorial." },
-      { id: "ty9ZcimL6VE", title: "How I built a $20K/month AI Chrome extension", by: "Starter Story", mins: 13, about: "A real founder on how he picked the idea, got his first users and started charging. Proof that a small browser tool can be a real business." },
+      { id: "356Iq9NkDI4", title: "How to build a Chrome extension with Claude and make money", by: "Panstag", mins: 8, about: "From idea to code with Claude, then testing, publishing and ways to make money from it. Steps 2 to 10 of the tutorial in 8 minutes." },
+      { id: "7BbNHBucSIg", title: "Create and publish your first Chrome extension (2026)", by: "The Coding Bus", mins: 5, about: "Builds a full-page screenshot extension, then walks through the Chrome Web Store dashboard, upload and review. Step 10 of the tutorial." },
+      { id: "Z-aDxX0o9P4", title: "I monetized 100+ Chrome extensions. Here\u2019s what works", by: "Vitalii Vasianovych", mins: 12, about: "Which ways of charging actually work for extensions (and which ones get you in trouble), from someone who has launched over 100. Helps with steps 5 and 9." },
     ],
     tutorial: {
       intro: "A Chrome extension is a small tool that lives in the browser. People use Chrome all day, so a tool that saves them a few minutes every day is easy to say yes to. You'll pick an idea, check it with Claude, build it with Claude Code, test it in Chrome, add a paid plan and publish it.",
