@@ -25,9 +25,9 @@ const BASE: Lesson[] = [
   { slug: "ai-services-for-local-businesses", date: "Wed, Nov 11", title: "Cold calling and outreach", summary: "How to actually get clients: what to sell local businesses, finding leads on Google Maps, a call script that works, handling no's, and building for every yes in 10 minutes.", goal: "30 calls in one niche, and build for every yes the same day", status: "done",
     slides: "https://docs.google.com/presentation/d/1FbUyjLLXqA5xxpHiqDO7RsDmKYSq7x1SWeIItjsmN7E/embed?start=false&loop=false&delayms=3000",
     tools: ["Claude", "Vercel", "Google Sheets"] },
-  { slug: "digital-products-on-gumroad", date: "Wed, Nov 18", title: "AI digital products sold on Gumroad", summary: "Make an AI digital product and sell it on Gumroad.", goal: "Shared with 20 people, one sale", status: "upcoming" },
-  { slug: "ai-chrome-extension", date: "Wed, Dec 2", title: "AI Chrome extension with a paid plan", summary: "Build a Chrome extension with Claude Code: pick an idea from your own browser, check it before you code, test it in Chrome, add a paid plan and publish it on the Chrome Web Store.", goal: "10 installs, ask each to upgrade", status: "done",
+  { slug: "ai-chrome-extension", date: "Wed, Nov 18", title: "AI Chrome extension with a paid plan", summary: "Build a Chrome extension with Claude Code: pick an idea from your own browser, check it before you code, test it in Chrome, add a paid plan and publish it on the Chrome Web Store.", goal: "10 installs, ask each to upgrade", status: "done",
     tools: ["Claude"] },
+  { slug: "digital-products-on-gumroad", date: "Wed, Dec 2", title: "AI digital products sold on Gumroad", summary: "Make an AI digital product and sell it on Gumroad.", goal: "Shared with 20 people, one sale", status: "upcoming" },
   { slug: "custom-ai-chatbots", date: "Wed, Dec 9", title: "Custom AI chatbots for creators, teachers and clubs", summary: "Build custom AI chatbots for creators, teachers and clubs.", status: "upcoming" },
 ];
 export const LESSONS: Lesson[] = BASE.map((l) => ({ ...l, ...GUIDES[l.slug] }));
